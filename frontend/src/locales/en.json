@@ -1,0 +1,13 @@
+{
+    "logo": {
+        "title": "Explore Craiova",
+        "subtitle": "Ghidul tău pentru oraș"
+    },
+    "nav": {
+        "home": "Acasă",
+        "events": "Evenimente",
+        "gallery": "Galerie",
+        "attractions": "Locuri de vizitat",
+        "contact": "Contact"
+    }
+}

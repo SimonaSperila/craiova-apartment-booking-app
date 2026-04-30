@@ -1,0 +1,18 @@
+{
+    "logo": {
+        "title": "Shakespeare",
+        "subtitle": "central apartment"
+    },
+    "banner": { 
+        "title": "Shakespeare Central apartament",
+        "subtitle": "Bine ati venit la",
+        "body": "Un apartament modern și elegant situat chiar în inima orașului Craiova, la doar câțiva pași de cele mai importante atracții turistice, restaurante și magazine. Acest apartament este perfect pentru cei care doresc să exploreze orașul și să se bucure de tot ce are de oferit."
+    },
+    "nav": {
+        "home": "Acasă",
+        "events": "Evenimente",
+        "gallery": "Galerie",
+        "attractions": "Locuri de vizitat",
+        "contact": "Contact"
+    }
+}
