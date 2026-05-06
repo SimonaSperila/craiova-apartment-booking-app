@@ -5,23 +5,13 @@ header {
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
+	position: relative;
   }
 
   a{
     text-decoration: none;
     color: inherit;
   }
-}
-
-.container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 .logo {
@@ -42,9 +32,78 @@ img {
 }
 
 nav {
-  display: flex;
-  gap: var(--spacing-lg); 
-  padding-left: 2rem;
+    display: none;
+    padding-left: 2rem;
+	position: absolute;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+
+    @media (min-width: 769px) {
+		display: block;
+		position: static;
+		background-color: transparent;
+
+		.logo,
+		.close {
+			display: none;
+		}
+  	}
+
+	ul {
+		gap: var(--spacing-lg); 
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		@media (min-width: 769px) {
+			display: flex;
+		}
+	}
+
+	&.active {
+		display: block;
+	}
+}
+
+.hamburger {
+	display: block;
+	font-size: 1.5rem;
+	cursor: pointer;
+
+	@media (min-width: 769px) {
+		display: none;	
+	}
+}
+
+.lang-switcher {
+	@media (min-width: 769px) {
+		position: absolute;
+		right: 0;
+	}
+}
+
+.lang-button {
+	border: none;
+	background: none;
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.lang-dropdown {
+	position: absolute;
+}
+
+.lang-dropdown button{
+	border: none;
+	background: none;
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
 }
 
 .banner {
@@ -90,4 +149,15 @@ nav {
   text-transform: uppercase;
   margin-bottom: 10px;
   display: block;
+}
+
+.benefits .container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--spacing-lg);
+	flex-wrap: wrap;
+
+	@media (min-width: 769px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }

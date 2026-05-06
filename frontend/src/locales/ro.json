@@ -14,5 +14,24 @@
         "gallery": "Galerie",
         "attractions": "Locuri de vizitat",
         "contact": "Contact"
+    },
+    "benefitsHomepage": {
+        "benefit1": {
+            "title": "Locație centrală",
+            "description": "La câțiva pași de principalele atracții, restaurante și transport public."
+        },
+              
+        "benefit2": {
+            "title": "Confort & Stil",
+            "description": "Design modern, spațios și dotat cu tot ce ai nevoie pentru un sejur plăcut."
+        },
+        "benefit3": {
+            "title": "Wi-Fi rapid",
+            "description": "Internet de mare viteză gratuit, ideal pentru muncă sau relaxare."
+        },
+        "benefit4": {
+            "title": "Parcare",
+            "description": "Opțiuni de parcare disponibile în apropiere."
+        }
     }
 }

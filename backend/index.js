@@ -29,11 +29,17 @@ db.query("SELECT 1", (err) => {
 
 // GET places
 app.get("/places", (req, res) => {
-  db.query("SELECT * FROM places", (err, results) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).json({ error: err.message });
-    }
+  const lang = req.query.lang || "ro";
+
+  const sql = `
+    SELECT p.id, pt.name, pt.description
+    FROM places p
+    JOIN place_translations pt ON p.id = pt.place_id
+    WHERE pt.language = ?
+  `;
+
+  db.query(sql, [lang], (err, results) => {
+    if (err) return res.status(500).json(err);
     res.json(results);
   });
 });
@@ -42,3 +48,4 @@ app.get("/places", (req, res) => {
 app.listen(3000, () => {
   console.log("Backend running on 3000");
 });
+
