@@ -4,6 +4,9 @@ import { useTranslation } from "react-i18next";
 import roFlag from "../assets/flags/ro.svg";
 import gbFlag from "../assets/flags/gb.svg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+
 function LanguageSwitcher() {
     const { i18n } = useTranslation();
     const [open, setOpen] = useState(false);
@@ -19,8 +22,9 @@ function LanguageSwitcher() {
     	<div className="lang-switcher">
 			{/* BUTON PRINCIPAL */}
 			<button className="lang-button" onClick={() => setOpen(!open)}>
-				<img src={currentLang === "ro" ? roFlag : gbFlag} alt="lang" />
+				<img src={currentLang === "ro" ? roFlag : gbFlag} width="15" height="15" alt="lang" />
 				<span>{currentLang.toUpperCase()}</span>
+				<FontAwesomeIcon icon={faAngleDown} />
 			</button>
 
 			{/* DROPDOWN */}
@@ -28,7 +32,7 @@ function LanguageSwitcher() {
 				<div className="lang-dropdown">
 					{currentLang !== "ro" && (
 					<button onClick={() => changeLang("ro")}>
-						<img src={roFlag} alt="Română" width="15" height="15" /> RO
+						<img src={roFlag} width="15" height="15" alt="Română" /> RO
 					</button>
 					)}
 

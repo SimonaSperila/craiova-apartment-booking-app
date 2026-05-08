@@ -33,5 +33,11 @@
             "title": "Parcare",
             "description": "Opțiuni de parcare disponibile în apropiere."
         }
+    },
+    "placesToVisit": {
+        "subtitle": "Descoperă Craiova",
+        "title": "Locuri de vizitat",
+        "description": "Craiova este un oraș plin de istorie, cultură și viață. Iată câteva dintre locurile pe care nu trebuie să le ratezi.",
+        "viewAll": "Vezi toate atracțiile"
     }
 }

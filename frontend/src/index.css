@@ -15,12 +15,17 @@
   --spacing-lg-r: 16px;
   --spacing-xl-r: 24px;
 
+  /*sections spacing*/
+  --section-padding: 30px;
+
   /* colors */
   --white: #fff;
   --orange: #f97316;
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
+  --gray-200: #E9E8E7;
+  --gray-500: #8F8F8F;
+  --gray-700: #5C5C5C;
+  --gray-900: #333333;
+  --bg-btn-primary: #253a32;
   --border: #e5e4e7;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -61,6 +66,7 @@ body {
   margin: 0;
   font-family: var(--main-font);
   font-size: 1rem;
+  color: var(--gray-700);
 }
 
 #root {
@@ -72,6 +78,7 @@ h1,
 h2 {
   font-family: var(--heading-font);
   font-weight: 500;
+  color: var(--gray-900);
 }
 
 h1 {
@@ -86,14 +93,9 @@ h1 {
 }
 
 h2 {
-	font-size: 24px;
-	line-height: 118%;
-	letter-spacing: -0.24px;
-	margin: 0 0 8px;
-	@media (max-width: 1024px) {
-		font-size: 20px;
-	}
+	margin: 0 0 var(--spacing-sm);
 }
+
 p {
   margin: 0;
 }
@@ -122,5 +124,12 @@ code {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: var(--bg-btn-primary);
+  color: var(--white);
+  padding: var(--spacing-sm) var(--spacing-lg);
 }
 

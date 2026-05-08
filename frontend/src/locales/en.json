@@ -3,11 +3,39 @@
         "title": "Shakespeare",
         "subtitle": "central apartment"
     },
+    "banner": { 
+        "title": "Shakespeare Central Apartment",
+        "subtitle": "Welcome to",
+        "body": "A modern and elegant apartment located right in the heart of Craiova, just a few steps away from the most important tourist attractions, restaurants, and shops. This apartment is perfect for those who want to explore the city and enjoy everything it has to offer."
+    },
     "nav": {
-        "home": "Acasă",
-        "events": "Evenimente",
-        "gallery": "Galerie",
-        "attractions": "Locuri de vizitat",
+        "home": "Home",
+        "events": "Events",
+        "gallery": "Gallery",
+        "attractions": "Places to Visit",
         "contact": "Contact"
+    },
+    "benefitsHomepage": {
+        "benefit1": {
+            "title": "Central Location",
+            "description": "Just a few steps from major attractions, restaurants, and public transport."
+        },
+        "benefit2": {
+            "title": "Comfort & Style",
+            "description": "Modern, spacious design equipped with everything you need for a pleasant stay."
+        },
+        "benefit3": {
+            "title": "Fast Wi-Fi",
+            "description": "Free high-speed internet, ideal for work or relaxation."
+        },
+        "benefit4": {
+            "title": "Parking",
+            "description": "Parking options available nearby."
+        },
+        "placesToVisit": {
+            "subtitle": "Descoperă Craiova",
+            "title": "Locuri de vizitat",
+            "description": "Craiova este un oraș plin de istorie, cultură și frumusețe naturală. Iată câteva dintre cele mai importante locuri pe care nu trebuie să le ratezi în timpul vizitei tale."
+        }
     }
 }

@@ -6,17 +6,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ POOL (corect pentru Docker)
+// ✅ POOL corect pentru Docker
 const db = mysql.createPool({
   host: "db",
   user: "user",
   password: "userpass",
   database: "craiova",
   waitForConnections: true,
-  connectionLimit: 10
+  connectionLimit: 10,
+  charset: "utf8mb4"  
 });
-
-// ❌ REMOVE connectWithRetry (nu există la pool)
 
 // ✔ optional: test conexiune simplu
 db.query("SELECT 1", (err) => {
@@ -29,12 +28,19 @@ db.query("SELECT 1", (err) => {
 
 // GET places
 app.get("/places", (req, res) => {
+   console.log("SQL ACTIVE ROUTE HIT"); 
   const lang = req.query.lang || "ro";
 
   const sql = `
-    SELECT p.id, pt.name, pt.description
+    SELECT 
+      p.id,
+      p.distance,
+      p.image,
+      pt.name,
+      pt.description
     FROM places p
-    JOIN place_translations pt ON p.id = pt.place_id
+    INNER JOIN place_translations pt 
+      ON p.id = pt.place_id
     WHERE pt.language = ?
   `;
 

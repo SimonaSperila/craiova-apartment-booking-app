@@ -12,25 +12,33 @@ function Benefits() {
         <div className="benefits">
             <div className="container">
                 <div className="benefit-item">
-                    <FontAwesomeIcon icon={faLocationDot} />
+                    <span className="benefit-icon">
+                        <FontAwesomeIcon icon={faLocationDot} />
+                    </span>
                     <h2>{t("benefitsHomepage.benefit1.title")}</h2>
                     <p>{t("benefitsHomepage.benefit1.description")}</p>
                 </div>
 
                 <div className="benefit-item">
-                    <FontAwesomeIcon icon={faBed} />
+                    <span className="benefit-icon">
+                        <FontAwesomeIcon icon={faBed} />
+                    </span>
                     <h2>{t("benefitsHomepage.benefit2.title")}</h2>
                     <p>{t("benefitsHomepage.benefit2.description")}</p>
                 </div>
 
                 <div className="benefit-item">
-                    <FontAwesomeIcon icon={faWifi} />
+                    <span className="benefit-icon">
+                        <FontAwesomeIcon icon={faWifi} />
+                    </span>
                     <h2>{t("benefitsHomepage.benefit3.title")}</h2>
                     <p>{t("benefitsHomepage.benefit3.description")}</p>
                 </div>
 
                 <div className="benefit-item">
-                    <FontAwesomeIcon icon={faCar} />
+                    <span className="benefit-icon">
+                        <FontAwesomeIcon icon={faCar} />
+                    </span>
                     <h2>{t("benefitsHomepage.benefit4.title")}</h2>
                     <p>{t("benefitsHomepage.benefit4.description")}</p>
                 </div>

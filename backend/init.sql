@@ -3,8 +3,7 @@ USE craiova;
 
 CREATE TABLE places (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  lat DECIMAL(10,8),
-  lng DECIMAL(11,8),
+  distance VARCHAR(50),
   image VARCHAR(255),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -18,12 +17,12 @@ CREATE TABLE place_translations (
 );
 
 -- date demo
-INSERT INTO places (lat, lng, image) VALUES
-(44.3168, 23.8003, 'romanescu.jpg'),
-(44.3302, 23.7949, 'muzeu.jpg');
+INSERT INTO places (distance, image) VALUES
+('140 m', 'teatru.jpg'),
+('10 km', 'romanescu.jpg');
 
 INSERT INTO place_translations (place_id, language, name, description) VALUES
-(1, 'ro', 'Parcul Romanescu', 'Cel mai mare parc din Craiova'),
-(1, 'en', 'Romanescu Park', 'The largest park in Craiova'),
-(2, 'ro', 'Muzeul de Artă', 'Palatul Jean Mihail'),
-(2, 'en', 'Art Museum', 'Jean Mihail Palace');
+(1, 'ro', 'Teatrul National Marin Sorescu', 'Fondat in 1850, teatrul a fost denumit după omul de cultura si scriitorul de talie universala Marin Sorescu, in anii de dupa Revolutia din 1989'),
+(1, 'en', 'Marin Sorescu National Theatre', 'Founded in 1850, the theatre was named after the cultural figure and writer of universal stature Marin Sorescu in the years following the 1989 Revolution'),
+(2, 'ro', 'Parcul Romanescu', 'Cel mai mare parc din Craiova'),
+(2, 'en', 'Romanescu Park', 'The largest park in Craiova');

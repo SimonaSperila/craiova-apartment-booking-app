@@ -1,14 +1,20 @@
+/*HEADER*/
 header {
   padding: var(--spacing-lg) 0;
 
   .container {
     display: flex;
     align-items: center;
+	justify-content: space-between;
     gap: var(--spacing-lg);
-	position: relative;
+
+	@media (min-width: 769px) {
+		justify-content: left;
+		position: relative;
+	}
   }
 
-  a{
+  a {
     text-decoration: none;
     color: inherit;
   }
@@ -33,7 +39,6 @@ header {
 
 nav {
     display: none;
-    padding-left: 2rem;
 	position: absolute;
 	background-color: #fff;
 	top: 0;
@@ -46,6 +51,7 @@ nav {
 		display: block;
 		position: static;
 		background-color: transparent;
+		padding-left: 2rem;
 
 		.logo,
 		.close {
@@ -67,6 +73,33 @@ nav {
 	&.active {
 		display: block;
 	}
+
+	.logo {
+		justify-content: center;
+		padding: var(--spacing-xl) 0;
+	}
+
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 1.5rem;
+		cursor: pointer;
+	}
+
+	ul {
+		text-align: center;
+	}
+
+	ul li {
+		margin-bottom: 5px;
+		font-size: 1.1rem;
+
+		@media (min-width: 769px) {
+			margin-bottom: 0;
+			font-size: 1rem;
+		}
+	}
 }
 
 .hamburger {
@@ -82,20 +115,28 @@ nav {
 .lang-switcher {
 	@media (min-width: 769px) {
 		position: absolute;
-		right: 0;
+		right: var(--spacing-md);
 	}
 }
 
 .lang-button {
 	border: none;
 	background: none;
+	padding: 0;
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-sm);
+	cursor: pointer;
+}
+
+.lang-button span {
+	margin-left: var(--spacing-sm);
+	margin-right: 3px;
 }
 
 .lang-dropdown {
 	position: absolute;
+	width: 100%;
+	margin-top: 2px;
 }
 
 .lang-dropdown button{
@@ -104,8 +145,12 @@ nav {
 	display: flex;
 	align-items: center;
 	gap: var(--spacing-sm);
+	padding: 5px 0;
+	cursor: pointer;
 }
+/*END HEADER*/
 
+/*BANNER*/
 .banner {
   position: relative;
   line-height: 0;
@@ -150,14 +195,105 @@ nav {
   margin-bottom: 10px;
   display: block;
 }
+/*END BANNER*/
+
+/*BENEFITS*/
+.benefits {
+	margin-top: 30px;
+	padding-bottom: var( --section-padding);
+}
 
 .benefits .container {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: var(--spacing-lg);
 	flex-wrap: wrap;
+	border-bottom: 1px solid var(--gray-500);
+	padding-bottom: var(--section-padding);
 
 	@media (min-width: 769px) {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
+
+.benefit-item {
+	text-align: center;
+}
+
+.benefit-item + .benefit-item {
+	border-top: 1px solid var(--gray-500);
+	padding-top: 20px;
+
+	@media (min-width: 769px) {
+		border-left: 1px solid var(--gray-500);
+		border-top: none;
+		padding-top: 0;
+	}
+}
+
+.benefit-item h2 {
+	margin-top: var(--spacing-sm);
+}
+
+.benefit-icon {
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border: 1px solid var(--gray-500);
+	border-radius: 50%;
+	margin: 0 auto;
+	color: var(--gray-900);
+}
+/*END BENEFITS*/
+
+/*PLACES TO VISIT*/
+.places {
+	padding-bottom: var(--section-padding);
+}
+
+.places .container {
+	padding-bottom: var(--section-padding);
+	border-bottom: 1px solid var(--gray-500);
+}
+
+.places .small-title {
+	text-transform: uppercase;
+	color: var(--orange);
+	font-size: 0.8rem;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.places h2 {
+	font-size: 1.7rem;
+}
+
+.places .section-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--spacing-sm);
+	margin-bottom: var(--spacing-lg);
+
+	@media (min-width: 769px) {
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.places .section-header-content {
+	max-width: 440px;
+}
+
+.places-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--spacing-lg);
+
+	@media (min-width: 769px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+/*END PLACES TO VISIT*/
