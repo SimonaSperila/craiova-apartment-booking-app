@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.4.9, for Linux (x86_64)
 --
--- Host: localhost    Database: craiova
+-- Host: db    Database: craiova
 -- ------------------------------------------------------
 -- Server version	8.4.9
 
@@ -29,7 +29,7 @@ CREATE TABLE `place_translations` (
   `name` varchar(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `place_translations` (
 
 LOCK TABLES `place_translations` WRITE;
 /*!40000 ALTER TABLE `place_translations` DISABLE KEYS */;
-INSERT INTO `place_translations` VALUES (1,1,'ro','Teatrul National Marin Sorescu','Fondat in 1850, teatrul a fost denumit dupa omul de cultura si scriitorul de talie universala Marin Sorescu, in anii de dupa Revolutia din 1989'),(5,1,'en','Marin Sorescu National Theatre','Founded in 1850, the theatre was named after the cultural figure and writer of universal stature Marin Sorescu in the years following the 1989 Revolution'),(6,2,'ro','Parcul Romanescu','Cel mai mare parc din Craiova'),(7,2,'en','Romanescu Park','The largest park in Craiova');
+INSERT INTO `place_translations` VALUES (1,1,'ro','Teatrul National Marin Sorescu','Fondat in 1850, teatrul a fost denumit dupa omul de cultura si scriitorul de talie universala Marin Sorescu, in anii de dupa Revolutia din 1989'),(5,1,'en','Marin Sorescu National Theatre','Founded in 1850, the theatre was named after the cultural figure and writer of universal stature Marin Sorescu in the years following the 1989 Revolution'),(8,3,'ro','Centrul vechi','Stradute cochete, cladiri istorice si terase primitoare.'),(9,3,'en','Old Town','Charming narrow streets, historic buildings, and welcoming terraces.');
 /*!40000 ALTER TABLE `place_translations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +57,7 @@ CREATE TABLE `places` (
   `image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `places` (
 
 LOCK TABLES `places` WRITE;
 /*!40000 ALTER TABLE `places` DISABLE KEYS */;
-INSERT INTO `places` VALUES (1,140,NULL,NULL,'teatru.jpg','2026-05-07 10:25:07'),(2,10,NULL,NULL,'romanescu.jpg','2026-05-07 10:25:07');
+INSERT INTO `places` VALUES (1,140,44.31915952,23.79910704,'teatru.jpg','2026-05-07 10:25:07'),(3,280,44.31749684,23.79901193,'centrul-vechi.jpeg','2026-05-12 08:09:13');
 /*!40000 ALTER TABLE `places` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-11 12:20:48
+-- Dump completed on 2026-05-12  8:46:31

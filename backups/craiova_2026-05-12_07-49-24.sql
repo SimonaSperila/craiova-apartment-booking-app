@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.4.9, for Linux (x86_64)
 --
--- Host: localhost    Database: craiova
+-- Host: db    Database: craiova
 -- ------------------------------------------------------
 -- Server version	8.4.9
 
@@ -66,7 +66,7 @@ CREATE TABLE `places` (
 
 LOCK TABLES `places` WRITE;
 /*!40000 ALTER TABLE `places` DISABLE KEYS */;
-INSERT INTO `places` VALUES (1,140,NULL,NULL,'teatru.jpg','2026-05-07 10:25:07'),(2,10,NULL,NULL,'romanescu.jpg','2026-05-07 10:25:07');
+INSERT INTO `places` VALUES (1,140,44.31915952,23.79910704,'teatru.jpg','2026-05-07 10:25:07'),(2,10,NULL,NULL,'romanescu.jpg','2026-05-07 10:25:07');
 /*!40000 ALTER TABLE `places` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-11 12:20:48
+-- Dump completed on 2026-05-12  7:49:24

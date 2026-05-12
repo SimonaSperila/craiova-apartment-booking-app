@@ -28,13 +28,14 @@ db.query("SELECT 1", (err) => {
 
 // GET places
 app.get("/places", (req, res) => {
-   console.log("SQL ACTIVE ROUTE HIT"); 
   const lang = req.query.lang || "ro";
 
   const sql = `
     SELECT 
       p.id,
-      p.distance,
+      p.distance_m,
+      p.latitude,
+      p.longitude,
       p.image,
       pt.name,
       pt.description
@@ -54,4 +55,3 @@ app.get("/places", (req, res) => {
 app.listen(3000, () => {
   console.log("Backend running on 3000");
 });
-

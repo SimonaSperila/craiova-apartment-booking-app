@@ -12,6 +12,34 @@ services:
       - db_data:/var/lib/mysql
       - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
 
+  backup:
+    image: mysql:8
+    depends_on:
+      - db
+    volumes:
+      - ./backups:/backups
+    entrypoint: >
+      bash -c '
+      until mysqladmin ping -h db -uroot -proot --silent; do
+        echo "Waiting for MySQL..."
+        sleep 2
+      done
+
+      while true; do
+        FILE=/backups/craiova_$$(date +%F_%H-%M-%S).sql
+
+        echo "Creating backup: $$FILE"
+
+        if mysqldump -h db -uroot -proot craiova > "$$FILE"; then
+          echo "Backup successful"
+        else
+          echo "Backup FAILED"
+          rm -f "$$FILE"
+        fi
+
+        sleep 3600
+      done
+      '
   backend:
     build: ./backend
     ports:
