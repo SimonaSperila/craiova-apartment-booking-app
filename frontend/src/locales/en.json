@@ -31,11 +31,12 @@
         "benefit4": {
             "title": "Parking",
             "description": "Parking options available nearby."
-        },
-        "placesToVisit": {
-            "subtitle": "Descoperă Craiova",
-            "title": "Locuri de vizitat",
-            "description": "Craiova este un oraș plin de istorie, cultură și frumusețe naturală. Iată câteva dintre cele mai importante locuri pe care nu trebuie să le ratezi în timpul vizitei tale."
         }
+    },
+    "placesToVisit": {
+        "subtitle": "Discover Craiova",
+        "title": "Places to visit",
+        "description": "Craiova is a city rich in history, culture, and natural beauty. Here are some of the most important places you shouldn't miss during your visit.",
+        "viewAll": "View all attractions"
     }
 }

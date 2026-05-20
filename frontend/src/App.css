@@ -300,4 +300,20 @@ nav {
 .place-item img {
 	border-radius: var(--radius);
 }
+
+.place-item h3 {
+	font-family: var(--font-heading);
+	font-weight: 500;
+	color: var(--gray-900);
+	margin: var(--spacing-sm) 0;
+}
+.place-location {
+	margin-top: var(--spacing-sm);
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+.place-location svg {
+	color: black;
+}
 /*END PLACES TO VISIT*/

@@ -25,6 +25,9 @@
   --gray-500: #8F8F8F;
   --gray-700: #5C5C5C;
   --gray-900: #333333;
+  --green-500: #22c55e;
+  --green-700: #16a34a;
+  --green-900: #253a32;
   --bg-btn-primary: #253a32;
   --border: #e5e4e7;
   --shadow:
@@ -100,6 +103,15 @@ h2 {
 
 p {
   margin: 0;
+}
+
+a {
+  color: var(--green-900);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 code,
