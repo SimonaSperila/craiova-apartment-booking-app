@@ -38,6 +38,12 @@
         "subtitle": "Descoperă Craiova",
         "title": "Locuri de vizitat",
         "description": "Craiova este un oraș plin de istorie, cultură și viață. Iată câteva dintre locurile pe care nu trebuie să le ratezi.",
-        "viewAll": "Vezi toate atracțiile"
+        "viewAll": "Vezi toate atracțiile",
+        "viewMap": "Vezi pe hartă"
+    },
+    "theApartment": {
+        "subtitle": "Apartamentul",
+        "title": "Confortul tău de acasă",
+        "description": "Shakespeare Central apartament  îți oferă intimitatea și confortul unui cămin, în centrul orașului."
     }
 }

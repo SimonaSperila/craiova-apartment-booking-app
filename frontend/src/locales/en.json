@@ -37,6 +37,12 @@
         "subtitle": "Discover Craiova",
         "title": "Places to visit",
         "description": "Craiova is a city rich in history, culture, and natural beauty. Here are some of the most important places you shouldn't miss during your visit.",
-        "viewAll": "View all attractions"
+        "viewAll": "View all attractions",
+        "viewMap": "View on map"
+    },
+    "theApartment": {
+        "subtitle": "The Apartment",
+        "title": "Your home away from home",
+        "description": "Shakespeare Central Apartment offers you the privacy and comfort of a home, right in the center of the city."
     }
 }

@@ -148,3 +148,14 @@ img {
   border-radius: var(--radius);
 }
 
+.small-title {
+	text-transform: uppercase;
+	color: var(--orange);
+	font-size: 0.8rem;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 1.7rem;
+}

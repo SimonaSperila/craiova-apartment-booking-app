@@ -46,7 +46,7 @@ function PlacesToVisit({ place }) {
                 <div className="section-header">
                     <div className="section-header-content">
                         <span className="small-title">{t("placesToVisit.subtitle")}</span>
-                        <h2>{t("placesToVisit.title")}</h2>
+                        <h2 className="section-title">{t("placesToVisit.title")}</h2>
                         <p>{t("placesToVisit.description")}</p>
                     </div>
                     <a href="/places" className="btn btn-primary">{t("placesToVisit.viewAll")}</a>
@@ -62,7 +62,7 @@ function PlacesToVisit({ place }) {
                                     <FontAwesomeIcon icon={faLocationDot} />
                                     {formatDistance(p.distance_m)}
                                 </span>
-                                <a href={`https://www.google.com/maps?q=${p.latitude},${p.longitude}`} target="_blank" rel="noopener noreferrer" className="btn-map">Vezi pe hartă</a>
+                                <a href={`https://www.google.com/maps?q=${p.latitude},${p.longitude}`} target="_blank" rel="noopener noreferrer" className="btn-map">{t("placesToVisit.viewMap")}</a>
                             </p>
                         </div>
                     ))}
