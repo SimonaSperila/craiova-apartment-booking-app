@@ -9,7 +9,7 @@ function Benefits() {
     const { t } = useTranslation();  
 
     return (
-        <div className="benefits">
+        <div className="benefits homepage-section">
             <div className="container">
                 <div className="benefit-item">
                     <span className="benefit-icon">

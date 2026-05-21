@@ -44,6 +44,7 @@
     "theApartment": {
         "subtitle": "Apartamentul",
         "title": "Confortul tău de acasă",
-        "description": "Shakespeare Central apartament  îți oferă intimitatea și confortul unui cămin, în centrul orașului."
+        "description": "Shakespeare Central Apartament  îți oferă intimitatea și confortul unui cămin, în centrul orașului.",
+        "viewDetails": "Descoperă apartamentul"
     }
 }

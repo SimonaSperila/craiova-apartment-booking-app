@@ -43,6 +43,7 @@
     "theApartment": {
         "subtitle": "The Apartment",
         "title": "Your home away from home",
-        "description": "Shakespeare Central Apartment offers you the privacy and comfort of a home, right in the center of the city."
+        "description": "Shakespeare Central Apartment offers you the privacy and comfort of a home, right in the center of the city.",
+        "viewDetails": "Discover the apartment"
     }
 }

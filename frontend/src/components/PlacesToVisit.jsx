@@ -41,7 +41,7 @@ function PlacesToVisit({ place }) {
     }, [i18n.language]);
 
     return (
-        <div className="places">
+        <div className="places homepage-section">
             <div className="container">
                 <div className="section-header">
                     <div className="section-header-content">

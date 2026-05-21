@@ -26,7 +26,7 @@
   --gray-700: #5C5C5C;
   --gray-900: #333333;
   --green-500: #22c55e;
-  --green-700: #16a34a;
+  --green-700: #2e5c4b;
   --green-900: #253a32;
   --bg-btn-primary: #253a32;
   --border: #e5e4e7;
@@ -148,6 +148,12 @@ img {
   border-radius: var(--radius);
 }
 
+.btn:hover {
+  text-decoration: none;
+  background-color: var(--green-700);
+  transition: background-color 0.3s ease;
+}
+
 .small-title {
 	text-transform: uppercase;
 	color: var(--orange);
@@ -158,4 +164,13 @@ img {
 
 .section-title {
   font-size: 1.7rem;
+}
+
+.homepage-section {
+  padding-bottom: var(--section-padding);
+
+  .container {
+    border-bottom: 1px solid var(--gray-500);
+    padding-bottom: var(--section-padding);
+  }
 }
