@@ -4,7 +4,7 @@ import dormitor from "../assets/apartment/dormitor.jpg";
 import Logo from "./Logo";
 
 function TheApartment() {  
-const { t, i18n } = useTranslation();
+const { t } = useTranslation();
 
     return(
         <div className="the-apartment homepage-section">

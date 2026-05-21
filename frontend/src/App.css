@@ -300,10 +300,16 @@ nav {
 
 /*THE APARTMENT*/
 .the-apartment {
+	padding-bottom: 0;
+
 	.section-header {
 		@media (min-width: 769px) {
 			display: flex;
 		}
+	}
+
+	.container {
+		border-bottom: none;
 	}
 
 	.section-header-content {
