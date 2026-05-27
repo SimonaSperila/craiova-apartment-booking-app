@@ -1,6 +1,8 @@
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 app.use(cors());
@@ -49,6 +51,20 @@ app.get("/places", (req, res) => {
     if (err) return res.status(500).json(err);
     res.json(results);
   });
+});
+
+app.get("/reviews", (req, res) => {
+  try {
+    const filePath = path.join(__dirname, "reviews.json");
+
+    const data = fs.readFileSync(filePath, "utf-8");
+    const reviews = JSON.parse(data);
+
+    res.json(reviews);
+  } catch (err) {
+    console.error("Error reading reviews:", err);
+    res.status(500).json({ error: "Failed to load reviews" });
+  }
 });
 
 // server start
