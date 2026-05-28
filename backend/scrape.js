@@ -10,8 +10,7 @@ async function launchBrowser() {
 }
 
 async function createPage(browser) {
-  const page = await browser.newPage();
-  return page;
+  return browser.newPage();
 }
 
 async function navigateToPage(page, url) {
@@ -57,6 +56,35 @@ async function extractReviews(page) {
   );
 }
 
+async function extractOverallScore(page) {
+  const container = page.locator('[data-testid="reviews-tab-score-header"]');
+
+  if ((await container.count()) === 0) return null;
+
+  const scoreNumber = await container
+    .locator('div:first-child > div:nth-child(2)')
+    .first()
+    .textContent()
+    .then(t => t?.trim() || "");
+
+  const scoreText = await container
+    .locator('div:first-child > div:nth-child(4) > div:first-child')
+    .first()
+    .textContent()
+    .then(t => t?.trim() || "");
+
+  const reviewsText = await container
+    .locator('div:first-child > div:nth-child(4) > div:nth-child(2)')
+    .textContent()
+    .then(t => t?.trim() || "");
+
+  return {
+    scoreNumber,  
+    scoreText,
+    reviewsText
+  };
+}
+
 async function goToNextPage(page) {
   const nextButton = page.locator('button[aria-label="Next page"]');
 
@@ -66,12 +94,10 @@ async function goToNextPage(page) {
   if (disabled) return false;
 
   await nextButton.scrollIntoViewIfNeeded();
-  await page.waitForTimeout(800);
 
   try {
     await nextButton.click({ timeout: 10000 });
   } catch {
-    console.log("Retry click next...");
     await page.waitForTimeout(1500);
     await nextButton.click({ timeout: 10000 });
   }
@@ -101,22 +127,30 @@ async function scrapeReviews() {
     await acceptCookies(page);
     await openReviews(page);
 
+    // ⭐ ia scorul general o singură dată
+    const overallScore = await extractOverallScore(page);
+    console.log("Overall score:", overallScore);
+
+    // 🔁 colectare reviews pagină cu pagină
     while (true) {
       const reviews = await extractReviews(page);
 
       allReviews.push(...reviews);
-      console.log(`Collected so far: ${allReviews.length}`);
+
+      console.log("Collected:", allReviews.length);
 
       const hasNext = await goToNextPage(page);
-      if (!hasNext) {
-        console.log("No more pages.");
-        break;
-      }
+      if (!hasNext) break;
     }
 
-    await saveToFile(allReviews);
+    const result = {
+      overallScore,
+      reviews: allReviews,
+    };
 
-    console.log(`DONE. Total reviews: ${allReviews.length}`);
+    await saveToFile(result);
+
+    console.log("DONE. Total reviews:", allReviews.length);
   } catch (err) {
     console.error("SCRAPE ERROR:", err);
   } finally {
