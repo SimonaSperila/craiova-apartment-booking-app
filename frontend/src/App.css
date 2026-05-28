@@ -373,3 +373,36 @@ nav {
 	}
 }
 /*END THE APARTMENT*/
+
+/*REVIEWS*/
+.reviews {
+	position: relative;
+
+	picture {
+		display: block;
+		line-height: 0;
+	}
+
+	.container {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-lg);
+
+		@media (min-width: 769px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+
+.review-card {
+	p {
+		height: 40px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+/*END REVIEWS*/

@@ -44,9 +44,11 @@ async function extractReviews(page) {
   return page.$$eval('[data-testid="review-card"]', (cards) =>
     cards.map((card) => ({
       name:
-        card.querySelector('[data-testid="review-avatar"]')?.textContent?.trim() || "",
+        card.querySelector('[data-testid="review-avatar"] > div > div:nth-of-type(2) > div')?.textContent?.trim() || "",
+      country:
+        card.querySelector('[data-testid="review-avatar"]  > div > div:nth-of-type(2) > div:nth-of-type(2) span')?.textContent?.trim() || "",
       score:
-        card.querySelector('[data-testid="review-score"]')?.textContent?.trim() || "",
+        card.querySelector('[data-testid="review-score"] > div > div:nth-of-type(2)')?.textContent?.trim() || "",
       positive:
         card.querySelector('[data-testid="review-positive-text"]')?.textContent?.trim() || "",
       negative:
