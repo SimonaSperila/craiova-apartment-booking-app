@@ -9,6 +9,7 @@ import Benefits from "./components/Benefits";
 import PlacesToVisit from './components/PlacesToVisit';
 import TheApartment from './components/TheApartment';
 import BookingAvailability from './components/BookingAvailability';
+import Footer from './components/Footer';
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 			<PlacesToVisit />
 			<TheApartment />
 			<BookingAvailability />
+			<Footer />
 		</div>
 	);
 }
