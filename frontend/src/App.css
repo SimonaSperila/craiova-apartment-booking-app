@@ -318,7 +318,9 @@ nav {
 		position: relative;
 
 		p {
-			max-width: 260px;
+			@media (min-width: 769px) {
+				max-width: 260px;
+			}
 		}
 
 		.btn {
@@ -327,18 +329,33 @@ nav {
 		}
 
 		.logo {
-			padding-top: 50px;
+			padding-top: 25px;
+			padding-bottom: 25px;
+
+			@media (min-width: 769px) {
+				padding-top: 50px;
+				padding-bottom: 0;
+			}
 
 			img {
-				width: 160px;
+				width: 80px;
+				@media (min-width: 769px) {
+					width: 160px;
+				}
 			}
 
 			.logo-title {
-				font-size: 1.5rem;
+				font-size: 1.2rem;
+				@media (min-width: 769px) {
+					font-size: 1.5rem;
+				}
 			}
 
 			.logo-subtitle {
-				font-size: 1rem;
+				font-size: 0.8rem;
+				@media (min-width: 769px) {
+					font-size: 1rem;
+				}
 			}
 		}
 	}
@@ -374,9 +391,10 @@ nav {
 }
 /*END THE APARTMENT*/
 
-/*REVIEWS*/
-.reviews {
+/*BOOKING AVAILABILITY*/
+.booking-availability {
 	position: relative;
+	color: var(--white);
 
 	picture {
 		display: block;
@@ -384,18 +402,145 @@ nav {
 	}
 
 	.container {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
+		position: static;
+		padding-bottom: var(--section-padding);
+
+		@media (min-width: 769px) {
+			display: flex;
+			height: 100%;
+			align-items: center;
+			gap: var(--spacing-xl);
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	.vertical-border {
+		border-left: 1px solid #fff;
+    	height: 70%;
+		display: none;
+
+		@media (min-width: 769px) {
+			display: block;
+		}
+	}
+
+	.availability-check {
+		@media (min-width: 769px) {
+			display: flex;
+			align-items: center;
+			gap: var(--spacing-xl);
+		}
+
+		.calendar-icon {
+			width: 60px;
+			height: 60px;
+			border: 1px solid var(--white);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.7rem;
+			margin: 0 auto;
+
+			@media (min-width: 769px) {
+				width: 80px;
+				height: 80px;
+				font-size: 2rem;
+				margin: 0;
+			}
+		}
+	}
+
+	.availability-check {
+		text-align: center;
+		padding: var(--spacing-lg) var(--spacing-md);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-lg);
+		background-color: #1f2e27;
+		margin: 0 calc(-1 * var(--spacing-md));
+		border-top: 1px solid #1f2e27;
+
+		@media (min-width: 769px) {
+			text-align: left;
+			padding: 0;
+			flex-direction: row;
+			background-color: transparent;
+			margin: 0;
+			border-top: none;
+		}
+	}
+
+	.availability-text {
+		p {
+			font-size: 1.5rem;
+			font-family: var(--secondary-font);
+			line-height: 1.2;
+
+			@media (min-width: 769px) {
+				font-size: 1.7rem;
+			}
+		}
+		 span {
+			display: block;
+			font-family: var(--main-font);
+			font-size: 1rem;
+			margin-top: var(--spacing-sm);
+		 }
+	}
+
+	.check-availability-btn {
+		@media (min-width: 769px) {
+			margin-left: var(--spacing-xl);
+		}
 	}
 }
 
-.review-card {
+.overall-score {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-lg);
+	height: 175px;
+	margin: 0 calc(-1 * var(--spacing-md));
+	padding: 0 var(--spacing-md);
+	position: absolute;
+	top: 0;
+
+	@media (min-width: 769px) {
+		height: auto;
+		margin: 0;
+		padding: 0;
+		position: static;
+	}
+
+	.score-number {
+		color: var(--orange);
+		font-size: 2rem;
+		font-weight: 500;
+		background: rgba(255, 255, 255, 0.8);
+		padding: 15px;
+		border-radius: var(--radius);
+
+		@media (min-width: 769px) {
+			font-size: 2.5rem;
+			padding: 20px;
+		}
+	}
+
+	.score-text {
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+
 	p {
-		height: 40px;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		text-align: center;
+
+		span {
+			display: block;
+		}
 	}
 }
-/*END REVIEWS*/
+/*END BOOKING AVAILABILITY*/

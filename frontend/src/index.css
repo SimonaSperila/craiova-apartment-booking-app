@@ -29,6 +29,7 @@
   --green-700: #2e5c4b;
   --green-900: #253a32;
   --bg-btn-primary: #253a32;
+  --bg-btn-secondary: #d2b583;
   --border: #e5e4e7;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -148,9 +149,25 @@ img {
   border-radius: var(--radius);
 }
 
+.btn-primary {
+  background-color: var(--bg-btn-primary);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background-color: var(--bg-btn-secondary);
+  color: #000;
+}
+
 .btn:hover {
   text-decoration: none;
   background-color: var(--green-700);
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  text-decoration: none;
+  background-color: color-mix(in srgb, var(--bg-btn-secondary) 80%, transparent);
   transition: background-color 0.3s ease;
 }
 

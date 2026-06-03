@@ -1,8 +1,8 @@
 {
   "overallScore": {
-    "scoreNumber": "9.6",
+    "scoreNumber": "9.7",
     "scoreText": "Exceptional",
-    "reviewsText": "16 reviews"
+    "reviewsText": "19 reviews"
   },
   "reviews": [
     {
@@ -41,6 +41,20 @@
       "negative": "The third floor without elevator"
     },
     {
+      "name": "Edyion",
+      "country": "Romania",
+      "score": "10",
+      "positive": "Apartament cochet situat in centrul orașului Craiova foarte aproape de centrul vechi!",
+      "negative": "Totul a fost ok!"
+    },
+    {
+      "name": "Melania",
+      "country": "Romania",
+      "score": "10",
+      "positive": "Locație excelentă, apartament f curat, gazdă f amabila",
+      "negative": ""
+    },
+    {
       "name": "Andrea",
       "country": "Italy",
       "score": "10",
@@ -74,6 +88,13 @@
       "score": "8.0",
       "positive": "Cistoca, sve je novo, divna posteljina.",
       "negative": "Sve je biko super."
+    },
+    {
+      "name": "Dragance",
+      "country": "Serbia",
+      "score": "10",
+      "positive": "",
+      "negative": ""
     },
     {
       "name": "Dana",

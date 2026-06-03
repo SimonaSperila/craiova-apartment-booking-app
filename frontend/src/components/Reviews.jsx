@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 import bgReviews from '../assets/bg-reviews.jpg';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 
 function Reviews() {
     const { t } = useTranslation();
     const [reviews, setReviews] = useState([]);
+    const [overallScore, setOverallScore] = useState(null);
     const [startIndex, setStartIndex] = useState(0);
 
     const ITEMS_TO_SHOW = 1;
 
     useEffect(() => {
-        fetch("http://localhost:3000/reviews")
-            .then(res => res.json())
-            .then(data => setReviews(data));
+    fetch("http://localhost:3000/reviews")
+        .then(res => res.json())
+        .then(data => {
+            setReviews(data.reviews);
+            setOverallScore(data.overallScore);
+        });
     }, []);
 
     // carousel automat
@@ -23,12 +29,11 @@ function Reviews() {
             setStartIndex(prev =>
                 (prev + ITEMS_TO_SHOW) % reviews.length
             );
-        }, 6000); // schimbare la 4 secunde
+        }, 6000);
 
         return () => clearInterval(interval);
     }, [reviews]);
 
-    // ia 4 review-uri din poziția curentă (loop infinit)
     const visibleReviews =
         reviews.length > 0
             ? Array.from({ length: Math.min(ITEMS_TO_SHOW, reviews.length) })
@@ -46,6 +51,18 @@ function Reviews() {
             </picture>
 
             <div className="container">
+                {overallScore && (
+                    <div className="overall-score">
+                        <span className="score-number">{overallScore.scoreNumber}</span>
+                        <p>
+                            <span className="score-text">{overallScore.scoreText}</span>
+                            <span className="reviews-text">{overallScore.reviewsText}</span>
+                        </p>
+                    </div>
+                )}
+
+                <span className="vertical-border"></span>
+
                 {visibleReviews.map((r, index) => (
                     r && (
                         <div key={index} className="review-card">

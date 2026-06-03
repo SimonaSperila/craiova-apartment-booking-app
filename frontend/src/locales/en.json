@@ -45,5 +45,10 @@
         "title": "Your home away from home",
         "description": "Shakespeare Central Apartment offers you the privacy and comfort of a home, right in the center of the city.",
         "viewDetails": "Discover the apartment"
+    },
+    "bookingAvailability": {
+        "subtitle": "Check availability and book your stay.",
+        "title": "Ready for your next visit to Craiova?",
+        "checkAvailability": "Check availability"
     }
 }

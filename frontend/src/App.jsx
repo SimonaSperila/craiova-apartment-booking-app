@@ -8,7 +8,7 @@ import Banner from "./components/Banner";
 import Benefits from "./components/Benefits";
 import PlacesToVisit from './components/PlacesToVisit';
 import TheApartment from './components/TheApartment';
-import Reviews from './components/Reviews';
+import BookingAvailability from './components/BookingAvailability';
 
 function App() {
 	return (
@@ -18,7 +18,7 @@ function App() {
 			<Benefits />
 			<PlacesToVisit />
 			<TheApartment />
-			<Reviews />
+			<BookingAvailability />
 		</div>
 	);
 }

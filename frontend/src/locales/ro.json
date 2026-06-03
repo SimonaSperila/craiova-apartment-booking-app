@@ -46,5 +46,10 @@
         "title": "Confortul tău de acasă",
         "description": "Shakespeare Central Apartament  îți oferă intimitatea și confortul unui cămin, în centrul orașului.",
         "viewDetails": "Descoperă apartamentul"
+    },
+    "bookingAvailability": {
+        "subtitle": "Verifică disponibilitatea și rezervă acum sejurul tău.",
+        "title": "Gata de următoarea ta vizită în Craiova?",
+        "checkAvailability": "Verifică disponibilitatea"
     }
 }
