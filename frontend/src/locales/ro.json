@@ -51,5 +51,10 @@
         "subtitle": "Verifică disponibilitatea și rezervă acum sejurul tău.",
         "title": "Gata de următoarea ta vizită în Craiova?",
         "checkAvailability": "Verifică disponibilitatea"
+    },
+    "footer": {
+        "copyright": "Toate drepturile rezervate.",
+        "link1": "Politica de confidențialitate",
+        "link2": "Termeni și condiții"
     }
 }

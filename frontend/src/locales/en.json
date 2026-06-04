@@ -50,5 +50,10 @@
         "subtitle": "Check availability and book your stay.",
         "title": "Ready for your next visit to Craiova?",
         "checkAvailability": "Check availability"
+    },
+    "footer": {
+        "copyright": "All rights reserved.",
+        "link1": "Privacy Policy",
+        "link2": "Terms and Conditions"
     }
 }

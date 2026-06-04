@@ -403,7 +403,6 @@ nav {
 
 	.container {
 		position: static;
-		padding-bottom: var(--section-padding);
 
 		@media (min-width: 769px) {
 			display: flex;
@@ -544,3 +543,49 @@ nav {
 	}
 }
 /*END BOOKING AVAILABILITY*/
+
+/*FOOTER*/
+	footer {
+		padding: var(--section-padding) 0;
+
+		.footer-top {
+			display: grid;
+			grid-template-columns: 1fr 4fr 1fr;
+			align-items: center;
+			border-bottom: 1px solid var(--gray-500);
+			padding-bottom: var(--spacing-lg);
+			margin-bottom: var(--spacing-lg);
+		}
+
+		.contact-info {
+			display: flex;
+			gap: var(--spacing-lg);
+			justify-content: space-around;
+		}
+
+		.social-media {
+			display: flex;
+			gap: var(--spacing-lg);
+			justify-content: right;
+			font-size: 1.2rem;
+		}
+
+		.footer-bottom {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 0.9rem;
+			color: var(--gray-500);
+		}
+
+		.footer-links {
+			display: flex;
+			gap: var(--spacing-lg);
+
+			a {
+				font-size: 0.9rem;
+				color: var(--gray-500);
+			}
+		}
+	}
+/*END FOOTER*/
