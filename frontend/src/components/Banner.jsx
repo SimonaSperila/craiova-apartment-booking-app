@@ -17,6 +17,9 @@ function Banner() {
 					<span className="banner-subtitle">{t("banner.subtitle")}</span>
 					<h1>{t("banner.title")}</h1>    
 					<p>{t("banner.body")}</p>
+					<a href="https://www.booking.com/hotel/ro/shakespeare-central-apartment.html" target="_blank" rel="noopener noreferrer" className="btn btn-primary check-availability-btn">
+                        {t('bookingAvailability.checkAvailability')}
+                    </a>
 				</div>
 			</div>
 		</div>

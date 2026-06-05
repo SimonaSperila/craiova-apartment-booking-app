@@ -6,11 +6,18 @@ const BOOKING_URL =
   "https://www.booking.com/hotel/ro/shakespeare-central-apartment.html";
 
 async function launchBrowser() {
-  return chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
+
+  const context = await browser.newContext({
+    userAgent:
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122 Safari/537.36",
+  });
+
+  return { browser, context };
 }
 
-async function createPage(browser) {
-  return browser.newPage();
+async function createPage(context) {
+  return context.newPage();
 }
 
 async function navigateToPage(page, url) {
@@ -32,11 +39,32 @@ async function acceptCookies(page) {
 }
 
 async function openReviews(page) {
-  await page.locator("#reviews-tab-trigger").click();
+  const btn = page.locator("#reviews-tab-trigger");
 
-  await page.waitForSelector('[data-testid="review-card"]', {
-    timeout: 15000,
-  });
+  await btn.waitFor({ state: "visible", timeout: 10000 });
+  await btn.scrollIntoViewIfNeeded();
+
+  // click robust + retry
+  try {
+    await Promise.all([
+      page.waitForSelector('[data-testid="review-card"]', {
+        timeout: 20000,
+      }),
+      btn.click(),
+    ]);
+  } catch {
+    await btn.click({ force: true });
+    await page.waitForSelector('[data-testid="review-card"]', {
+      timeout: 20000,
+    });
+  }
+
+  await page.waitForTimeout(2000);
+
+  console.log(
+    "reviews:",
+    await page.locator('[data-testid="review-card"]').count()
+  );
 }
 
 async function extractReviews(page) {
@@ -61,48 +89,50 @@ async function extractOverallScore(page) {
 
   if ((await container.count()) === 0) return null;
 
-  const scoreNumber = await container
-    .locator('div:first-child > div:nth-child(2)')
-    .first()
-    .textContent()
-    .then(t => t?.trim() || "");
-
-  const scoreText = await container
-    .locator('div:first-child > div:nth-child(4) > div:first-child')
-    .first()
-    .textContent()
-    .then(t => t?.trim() || "");
-
-  const reviewsText = await container
-    .locator('div:first-child > div:nth-child(4) > div:nth-child(2)')
-    .textContent()
-    .then(t => t?.trim() || "");
-
   return {
-    scoreNumber,  
-    scoreText,
-    reviewsText
+    scoreNumber:
+      (await container.locator("div:first-child > div:nth-child(2)").first().textContent())?.trim() || "",
+    scoreText:
+      (await container.locator("div:first-child > div:nth-child(4) > div:first-child").first().textContent())?.trim() || "",
+    reviewsText:
+      (await container.locator("div:first-child > div:nth-child(4) > div:nth-child(2)").textContent())?.trim() || "",
   };
 }
 
 async function goToNextPage(page) {
-  const nextButton = page.locator('button[aria-label="Next page"]');
+  const firstCard = page.locator('[data-testid="review-card"]').first();
 
-  if (!(await nextButton.count())) return false;
+  // ia un element handle real (nu text)
+  const oldHandle = await firstCard.elementHandle();
+  if (!oldHandle) return false;
+
+  const nextButton = page.locator('[data-testid="review-list-container"] div[role="navigation"] > div > div > div > div:last-child button');
+
+  if ((await nextButton.count()) === 0) return false;
 
   const disabled = await nextButton.isDisabled().catch(() => false);
   if (disabled) return false;
 
   await nextButton.scrollIntoViewIfNeeded();
 
+  // click + așteaptă schimbare DOM reală
+  await nextButton.click({ force: true });
+
+  // 🔥 CRITICAL: așteaptă ca vechiul element să dispară din DOM
   try {
-    await nextButton.click({ timeout: 10000 });
+    await page.waitForFunction((el) => {
+      return !document.contains(el);
+    }, oldHandle, { timeout: 15000 });
   } catch {
-    await page.waitForTimeout(1500);
-    await nextButton.click({ timeout: 10000 });
+    // fallback dacă Booking face reuse de nodes
+    await page.waitForTimeout(3000);
   }
 
-  await page.waitForTimeout(2000);
+  // confirmă că s-a schimbat conținutul
+  await page.waitForSelector('[data-testid="review-card"]', {
+    timeout: 15000,
+  });
+
   return true;
 }
 
@@ -117,21 +147,32 @@ async function saveToFile(data) {
 async function scrapeReviews() {
   console.log("Starting Booking scrape...");
 
-  const browser = await launchBrowser();
-  const page = await createPage(browser);
+  const { browser, context } = await launchBrowser();
+  const page = await createPage(context);
 
   const allReviews = [];
 
   try {
     await navigateToPage(page, BOOKING_URL);
+
     await acceptCookies(page);
+
+    await page.screenshot({ path: "step2.png", fullPage: true });
+
     await openReviews(page);
 
-    // ⭐ ia scorul general o singură dată
+    await page.screenshot({ path: "step3.png", fullPage: true });
+
+    const html = await page.content();
+await fs.writeFile(
+  path.join(__dirname, "step3.html"),
+  html
+);
+
     const overallScore = await extractOverallScore(page);
     console.log("Overall score:", overallScore);
 
-    // 🔁 colectare reviews pagină cu pagină
+    // 🔁 collect loop
     while (true) {
       const reviews = await extractReviews(page);
 
@@ -143,12 +184,10 @@ async function scrapeReviews() {
       if (!hasNext) break;
     }
 
-    const result = {
+    await saveToFile({
       overallScore,
       reviews: allReviews,
-    };
-
-    await saveToFile(result);
+    });
 
     console.log("DONE. Total reviews:", allReviews.length);
   } catch (err) {

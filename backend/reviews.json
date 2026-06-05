@@ -1,10 +1,31 @@
 {
   "overallScore": {
-    "scoreNumber": "9.7",
-    "scoreText": "Exceptional",
-    "reviewsText": "19 reviews"
+    "scoreNumber": "9,7",
+    "scoreText": "Excepţional",
+    "reviewsText": "19 evaluări"
   },
   "reviews": [
+    {
+      "name": "Edyion",
+      "country": "România",
+      "score": "10",
+      "positive": "Apartament cochet situat in centrul orașului Craiova foarte aproape de centrul vechi!",
+      "negative": "Totul a fost ok!"
+    },
+    {
+      "name": "Melania",
+      "country": "România",
+      "score": "10",
+      "positive": "Locație excelentă, apartament f curat, gazdă f amabila",
+      "negative": ""
+    },
+    {
+      "name": "Popazu",
+      "country": "România",
+      "score": "10",
+      "positive": "Locația este excelentă! Este situată între primărie și teatrul național, se poate ajunge foarte ușor în centrul vechi sau se poate servi masa chiar la parterul blocului unde sunt trei localuri unde se poate lua masa!\nApartamentul este dotat cu tot ce am avut nevoie și este foarte confortabil pentru două persoane cum am fost noi!\nMulțumim frumos pentru găzduire!",
+      "negative": ""
+    },
     {
       "name": "Marko",
       "country": "Serbia",
@@ -35,35 +56,21 @@
     },
     {
       "name": "Daniela",
-      "country": "Italy",
-      "score": "8.0",
+      "country": "Italia",
+      "score": "8,0",
       "positive": "The location was perfect and near Craiova's main street. The flat was clean and with all facilities \nThere is a little kitchen, if you want to eat in the flat, and a little balcony on the theatre's square.",
       "negative": "The third floor without elevator"
     },
     {
-      "name": "Edyion",
-      "country": "Romania",
-      "score": "10",
-      "positive": "Apartament cochet situat in centrul orașului Craiova foarte aproape de centrul vechi!",
-      "negative": "Totul a fost ok!"
-    },
-    {
-      "name": "Melania",
-      "country": "Romania",
-      "score": "10",
-      "positive": "Locație excelentă, apartament f curat, gazdă f amabila",
-      "negative": ""
-    },
-    {
       "name": "Andrea",
-      "country": "Italy",
+      "country": "Italia",
       "score": "10",
       "positive": "Allocato in centro citta ma non esposto al caos della movida, posizione perfetta.",
       "negative": ""
     },
     {
       "name": "Cristian",
-      "country": "Italy",
+      "country": "Italia",
       "score": "10",
       "positive": "Appartamento Ben ristrutturato, con tutto il necessario.",
       "negative": ""
@@ -76,18 +83,39 @@
       "negative": ""
     },
     {
-      "name": "Popazu",
-      "country": "Romania",
+      "name": "Andjela",
+      "country": "Serbia",
+      "score": "8,0",
+      "positive": "Cistoca, sve je novo, divna posteljina.",
+      "negative": "Sve je biko super."
+    },
+    {
+      "name": "Dana",
+      "country": "România",
       "score": "10",
-      "positive": "Locația este excelentă! Este situată între primărie și teatrul național, se poate ajunge foarte ușor în centrul vechi sau se poate servi masa chiar la parterul blocului unde sunt trei localuri unde se poate lua masa!\nApartamentul este dotat cu tot ce am avut nevoie și este foarte confortabil pentru două persoane cum am fost noi!\nMulțumim frumos pentru găzduire!",
+      "positive": "",
       "negative": ""
     },
     {
-      "name": "Andjela",
-      "country": "Serbia",
-      "score": "8.0",
-      "positive": "Cistoca, sve je novo, divna posteljina.",
-      "negative": "Sve je biko super."
+      "name": "Ivan",
+      "country": "România",
+      "score": "10",
+      "positive": "",
+      "negative": ""
+    },
+    {
+      "name": "Bogdan",
+      "country": "România",
+      "score": "9,0",
+      "positive": "",
+      "negative": ""
+    },
+    {
+      "name": "Florin",
+      "country": "România",
+      "score": "9,0",
+      "positive": "",
+      "negative": ""
     },
     {
       "name": "Dragance",
@@ -97,37 +125,9 @@
       "negative": ""
     },
     {
-      "name": "Dana",
-      "country": "Romania",
-      "score": "10",
-      "positive": "",
-      "negative": ""
-    },
-    {
-      "name": "Ivan",
-      "country": "Romania",
-      "score": "10",
-      "positive": "",
-      "negative": ""
-    },
-    {
       "name": "Ελένη",
-      "country": "Greece",
+      "country": "Grecia",
       "score": "10",
-      "positive": "",
-      "negative": ""
-    },
-    {
-      "name": "Bogdan",
-      "country": "Romania",
-      "score": "9.0",
-      "positive": "",
-      "negative": ""
-    },
-    {
-      "name": "Florin",
-      "country": "Romania",
-      "score": "9.0",
       "positive": "",
       "negative": ""
     },
