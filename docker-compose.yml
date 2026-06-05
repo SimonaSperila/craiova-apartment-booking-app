@@ -52,5 +52,16 @@ services:
     ports:
       - "8080:80"
 
+  scraper:
+    build: ./scraper
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/shared-backend
+    environment:
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: userpass
+      DB_NAME: craiova
 volumes:
   db_data:

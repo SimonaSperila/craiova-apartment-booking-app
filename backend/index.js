@@ -54,17 +54,30 @@ app.get("/places", (req, res) => {
 });
 
 app.get("/reviews", (req, res) => {
-  try {
-    const filePath = path.join(__dirname, "reviews.json");
+  const sqlRun = `
+    SELECT id, score_number, score_text, reviews_text
+    FROM scrape_runs
+    ORDER BY id DESC
+    LIMIT 1
+  `;
 
-    const data = fs.readFileSync(filePath, "utf-8");
-    const reviews = JSON.parse(data);
+  db.query(sqlRun, (err, runResult) => {
+    if (err) return res.status(500).json(err);
 
-    res.json(reviews);
-  } catch (err) {
-    console.error("Error reading reviews:", err);
-    res.status(500).json({ error: "Failed to load reviews" });
-  }
+    if (!runResult.length) {
+      return res.json({ overallScore: null });
+    }
+
+    const run = runResult[0];
+
+    const overallScore = {
+      scoreNumber: run.score_number,
+      scoreText: run.score_text,
+      reviewsText: run.reviews_text,
+    };
+
+    res.json({ overallScore });
+  });
 });
 
 // server start

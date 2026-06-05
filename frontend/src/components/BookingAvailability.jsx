@@ -14,7 +14,7 @@ function BookingAvailability() {
         fetch("http://localhost:3000/reviews")
             .then(res => res.json())
             .then(data => {
-                setOverallScore(data.overallScore);
+                setOverallScore(data.overallScore || null);
             });
     }, []);
 

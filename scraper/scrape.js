@@ -1,10 +1,20 @@
 const { chromium } = require("playwright");
-const fs = require("fs-extra");
-const path = require("path");
+const mysql = require("mysql2/promise");
 
 const BOOKING_URL =
   "https://www.booking.com/hotel/ro/shakespeare-central-apartment.html";
 
+// -------------------- DB CONNECTION --------------------
+async function getDb() {
+  return await mysql.createConnection({
+    host: process.env.DB_HOST || "db",
+    user: process.env.DB_USER || "user",
+    password: process.env.DB_PASSWORD || "userpass",
+    database: process.env.DB_NAME || "craiova",
+  });
+}
+
+// -------------------- BROWSER --------------------
 async function launchBrowser() {
   const browser = await chromium.launch({ headless: true });
 
@@ -38,18 +48,16 @@ async function acceptCookies(page) {
   }
 }
 
+// -------------------- SCRAPE UI --------------------
 async function openReviews(page) {
   const btn = page.locator("#reviews-tab-trigger");
 
   await btn.waitFor({ state: "visible", timeout: 10000 });
   await btn.scrollIntoViewIfNeeded();
 
-  // click robust + retry
   try {
     await Promise.all([
-      page.waitForSelector('[data-testid="review-card"]', {
-        timeout: 20000,
-      }),
+      page.waitForSelector('[data-testid="review-card"]', { timeout: 20000 }),
       btn.click(),
     ]);
   } catch {
@@ -60,26 +68,37 @@ async function openReviews(page) {
   }
 
   await page.waitForTimeout(2000);
-
-  console.log(
-    "reviews:",
-    await page.locator('[data-testid="review-card"]').count()
-  );
 }
 
 async function extractReviews(page) {
   return page.$$eval('[data-testid="review-card"]', (cards) =>
     cards.map((card) => ({
       name:
-        card.querySelector('[data-testid="review-avatar"] > div > div:nth-of-type(2) > div')?.textContent?.trim() || "",
+        card
+          .querySelector(
+            '[data-testid="review-avatar"] > div > div:nth-of-type(2) > div'
+          )
+          ?.textContent?.trim() || "",
       country:
-        card.querySelector('[data-testid="review-avatar"]  > div > div:nth-of-type(2) > div:nth-of-type(2) span')?.textContent?.trim() || "",
+        card
+          .querySelector(
+            '[data-testid="review-avatar"] > div > div:nth-of-type(2) > div:nth-of-type(2) span'
+          )
+          ?.textContent?.trim() || "",
       score:
-        card.querySelector('[data-testid="review-score"] > div > div:nth-of-type(2)')?.textContent?.trim() || "",
+        card
+          .querySelector(
+            '[data-testid="review-score"] > div > div:nth-of-type(2)'
+          )
+          ?.textContent?.trim() || "",
       positive:
-        card.querySelector('[data-testid="review-positive-text"]')?.textContent?.trim() || "",
+        card
+          .querySelector('[data-testid="review-positive-text"]')
+          ?.textContent?.trim() || "",
       negative:
-        card.querySelector('[data-testid="review-negative-text"]')?.textContent?.trim() || "",
+        card
+          .querySelector('[data-testid="review-negative-text"]')
+          ?.textContent?.trim() || "",
     }))
   );
 }
@@ -91,22 +110,30 @@ async function extractOverallScore(page) {
 
   return {
     scoreNumber:
-      (await container.locator("div:first-child > div:nth-child(2)").first().textContent())?.trim() || "",
+      (await container
+        .locator("div:first-child > div:nth-child(2)")
+        .first()
+        .textContent())?.trim() || "",
     scoreText:
-      (await container.locator("div:first-child > div:nth-child(4) > div:first-child").first().textContent())?.trim() || "",
+      (await container
+        .locator("div:first-child > div:nth-child(4) > div:first-child")
+        .first()
+        .textContent())?.trim() || "",
     reviewsText:
-      (await container.locator("div:first-child > div:nth-child(4) > div:nth-child(2)").textContent())?.trim() || "",
+      (await container
+        .locator("div:first-child > div:nth-child(4) > div:nth-child(2)")
+        .textContent())?.trim() || "",
   };
 }
 
 async function goToNextPage(page) {
   const firstCard = page.locator('[data-testid="review-card"]').first();
-
-  // ia un element handle real (nu text)
   const oldHandle = await firstCard.elementHandle();
   if (!oldHandle) return false;
 
-  const nextButton = page.locator('[data-testid="review-list-container"] div[role="navigation"] > div > div > div > div:last-child button');
+  const nextButton = page.locator(
+    '[data-testid="review-list-container"] div[role="navigation"] > div > div > div > div:last-child button'
+  );
 
   if ((await nextButton.count()) === 0) return false;
 
@@ -114,21 +141,16 @@ async function goToNextPage(page) {
   if (disabled) return false;
 
   await nextButton.scrollIntoViewIfNeeded();
-
-  // click + așteaptă schimbare DOM reală
   await nextButton.click({ force: true });
 
-  // 🔥 CRITICAL: așteaptă ca vechiul element să dispară din DOM
   try {
-    await page.waitForFunction((el) => {
-      return !document.contains(el);
-    }, oldHandle, { timeout: 15000 });
+    await page.waitForFunction((el) => !document.contains(el), oldHandle, {
+      timeout: 15000,
+    });
   } catch {
-    // fallback dacă Booking face reuse de nodes
     await page.waitForTimeout(3000);
   }
 
-  // confirmă că s-a schimbat conținutul
   await page.waitForSelector('[data-testid="review-card"]', {
     timeout: 15000,
   });
@@ -136,16 +158,51 @@ async function goToNextPage(page) {
   return true;
 }
 
-async function saveToFile(data) {
-  const outputPath = path.join(__dirname, "reviews.json");
+// -------------------- DB INSERTS --------------------
+async function insertScrapeRun(db, overallScore) {
+  const [result] = await db.execute(
+    `
+    INSERT INTO scrape_runs (score_number, score_text, reviews_text)
+    VALUES (?, ?, ?)
+  `,
+    [
+      overallScore?.scoreNumber?.replace(",", ".") || null,
+      overallScore?.scoreText || null,
+      overallScore?.reviewsText || null,
+    ]
+  );
 
-  await fs.writeJson(outputPath, data, { spaces: 2 });
-
-  console.log(`Saved to ${outputPath}`);
+  return result.insertId;
 }
 
+async function insertReviews(db, reviews, runId) {
+  for (const r of reviews) {
+    const cleanScore = r.score
+      ? parseFloat(r.score.replace(",", "."))
+      : null;
+
+    await db.execute(
+      `
+      INSERT INTO reviews (name, country, score, positive, negative, scrape_run_id)
+      VALUES (?, ?, ?, ?, ?, ?)
+    `,
+      [
+        r.name,
+        r.country,
+        cleanScore,
+        r.positive,
+        r.negative,
+        runId,
+      ]
+    );
+  }
+}
+
+// -------------------- MAIN --------------------
 async function scrapeReviews() {
   console.log("Starting Booking scrape...");
+
+  const db = await getDb();
 
   const { browser, context } = await launchBrowser();
   const page = await createPage(context);
@@ -154,46 +211,35 @@ async function scrapeReviews() {
 
   try {
     await navigateToPage(page, BOOKING_URL);
-
     await acceptCookies(page);
 
-    await page.screenshot({ path: "step2.png", fullPage: true });
-
     await openReviews(page);
-
-    await page.screenshot({ path: "step3.png", fullPage: true });
-
-    const html = await page.content();
-await fs.writeFile(
-  path.join(__dirname, "step3.html"),
-  html
-);
 
     const overallScore = await extractOverallScore(page);
     console.log("Overall score:", overallScore);
 
-    // 🔁 collect loop
+    // save scrape run FIRST
+    const runId = await insertScrapeRun(db, overallScore);
+    console.log("Scrape run ID:", runId);
+
+    // collect reviews
     while (true) {
       const reviews = await extractReviews(page);
-
       allReviews.push(...reviews);
-
-      console.log("Collected:", allReviews.length);
 
       const hasNext = await goToNextPage(page);
       if (!hasNext) break;
     }
 
-    await saveToFile({
-      overallScore,
-      reviews: allReviews,
-    });
+    // insert reviews in DB
+    await insertReviews(db, allReviews, runId);
 
     console.log("DONE. Total reviews:", allReviews.length);
   } catch (err) {
     console.error("SCRAPE ERROR:", err);
   } finally {
     await browser.close();
+    await db.end();
   }
 }
 
