@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import Logo from "./Logo";
+import Logo from "./logo/Logo";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';

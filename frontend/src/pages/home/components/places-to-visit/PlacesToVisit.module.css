@@ -1,0 +1,48 @@
+/*PLACES TO VISIT*/
+.places .section-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--spacing-sm);
+	margin-bottom: var(--spacing-lg);
+
+	@media (min-width: 769px) {
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.places .section-header-content {
+	max-width: 440px;
+}
+
+.places-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--spacing-lg);
+
+	@media (min-width: 769px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.place-item img {
+	border-radius: var(--radius);
+}
+
+.place-item h3 {
+	font-family: var(--font-heading);
+	font-weight: 500;
+	color: var(--gray-900);
+	margin: var(--spacing-sm) 0;
+}
+.place-location {
+	margin-top: var(--spacing-sm);
+	display: flex;
+	gap: var(--spacing-sm);
+}
+
+.place-location svg {
+	color: black;
+}
+/*END PLACES TO VISIT*/

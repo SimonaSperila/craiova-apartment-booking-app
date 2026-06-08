@@ -3,10 +3,12 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-import teatruImg from "../assets/places/teatru.jpg";
-import centrulVechiImg from "../assets/places/centrul-vechi.jpeg";
-import stadionImg from "../assets/places/stadion.jpeg";
-import parcImg from "../assets/places/parcul-nicolae-romanescu.jpg"
+import teatruImg from "../../../../assets/places/teatru.jpg";
+import centrulVechiImg from "../../../../assets/places/centrul-vechi.jpeg";
+import stadionImg from "../../../../assets/places/stadion.jpeg";
+import parcImg from "../../../../assets/places/parcul-nicolae-romanescu.jpg"
+
+import styles from "./PlacesToVisit.module.css";
 
 const images = {
     "teatru.jpg": teatruImg,
@@ -41,28 +43,28 @@ function PlacesToVisit({ place }) {
     }, [i18n.language]);
 
     return (
-        <div className="places homepage-section">
-            <div className="container">
-                <div className="section-header">
-                    <div className="section-header-content">
-                        <span className="small-title">{t("placesToVisit.subtitle")}</span>
-                        <h2 className="section-title">{t("placesToVisit.title")}</h2>
+        <div className={styles['places'] + " homepage-section"}>
+            <div className={styles['container'] + " container"}>
+                <div className={styles['section-header']}>
+                    <div className={styles['section-header-content']}>
+                        <span className='small-title'>{t("placesToVisit.subtitle")}</span>
+                        <h2 className='section-title'>{t("placesToVisit.title")}</h2>
                         <p>{t("placesToVisit.description")}</p>
                     </div>
-                    <a href="/places" className="btn btn-primary">{t("placesToVisit.viewAll")}</a>
+                    <a href="/places" className={styles['btn'] + " btn btn-primary"}>{t("placesToVisit.viewAll")}</a>
                 </div>
-                <div className="places-list">
+                <div className={styles['places-list']}>
                     {places.map(p => (
-                        <div key={p.id} className="place-item">
-                            <img src={images[p.image]} alt={p.name} className="place-image" />
+                        <div key={p.id} className={styles['place-item']}>
+                            <img src={images[p.image]} alt={p.name} className={styles['place-image']} />
                             <h3>{p.name}</h3>
                             <p>{p.description}</p>
-                            <p className="place-location">
+                            <p className={styles['place-location']}>
                                 <span>
                                     <FontAwesomeIcon icon={faLocationDot} />
                                     {formatDistance(p.distance_m)}
                                 </span>
-                                <a href={`https://www.google.com/maps?q=${p.latitude},${p.longitude}`} target="_blank" rel="noopener noreferrer" className="btn-map">{t("placesToVisit.viewMap")}</a>
+                                <a href={`https://www.google.com/maps?q=${p.latitude},${p.longitude}`} target="_blank" rel="noopener noreferrer" className={styles['btn-map']}>{t("placesToVisit.viewMap")}</a>
                             </p>
                         </div>
                     ))}

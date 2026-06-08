@@ -3,11 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import Logo from "./Logo";
+import Logo from "./logo/Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { NavLink } from "react-router-dom";
+
+import styles from "./logo/Logo.module.css";
 
 function Header() {
-  	const { t } = useTranslation();
+  	const { i18n, t } = useTranslation();
+	const lang = i18n.language;
   	const [open, setOpen] = useState(false);
 
   	return (
@@ -19,11 +23,12 @@ function Header() {
 					<Logo />
 
 					<ul>
-						<li><a href="/">{t("nav.home")}</a></li>
-						<li><a href="/places">{t("nav.events")}</a></li>
-						<li><a href="/places">{t("nav.gallery")}</a></li>
-						<li><a href="/places">{t("nav.attractions")}</a></li>
-						<li><a href="/places">{t("nav.contact")}</a></li>
+						<li><NavLink to="/">{t("nav.home")}</NavLink></li>
+						<li><NavLink to={`/${lang}/apartment`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.apartment")}</NavLink></li>
+						<li><NavLink to="/events">{t("nav.events")}</NavLink></li>
+						<li><NavLink to="/gallery">{t("nav.gallery")}</NavLink></li>
+						<li><NavLink to="/attractions">{t("nav.attractions")}</NavLink></li>
+						<li><NavLink to="/contact">{t("nav.contact")}</NavLink></li>
 					</ul>
 
 					<span className="close" onClick={() => setOpen(false)}>

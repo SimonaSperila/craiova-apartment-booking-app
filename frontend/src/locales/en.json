@@ -10,6 +10,7 @@
     },
     "nav": {
         "home": "Home",
+        "apartment": "Apartment",
         "events": "Events",
         "gallery": "Gallery",
         "attractions": "Places to Visit",
@@ -55,5 +56,24 @@
         "copyright": "All rights reserved.",
         "link1": "Privacy Policy",
         "link2": "Terms and Conditions"
+    },
+     "apartmentPage": {
+        "title": "About the Apartment and Usage Guide",
+        "description": "Everything you need to know for a comfortable stay. Details about the apartment and how to use the available objects and facilities.",
+        "apartmentDetailsLeft": {
+            "title": "Apartment Details",
+            "description": "A modern apartment with two rooms, located in the center of Craiova, just a few steps from the most important tourist attractions, restaurants, and shops. This apartment is perfect for those who want to explore the city and enjoy everything it has to offer.",
+            "list": [
+                "Area: 42m²",
+                "Capacity: 1 - 4 people",
+                "Bedroom: 1 double bed",
+                "Living: 1 extendable sofa",
+                "Kitchen: fully equipped",
+                "Bathroom: 1 bathroom with shower",
+                "Balcony: 1 balcony with city view",
+                "Floor: 3",
+                "Wi-Fi: free and high-speed"
+            ]
+        }
     }
 }

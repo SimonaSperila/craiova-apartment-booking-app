@@ -10,6 +10,7 @@
     },
     "nav": {
         "home": "Acasă",
+        "apartment": "Apartament",
         "events": "Evenimente",
         "gallery": "Galerie",
         "attractions": "Locuri de vizitat",
@@ -56,5 +57,24 @@
         "copyright": "Toate drepturile rezervate.",
         "link1": "Politica de confidențialitate",
         "link2": "Termeni și condiții"
+    },
+    "apartmentPage": {
+        "title": "Despre apartament si ghid de utilizare",
+        "description": "Tot ce trebuie să știi pentru un sejur confortabil. Detalii despre apartament și modul de utilizare a obiectelor și facilităților disponibile.",
+        "apartmentDetailsLeft": {
+            "title": "Detalii despre apartament",
+            "description": "Apartament modern cu doua camere, situat în centrul orașului Craiova, la doar câțiva pași de principalele atracții turistice, restaurante și magazine. Acest apartament este perfect pentru cei care doresc să exploreze orașul și să se bucure de tot ce are de oferit.",
+            "list": [
+                "Suprafață: 42m²",
+                "Capacitate: 1 - 4 persoane",
+                "Dormitor: 1 pat matrimonial",
+                "Living: 1 canapea extensibilă",
+                "Bucătărie: complet utilată",
+                "Baie: 1 baie cu duș",
+                "Balcon: 1 balcon cu vedere la oraș",
+                "Etaj: 3",
+                "Wi-Fi: gratuit și de mare viteză"
+            ]
+        }
     }
 }
