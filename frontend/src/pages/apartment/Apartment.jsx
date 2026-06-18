@@ -1,4 +1,5 @@
 import banner from "../../assets/apartment-banner.jpg";
+import bannerMobile from "../../assets/apartment-banner-mobile.jpg";
 import { useTranslation } from 'react-i18next';
 import ApartmentDetails from "./components/ApartmentDetails";
 
@@ -11,7 +12,7 @@ function Apartment() {
         <div className={styles["apartment-page"]}>
             <div className={styles["apartment-banner"]}>
                 <picture>
-                    <source media="(max-width: 768px)" srcSet={banner} />
+                    <source media="(max-width: 768px)" srcSet={bannerMobile} />
                     <img src={banner} alt="Apartment Banner" />
                 </picture>
 

@@ -63,17 +63,84 @@
         "description": "Tot ce trebuie să știi pentru un sejur confortabil. Detalii despre apartament și modul de utilizare a obiectelor și facilităților disponibile.",
         "apartmentDetailsLeft": {
             "title": "Detalii despre apartament",
-            "description": "Apartament modern cu doua camere, situat în centrul orașului Craiova, la doar câțiva pași de principalele atracții turistice, restaurante și magazine. Acest apartament este perfect pentru cei care doresc să exploreze orașul și să se bucure de tot ce are de oferit.",
+            "description": "Apartament modern cu doua camere, situat în centrul Craiovei, la câteva minute de principalele puncte de interes. Ideal pentru cupluri, familii sau călătorii de afaceri.",
             "list": [
-                "Suprafață: 42m²",
-                "Capacitate: 1 - 4 persoane",
-                "Dormitor: 1 pat matrimonial",
-                "Living: 1 canapea extensibilă",
-                "Bucătărie: complet utilată",
-                "Baie: 1 baie cu duș",
-                "Balcon: 1 balcon cu vedere la oraș",
-                "Etaj: 3",
-                "Wi-Fi: gratuit și de mare viteză"
+                {
+                    "icon": "area",
+                    "text": "Suprafață: 42m²"
+                },
+                {
+                    "icon": "users",
+                    "text": "Capacitate: 1 - 4 persoane"
+                },
+                {
+                    "icon": "bed",
+                    "text": "Dormitor: 1 pat matrimonial"
+                },
+                {
+                    "icon": "couch",
+                    "text": "Living: 1 canapea extensibilă"
+                },
+                {
+                    "icon": "utensils",
+                    "text": "Bucătărie: complet utilată"
+                },
+                {
+                    "icon": "shower",
+                    "text": "Baie: 1 baie cu duș"
+                },
+                {
+                    "icon": "balcony",
+                    "text": "Balcon: 1 balcon cu vedere la teatru"
+                },
+                {
+                    "icon": "building",
+                    "text": "Etaj: 3 fără lift"
+                },
+                {
+                    "icon": "wifi",
+                    "text": "Wi-Fi: gratuit și de mare viteză"
+                }
+            ]
+        },
+        "apartmentDetailsRight": {
+           "list": [
+                {
+                    "icon": "wifi",
+                    "text": "Wi-Fi rapid"
+                },
+                {
+                    "icon": "ac",
+                    "text": "Aer condiționat"
+                },
+                {
+                    "icon": "tv",
+                    "text": "Smart TV"
+                },
+                {
+                    "icon": "kitchen",
+                    "text": "Bucătărie utilată"
+                },
+                {
+                    "icon": "coffee",
+                    "text": "Espressor de cafea"
+                },
+                {
+                    "icon": "hairdryer",
+                    "text": "Uscător de păr"
+                },
+                {
+                    "icon": "slippers",
+                    "text": "Papuci de casă"
+                },
+                {
+                    "icon": "kettle",
+                    "text": "Fierbător electric"
+                },
+                {
+                    "icon": "parking",
+                    "text": "Parcare privată în apropiere"
+                }
             ]
         }
     }

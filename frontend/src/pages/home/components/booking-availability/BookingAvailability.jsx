@@ -52,7 +52,7 @@ function BookingAvailability() {
                         </p>
                     </div>
 
-                    <a href="https://www.booking.com/hotel/ro/shakespeare-central-apartment.html" target="_blank" rel="noopener noreferrer" className={styles['check-availability-btn']}>
+                    <a href="https://www.booking.com/hotel/ro/shakespeare-central-apartment.html" target="_blank" rel="noopener noreferrer" className={styles['check-availability-btn'] + " btn btn-secondary"}>
                         {t('bookingAvailability.checkAvailability')}
                     </a>
                 </div>

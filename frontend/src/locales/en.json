@@ -62,17 +62,84 @@
         "description": "Everything you need to know for a comfortable stay. Details about the apartment and how to use the available objects and facilities.",
         "apartmentDetailsLeft": {
             "title": "Apartment Details",
-            "description": "A modern apartment with two rooms, located in the center of Craiova, just a few steps from the most important tourist attractions, restaurants, and shops. This apartment is perfect for those who want to explore the city and enjoy everything it has to offer.",
+            "description": "A modern two-room apartment located in the center of Craiova, just a few minutes from the main points of interest. Ideal for couples, families, or business travelers.",
             "list": [
-                "Area: 42m²",
-                "Capacity: 1 - 4 people",
-                "Bedroom: 1 double bed",
-                "Living: 1 extendable sofa",
-                "Kitchen: fully equipped",
-                "Bathroom: 1 bathroom with shower",
-                "Balcony: 1 balcony with city view",
-                "Floor: 3",
-                "Wi-Fi: free and high-speed"
+                {
+                    "icon": "area",
+                    "text": "Area: 42m²"
+                },
+                {
+                    "icon": "users",
+                    "text": "Capacity: 1 - 4 people"
+                },
+                {
+                    "icon": "bed",
+                    "text": "Bedroom: 1 double bed"
+                },
+                {
+                    "icon": "couch",
+                    "text": "Living: 1 extendable sofa"
+                },
+                {
+                    "icon": "utensils",
+                    "text": "Kitchen: fully equipped"
+                },
+                {
+                    "icon": "shower",
+                    "text": "Bathroom: 1 bathroom with shower"
+                },
+                {
+                    "icon": "balcony",
+                    "text": "Balcon: 1 balcony with view of the theater"
+                },
+                {
+                    "icon": "building",
+                    "text": "Floor: 3 without elevator"
+                },
+                {
+                    "icon": "wifi",
+                    "text": "Wi-Fi: free and high-speed"
+                }
+            ]
+        },
+        "apartmentDetailsRight": {
+           "list": [
+                {
+                    "icon": "wifi",
+                    "text": "High-speed Wi-Fi"
+                },
+                {
+                    "icon": "ac",
+                    "text": "Air conditioning"
+                },
+                {
+                    "icon": "tv",
+                    "text": "Smart TV"
+                },
+                {
+                    "icon": "kitchen",
+                    "text": "Fully equipped kitchen"
+                },
+                {
+                    "icon": "coffee",
+                    "text": "Coffee machine"
+                },
+                {
+                    "icon": "hairdryer",
+                    "text": "Hair dryer"
+                },
+                {
+                    "icon": "slippers",
+                    "text": "Slippers"
+                },
+                {
+                    "icon": "kettle",
+                    "text": "Electric kettle"
+                },
+                {
+                    "icon": "parking",
+                    "text": "Private parking nearby"
+                }
             ]
         }
     }
