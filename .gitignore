@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Env files
+.env
+.env.local
+
+# Database backups
+backups/*.sql
+
+# Editor/OS
+.DS_Store
