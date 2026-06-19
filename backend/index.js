@@ -10,13 +10,13 @@ app.use(express.json());
 
 // ✅ POOL corect pentru Docker
 const db = mysql.createPool({
-  host: "db",
-  user: "user",
-  password: "userpass",
-  database: "craiova",
+  host: process.env.DB_HOST || "db",
+  user: process.env.DB_USER || "user",
+  password: process.env.DB_PASSWORD || "userpass",
+  database: process.env.DB_NAME || "craiova",
   waitForConnections: true,
   connectionLimit: 10,
-  charset: "utf8mb4"  
+  charset: "utf8mb4"
 });
 
 // ✔ optional: test conexiune simplu

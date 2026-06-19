@@ -2,10 +2,10 @@ services:
   db:
     image: mysql:8
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: craiova
-      MYSQL_USER: user
-      MYSQL_PASSWORD: userpass
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
@@ -20,7 +20,7 @@ services:
       - ./backups:/backups
     entrypoint: >
       bash -c '
-      until mysqladmin ping -h db -uroot -proot --silent; do
+      until mysqladmin ping -h db -uroot -p${MYSQL_ROOT_PASSWORD} --silent; do
         echo "Waiting for MySQL..."
         sleep 2
       done
@@ -30,7 +30,7 @@ services:
 
         echo "Creating backup: $$FILE"
 
-        if mysqldump -h db -uroot -proot craiova > "$$FILE"; then
+        if mysqldump -h db -uroot -p${MYSQL_ROOT_PASSWORD} craiova > "$$FILE"; then
           echo "Backup successful"
         else
           echo "Backup FAILED"
@@ -46,6 +46,11 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    environment:
+      DB_HOST: db
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: ${MYSQL_DATABASE}
 
   frontend:
     build: ./frontend
@@ -60,8 +65,8 @@ services:
       - ./backend:/shared-backend
     environment:
       DB_HOST: db
-      DB_USER: user
-      DB_PASSWORD: userpass
-      DB_NAME: craiova
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: ${MYSQL_DATABASE}
 volumes:
   db_data:
