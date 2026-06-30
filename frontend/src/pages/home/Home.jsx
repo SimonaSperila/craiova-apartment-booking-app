@@ -3,8 +3,10 @@ import Benefits from "./components/benefits/Benefits";
 import PlacesToVisit from "./components/places-to-visit/PlacesToVisit";
 import TheApartment from "./components/the-apartment/TheApartment";
 import BookingAvailability from "./components/booking-availability/BookingAvailability";
+import { useBodyClass } from "../../hooks/useBodyClass";
 
 function Home() {
+  useBodyClass("page-home");
   return (
     <>
       <Banner />

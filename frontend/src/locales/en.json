@@ -141,6 +141,24 @@
                     "text": "Private parking nearby"
                 }
             ]
+        },
+        "userGuide": {
+            "title": "User Guide",
+            "description": "Simple instructions for the proper use of the main items in the apartment.",
+            "tabs": {
+                "coffeeMachine": "Coffee Machine",
+                "airConditioning": "Air Conditioning",
+                "smartTv": "Smart TV",
+                "heating": "Heating",
+                "other": "Other"
+            },
+            "contentTabs": {
+                "coffeeMachine": "Coffee Machine",
+                "airConditioning": "Air Conditioning",
+                "smartTv": "Smart TV",
+                "heating": "Heating",
+                "other": "Other"
+            }
         }
     }
 }

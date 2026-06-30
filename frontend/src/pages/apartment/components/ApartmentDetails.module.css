@@ -30,6 +30,7 @@
     grid-template-columns: 1fr;
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    background-color: white;
 
     @media (min-width: 769px) {
         grid-template-columns: repeat(3, 1fr);

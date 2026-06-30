@@ -1,0 +1,8 @@
+.user-guide-section {
+    padding: var(--spacing-xl) 0;
+    margin: var(--spacing-xl) auto;
+    text-align: center;
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}

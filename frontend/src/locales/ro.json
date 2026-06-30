@@ -142,6 +142,24 @@
                     "text": "Parcare privată în apropiere"
                 }
             ]
+        },
+        "userGuide": {
+            "title": "Ghid de utilizare",
+            "description": "Instrucțiuni simple pentru a folosi corect principalele obiecte din apartament.",
+            "tabs": {
+                "coffeeMachine": "Aparat de cafea",
+                "airConditioning": "Aer condiționat",
+                "smartTv": "Smart TV",
+                "heating": "Încălzire",
+                "other": "Altele"
+            },
+            "contentTabs": {
+                "coffeeMachine": "Aparat de cafea",
+                "airConditioning": "Aer condiționat",
+                "smartTv": "Smart TV",
+                "heating": "Încălzire",
+                "other": "Altele"
+            }
         }
     }
 }

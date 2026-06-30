@@ -1,6 +1,7 @@
 /*HEADER*/
 header {
   padding: var(--spacing-lg) 0;
+  background-color: white;
 
   .container {
     display: flex;
