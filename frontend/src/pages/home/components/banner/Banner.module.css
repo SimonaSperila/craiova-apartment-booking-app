@@ -33,8 +33,9 @@
   	.check-availability-btn-banner {
 	  	display: inline-block;
 	  	margin-top: var(--spacing-lg);
-		background-color: white;
-		padding: var(--spacing-md);
+		  background-color: white;
+		  padding: var(--spacing-md);
+      border-radius: var(--radius);
 		
 		&:hover {
 			text-decoration: none;

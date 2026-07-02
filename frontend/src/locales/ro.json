@@ -159,6 +159,28 @@
                 "smartTv": "Smart TV",
                 "heating": "Încălzire",
                 "other": "Altele"
+            },
+            "userGuideFooterRules": {
+                "title": "Reguli importante",
+                "list": [
+                    "Fumatul este interzis în apartament.",
+                    "Nu aduceți animale de companie.",
+                    "Respectați liniștea și vecinii.",
+                    "Nu organizați petreceri sau evenimente.",
+                    "Lăsați apartamentul curat și ordonat la plecare."
+                ]
+            },
+            "userGuideFooterChecInOut": {
+                "title": "Check-in/Check-out",
+                "list": [
+                    "Check-in: 15:00",
+                    "Check-out: 11:00"
+                ]
+            },
+            "userGuideFooterContact": {
+                "title": "Ai nevoie de ajutor?",
+                "text": "Dacă întâmpini orice problemă, nu ezita să ne contactezi.",
+                "phone": "Contactează-ne"
             }
         }
     }

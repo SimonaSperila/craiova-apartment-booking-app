@@ -158,6 +158,28 @@
                 "smartTv": "Smart TV",
                 "heating": "Heating",
                 "other": "Other"
+            },
+            "userGuideFooterRules": {
+                "title": "Important Rules",
+                "list": [
+                    "Smoking is prohibited in the apartment.",
+                    "Do not bring pets.",
+                    "Respect the peace and neighbors.",
+                    "Do not organize parties or events.",
+                    "Leave the apartment clean and organized upon departure."
+                ]
+            },
+            "userGuideFooterChecInOut": {
+                "title": "Check-in/Check-out",
+                "list": [
+                    "Check-in: 15:00",
+                    "Check-out: 11:00"
+                ]
+            },
+            "userGuideFooterContact": {
+                "title": "Do you need help?",
+                "text": "If you encounter any problems, feel free to contact us.",
+                "phone": "Contact us"
             }
         }
     }

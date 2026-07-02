@@ -2,11 +2,13 @@ import { useTranslation } from "react-i18next";
 import balconright from "../../../../assets/apartment/1.jpg";
 import dormitor from "../../../../assets/apartment/dormitor.jpg";
 import Logo from "../../../../components/logo/Logo";
+import { NavLink } from "react-router-dom";
 
 import styles from "./TheApartment.module.css";
 
 function TheApartment() {  
-const { t } = useTranslation();
+    const { i18n, t } = useTranslation();
+    const lang = i18n.language;
 
     return(
         <div className={styles["the-apartment"] + " homepage-section"}>
@@ -16,9 +18,7 @@ const { t } = useTranslation();
                         <span className="small-title">{t("theApartment.subtitle")}</span>
                         <h2 className={styles["section-title"]}>{t("theApartment.title")}</h2>
                         <p>{t("theApartment.description")}</p>
-                        <a href="/" className={styles["btn"] + " btn btn-primary"}>
-                            {t("theApartment.viewDetails")}
-                        </a>
+                        <NavLink to={`/${lang}/apartment`} className={styles["btn"] + " btn btn-primary"}>{t("theApartment.viewDetails")}</NavLink>
                         <Logo className={styles.logo} />
                     </div>
 
