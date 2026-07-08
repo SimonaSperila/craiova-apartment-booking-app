@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTriangleExclamation, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
+import ImageSlider from '../../../../components/ImageSlider';
 import styles from "./UserGuide.module.css";
 
 const TABS = [
@@ -12,9 +13,24 @@ const TABS = [
     { id: "other", key: "apartmentPage.userGuide.tabs.other" },
 ];
 
+const TAB_IMAGE_MODULES = import.meta.glob(
+    "../../../../assets/user-guide/*/*.{jpg,jpeg,png}",
+    { eager: true, import: "default" }
+);
+
+const TAB_IMAGES = TABS.reduce((acc, tab) => {
+    acc[tab.id] = Object.entries(TAB_IMAGE_MODULES)
+        .filter(([path]) => path.includes(`/user-guide/${tab.id}/`))
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([, src]) => src);
+    return acc;
+}, {});
+
 function UserGuide() {
     const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState(TABS[0].id);
+    const activeTabConfig = TABS.find((tab) => tab.id === activeTab);
+    const { title, ...tabFields } = t(activeTabConfig.key, { returnObjects: true });
 
     return (
         <div className="container">
@@ -29,17 +45,24 @@ function UserGuide() {
                             className={"tab" + (activeTab === tab.id ? " tab--active" : "")}
                             onClick={() => setActiveTab(tab.id)}
                         >
-                            {t(tab.key)}
+                            {t(`${tab.key}.title`)}
                         </button>
                     ))}
                 </div>
 
-                <div className="tab-content">
-                    {activeTab === "coffee-machine" && <p>{t('apartmentPage.userGuide.contentTabs.coffeeMachine')}</p>}
-                    {activeTab === "air-conditioning" && <p>{t('apartmentPage.userGuide.contentTabs.airConditioning')}</p>}
-                    {activeTab === "smart-tv" && <p>{t('apartmentPage.userGuide.contentTabs.smartTv')}</p>}
-                    {activeTab === "heating" && <p>{t('apartmentPage.userGuide.contentTabs.heating')}</p>}
-                    {activeTab === "other" && <p>{t('apartmentPage.userGuide.contentTabs.other')}</p>}
+                <div className={styles["tab-content"] + " tab-content"}>
+                    <ImageSlider key={activeTab} images={TAB_IMAGES[activeTab]} alt={title} />
+
+                    <div className={styles["tab-text"]}>
+                        <h3>{title}</h3>
+                        {Object.entries(tabFields).map(([field, value]) => (
+                            <div key={field} className={styles["tab-field"]} data-field={field}>
+                                {Array.isArray(value)
+                                    ? <ul>{value.map((item, index) => <li key={index}>{item}</li>)}</ul>
+                                    : <p>{value}</p>}
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className={styles["user-guide-footer"]}>

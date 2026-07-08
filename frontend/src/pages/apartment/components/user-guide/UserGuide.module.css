@@ -9,6 +9,12 @@
     @media (min-width: 769px) {
         padding: var(--spacing-xl);
     }
+
+    .tab-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+    }
 }
 
 .user-guide-footer {

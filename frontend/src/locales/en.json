@@ -146,18 +146,26 @@
             "title": "User Guide",
             "description": "Simple instructions for the proper use of the main items in the apartment.",
             "tabs": {
-                "coffeeMachine": "Coffee Machine",
-                "airConditioning": "Air Conditioning",
-                "smartTv": "Smart TV",
-                "heating": "Heating",
-                "other": "Other"
-            },
-            "contentTabs": {
-                "coffeeMachine": "Coffee Machine",
-                "airConditioning": "Air Conditioning",
-                "smartTv": "Smart TV",
-                "heating": "Heating",
-                "other": "Other"
+                "coffeeMachine": {
+                    "title": "Coffee Machine",
+                    "description": "Instructions for using the coffee machine."
+                },
+                "airConditioning": {
+                    "title": "Air Conditioning",
+                    "description": "Instructions for using the air conditioning."
+                },
+                "smartTv": {
+                    "title": "Smart TV",
+                    "description": "Instructions for using the smart TV."
+                },
+                "heating": {
+                    "title": "Heating",
+                    "description": "Instructions for using the heating system."
+                },
+                "other": {
+                    "title": "Other",
+                    "description": "Other usage instructions."
+                }
             },
             "userGuideFooterRules": {
                 "title": "Important Rules",

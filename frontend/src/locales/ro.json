@@ -147,18 +147,37 @@
             "title": "Ghid de utilizare",
             "description": "Instrucțiuni simple pentru a folosi corect principalele obiecte din apartament.",
             "tabs": {
-                "coffeeMachine": "Aparat de cafea",
-                "airConditioning": "Aer condiționat",
-                "smartTv": "Smart TV",
-                "heating": "Încălzire",
-                "other": "Altele"
-            },
-            "contentTabs": {
-                "coffeeMachine": "Aparat de cafea",
-                "airConditioning": "Aer condiționat",
-                "smartTv": "Smart TV",
-                "heating": "Încălzire",
-                "other": "Altele"
+                "coffeeMachine": {
+                    "title": "Aparat de cafea",
+                    "model": "Philips Seria 2200 – Espressor automat",
+                    "subtitle": "Cum prepari o cafea",
+                    "description": [
+                        "Verifică dacă rezervorul de apă este umplut și dacă există boabe de cafea în compartiment.",
+                        "Apasă butonul Power și așteaptă aproximativ 30 de secunde până când aparatul finalizează încălzirea și clătirea automată.",
+                        "Așază o ceașcă sub distribuitorul de cafea.",
+                        "Alege băutura dorită: espresso, Espresso Lungo, cafea, Iced Coffee (cafea cu gheață)"
+                    ]
+                },
+                "airConditioning": {
+                    "title": "Aer condiționat",
+                    "description": [
+                        "Verifică dacă aerul condiționat este alimentat cu energie.",
+                        "Așază controlerul la distanță în poziția dorită.",
+                        "Alege temperatura dorită și modul de funcționare."
+                    ]
+                },
+                "smartTv": {
+                    "title": "Smart TV",
+                    "description": "Instrucțiuni pentru utilizarea televizorului smart."
+                },
+                "heating": {
+                    "title": "Încălzire",
+                    "description": "Instrucțiuni pentru utilizarea sistemului de încălzire."
+                },
+                "other": {
+                    "title": "Altele",
+                    "description": "Alte instrucțiuni de utilizare."
+                }
             },
             "userGuideFooterRules": {
                 "title": "Reguli importante",
