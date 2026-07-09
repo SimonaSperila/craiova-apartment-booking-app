@@ -15,6 +15,19 @@
         grid-template-columns: 1fr 1fr;
         gap: 80px;
     }
+
+    ul li {
+        list-style-type: number;
+        list-style-position: inside;
+        margin-bottom: 10px;
+    }
+
+    :global(.text-slider-dots) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 }
 
 .user-guide-footer {

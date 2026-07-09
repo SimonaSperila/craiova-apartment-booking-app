@@ -149,21 +149,42 @@
             "tabs": {
                 "coffeeMachine": {
                     "title": "Aparat de cafea",
-                    "model": "Philips Seria 2200 – Espressor automat",
-                    "subtitle": "Cum prepari o cafea",
-                    "description": [
-                        "Verifică dacă rezervorul de apă este umplut și dacă există boabe de cafea în compartiment.",
-                        "Apasă butonul Power și așteaptă aproximativ 30 de secunde până când aparatul finalizează încălzirea și clătirea automată.",
-                        "Așază o ceașcă sub distribuitorul de cafea.",
-                        "Alege băutura dorită: espresso, Espresso Lungo, cafea, Iced Coffee (cafea cu gheață)"
-                    ]
+                    "description1": {
+                        "title": "Prepararea unei cafele",
+                        "text": [
+                            "Verifică dacă rezervorul de apă este umplut și dacă există boabe de cafea în compartiment.",
+                            "Apasă butonul Power și așteaptă aproximativ 30 de secunde până când aparatul finalizează încălzirea și clătirea automată.",
+                            "Așază o ceașcă sub distribuitorul de cafea.",
+                            "Alege băutura dorită: espresso, Espresso Lungo, cafea, Iced Coffee (cafea cu gheață)",
+                            "Dacă dorești, poți modifica: intensitatea cafelei (butonul cu boaba de cafea), cantitatea de cafea (butonul cu ceașca), temperatura (butonul cu termometrul)",
+                            "Apăsați butonul ▶⏸ (Start) din partea dreaptă pentru a începe prepararea cafelei",
+                            "Așteptați finalizarea preparării și savurați cafeaua"
+                        ]
+                    },
+                    "description2": {
+                        "title": "Prepararea spumei de lapte",
+                        "text": [
+                            "Introduceți tubul de abur într-un recipient cu lapte rece.",
+                            "Selectați funcția Steam.",
+                            "Rotiți recipientul ușor pentru obținerea unei spume fine.",
+                            "După utilizare, curățați imediat duza de abur."
+                        ]
+                    },
+                    "description3": {
+                        "title": "Prepararea apei fierbinți",
+                        "text": [
+                            "Așezați o cană sub duza de abur.",
+                            "Selectați Hot Water.",
+                            "Aparatul va furniza apă fierbinte pentru ceai sau alte băuturi."
+                        ]
+                    }
                 },
                 "airConditioning": {
                     "title": "Aer condiționat",
                     "description": [
-                        "Verifică dacă aerul condiționat este alimentat cu energie.",
-                        "Așază controlerul la distanță în poziția dorită.",
-                        "Alege temperatura dorită și modul de funcționare."
+                        "Așezați o cană sub duza de abur.",
+                        "Selectați Hot Water.",
+                        "Aparatul va furniza apă fierbinte pentru ceai sau alte băuturi."
                     ]
                 },
                 "smartTv": {
