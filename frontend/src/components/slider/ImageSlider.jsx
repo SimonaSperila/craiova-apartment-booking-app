@@ -13,7 +13,7 @@ function ImageSlider({ images, alt = '' }) {
     };
 
     return (
-        <div className={styles["image-slider"]}>
+        <div className={styles["image-slider"] + " image-slider"}>
             <div className={styles["image-slider-viewport"]}>
                 <img src={images[activeIndex]} alt={`${alt} ${activeIndex + 1}`} />
 
@@ -40,7 +40,7 @@ function ImageSlider({ images, alt = '' }) {
             </div>
 
             {images.length > 1 && (
-                <div className={styles["image-slider-dots"]}>
+                <div className={styles["image-slider-dots"] + " image-slider-dots"}>
                     {images.map((_, index) => (
                         <button
                             key={index}

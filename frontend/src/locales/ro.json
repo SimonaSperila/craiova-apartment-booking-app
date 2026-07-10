@@ -181,11 +181,7 @@
                 },
                 "airConditioning": {
                     "title": "Aer condiționat",
-                    "description": [
-                        "Așezați o cană sub duza de abur.",
-                        "Selectați Hot Water.",
-                        "Aparatul va furniza apă fierbinte pentru ceai sau alte băuturi."
-                    ]
+                    "description": "Instrucțiuni pentru utilizarea sistemului de aer condiționat."
                 },
                 "smartTv": {
                     "title": "Smart TV",

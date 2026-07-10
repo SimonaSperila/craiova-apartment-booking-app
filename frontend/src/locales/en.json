@@ -148,30 +148,39 @@
             "tabs": {
                 "coffeeMachine": {
                     "title": "Coffee Machine",
-                    "subtitle": "How to make a coffee",
                     "description1": {
-                        "title": "Brewing the coffee",
+                        "title": "Preparing a cup of coffee",
                         "text": [
-                            "Check that the water tank is full and that there are coffee beans in the compartment.",
-                            "Press the Power button and wait about 30 seconds for the machine to finish heating and auto-rinsing.",
-                            "Place a cup under the coffee spout.",
-                            "Choose your desired drink: Espresso, Espresso Lungo, Coffee, Iced Coffee",
-                            "If you like, you can adjust: coffee strength (bean icon button), coffee quantity (cup icon button), temperature (thermometer icon button)",
-                            "Press the ▶⏸ (Start) button on the right side to begin brewing",
-                            "Wait for brewing to finish and enjoy your coffee"
+                            "Check if the water tank is filled and if there are coffee beans in the compartment.",
+                            "Press the Power button and wait approximately 30 seconds until the machine completes heating and automatic cleaning.",
+                            "Place a cup under the coffee dispenser.",
+                            "Choose the desired beverage: espresso, Espresso Lungo, coffee, Iced Coffee (coffee with ice)",
+                            "If desired, you can modify: coffee strength (button with coffee bean), coffee quantity (button with cup), temperature (button with thermometer)",
+                            "Press the ▶⏸ (Start) button on the right side to begin coffee preparation.",
+                            "Wait for the preparation to complete and enjoy your coffee."
                         ]
                     },
                     "description2": {
-                        "title": "After use",
+                        "title": "Preparing Milk Foam",
                         "text": [
-                            "When you're done using the machine, press the Power button to turn it off.",
-                            "Clean the machine according to the instructions in the user manual."
+                            "Introduce the steam wand into a container with cold milk.",
+                            "Select the Steam function.",
+                            "Gently swirl the container to create fine foam.",
+                            "After use, clean the steam wand immediately."
+                        ]
+                    },
+                    "description3": {
+                        "title": "Preparing Hot Water",
+                        "text": [
+                            "Place a kettle under the steam wand.",
+                            "Select Hot Water.",
+                            "The machine will provide hot water for tea or other beverages."
                         ]
                     }
                 },
                 "airConditioning": {
                     "title": "Air Conditioning",
-                    "description": "Instructions for using the air conditioning."
+                    "description": "Instructions for using the air conditioning system."
                 },
                 "smartTv": {
                     "title": "Smart TV",

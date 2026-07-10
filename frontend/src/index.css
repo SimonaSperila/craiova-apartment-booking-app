@@ -238,6 +238,10 @@ img {
 
 .tab-content {
     margin-top: var(--spacing-xl);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-sm);
     text-align: left;
+
+    @media (min-width: 769px) {
+      	padding: var(--spacing-xl);
+    }
 }

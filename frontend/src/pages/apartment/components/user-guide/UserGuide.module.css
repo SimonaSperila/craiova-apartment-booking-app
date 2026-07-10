@@ -12,8 +12,13 @@
 
     .tab-content {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        @media (min-width: 769px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
     }
 
     ul li {
@@ -22,11 +27,16 @@
         margin-bottom: 10px;
     }
 
-    :global(.text-slider-dots) {
+    :global(.text-slider-dots),
+    :global(.image-slider-dots) {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
+    }
+
+    :global(.image-slider) {
+        padding-bottom: 20px;
     }
 }
 
@@ -55,7 +65,7 @@
     }
 
     ul {
-        padding-left: 25px;
+        list-style-position: inside;
         font-size: 0.9rem;
     }
 }
