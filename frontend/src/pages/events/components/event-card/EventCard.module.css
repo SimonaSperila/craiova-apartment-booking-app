@@ -1,0 +1,30 @@
+.event-item img {
+	border-radius: var(--radius);
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+
+.event-item h3 {
+	font-family: var(--font-heading);
+	font-weight: 500;
+	color: var(--gray-900);
+	margin: var(--spacing-sm) 0;
+}
+
+.event-meta {
+	margin-top: var(--spacing-sm);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-sm);
+}
+
+.event-meta span {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.event-meta svg {
+	color: black;
+}

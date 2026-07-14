@@ -69,6 +69,67 @@ LOCK TABLES `places` WRITE;
 INSERT INTO `places` VALUES (1,140,NULL,NULL,'teatru.jpg','2026-05-07 10:25:07'),(2,10,NULL,NULL,'romanescu.jpg','2026-05-07 10:25:07');
 /*!40000 ALTER TABLE `places` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+CREATE TABLE `events` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `event_date` datetime NOT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `is_popular` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+LOCK TABLES `events` WRITE;
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES
+  (1,'2026-08-15 19:00:00','Teatrul National Marin Sorescu','teatru.jpg',1,'2026-07-14 00:00:00'),
+  (2,'2026-07-25 10:00:00','Centrul Vechi','centrul-vechi.jpeg',0,'2026-07-14 00:00:00'),
+  (3,'2026-06-20 18:00:00','Parcul Romanescu','parcul-nicolae-romanescu.jpg',1,'2026-07-14 00:00:00'),
+  (4,'2026-09-10 09:00:00','Parcul Romanescu','parcul-nicolae-romanescu.jpg',1,'2026-07-14 00:00:00');
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `event_translations`
+--
+
+DROP TABLE IF EXISTS `event_translations`;
+CREATE TABLE `event_translations` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `event_id` int DEFAULT NULL,
+  `language` varchar(5) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `event_translations`
+--
+
+LOCK TABLES `event_translations` WRITE;
+/*!40000 ALTER TABLE `event_translations` DISABLE KEYS */;
+INSERT INTO `event_translations` VALUES
+  (1,1,'ro','Festivalul de Vara al Teatrului','Spectacole in aer liber sustinute de trupa Teatrului National Marin Sorescu.'),
+  (2,1,'en','Summer Theatre Festival','Open-air performances by the Marin Sorescu National Theatre company.'),
+  (3,2,'ro','Targul din Centrul Vechi','Targ cu mestesugari locali, muzica live si gastronomie traditionala.'),
+  (4,2,'en','Old Town Street Fair','Local craftsmen, live music, and traditional food in the historic centre.'),
+  (5,3,'ro','Nopti de Muzica la Craiova','Concerte in aer liber cu artisti locali si nationali.'),
+  (6,3,'en','Craiova Music Nights','Open-air concerts featuring local and national artists.'),
+  (7,4,'ro','Targul de Toamna din Parcul Romanescu','Targ de toamna cu produse locale, activitati pentru copii si muzica.'),
+  (8,4,'en','Romanescu Park Autumn Fair','Autumn market with local produce, kids'' activities, and live music.');
+/*!40000 ALTER TABLE `event_translations` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

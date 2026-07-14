@@ -53,6 +53,32 @@ app.get("/places", (req, res) => {
   });
 });
 
+// GET events
+app.get("/events", (req, res) => {
+  const lang = req.query.lang || "ro";
+
+  const sql = `
+    SELECT
+      e.id,
+      e.event_date,
+      e.location,
+      e.image,
+      e.is_popular,
+      et.title,
+      et.description
+    FROM events e
+    INNER JOIN event_translations et
+      ON e.id = et.event_id
+    WHERE et.language = ?
+    ORDER BY e.event_date ASC
+  `;
+
+  db.query(sql, [lang], (err, results) => {
+    if (err) return res.status(500).json(err);
+    res.json(results);
+  });
+});
+
 app.get("/reviews", (req, res) => {
   const sqlRun = `
     SELECT id, score_number, score_text, reviews_text

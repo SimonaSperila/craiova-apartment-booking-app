@@ -42,6 +42,19 @@
         "viewAll": "Vezi toate atracțiile",
         "viewMap": "Vezi pe hartă"
     },
+    "eventsPage": {
+        "popular": {
+            "subtitle": "Nu rata",
+            "title": "Evenimente populare",
+            "description": "Cele mai îndrăgite evenimente din Craiova și împrejurimi."
+        },
+        "future": {
+            "subtitle": "Planifică din timp",
+            "title": "Evenimente viitoare",
+            "description": "Evenimente care urmează să aibă loc în Craiova, în ordinea datei."
+        },
+        "noEvents": "Momentan nu sunt evenimente de afișat."
+    },
     "theApartment": {
         "subtitle": "Apartamentul",
         "title": "Confortul tău de acasă",

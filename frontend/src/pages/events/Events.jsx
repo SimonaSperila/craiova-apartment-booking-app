@@ -1,8 +1,35 @@
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import banner from "../../assets/events-banner.jpg";
+
+import teatruImg from "../../assets/events/teatru.jpg";
+import centrulVechiImg from "../../assets/events/centrul-vechi.jpeg";
+import parcImg from "../../assets/events/parcul-nicolae-romanescu.jpg";
+
+import EventCard from "./components/event-card/EventCard";
 
 import styles from "./Events.module.css";
 
+const images = {
+    "teatru.jpg": teatruImg,
+    "centrul-vechi.jpeg": centrulVechiImg,
+    "parcul-nicolae-romanescu.jpg": parcImg
+};
+
 function Events() {
+    const [events, setEvents] = useState([]);
+    const { t, i18n } = useTranslation();
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/events?lang=${i18n.language}`)
+            .then(res => res.json())
+            .then(data => setEvents(data));
+    }, [i18n.language]);
+
+    const popularEvents = events.filter(e => e.is_popular);
+    const futureEvents = events.filter(e => new Date(e.event_date) >= new Date());
+
     return(
         <div className={styles["events-page"]}>
             <div className={styles["events-banner"]}>
@@ -10,6 +37,46 @@ function Events() {
                     <source media="(max-width: 768px)" srcSet={banner} />
                     <img src={banner} alt="Events Banner" />
                 </picture>
+            </div>
+
+            <div className={styles['events-section'] + " homepage-section"}>
+                <div className={styles['container'] + " container"}>
+                    <div className={styles['section-header']}>
+                        <div className={styles['section-header-content']}>
+                            <span className='small-title'>{t("eventsPage.popular.subtitle")}</span>
+                            <h2 className='section-title'>{t("eventsPage.popular.title")}</h2>
+                            <p>{t("eventsPage.popular.description")}</p>
+                        </div>
+                    </div>
+                    <div className={styles['events-list']}>
+                        {popularEvents.length === 0
+                            ? <p>{t("eventsPage.noEvents")}</p>
+                            : popularEvents.map(event => (
+                                <EventCard key={event.id} event={event} image={images[event.image]} />
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles['events-section'] + " homepage-section"}>
+                <div className={styles['container'] + " container"}>
+                    <div className={styles['section-header']}>
+                        <div className={styles['section-header-content']}>
+                            <span className='small-title'>{t("eventsPage.future.subtitle")}</span>
+                            <h2 className='section-title'>{t("eventsPage.future.title")}</h2>
+                            <p>{t("eventsPage.future.description")}</p>
+                        </div>
+                    </div>
+                    <div className={styles['events-list']}>
+                        {futureEvents.length === 0
+                            ? <p>{t("eventsPage.noEvents")}</p>
+                            : futureEvents.map(event => (
+                                <EventCard key={event.id} event={event} image={images[event.image]} />
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     );
