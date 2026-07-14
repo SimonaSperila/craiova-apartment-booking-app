@@ -25,10 +25,10 @@ function Header() {
 					<ul>
 						<li><NavLink to="/">{t("nav.home")}</NavLink></li>
 						<li><NavLink to={`/${lang}/apartment`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.apartment")}</NavLink></li>
-						<li><NavLink to="/events">{t("nav.events")}</NavLink></li>
-						<li><NavLink to="/gallery">{t("nav.gallery")}</NavLink></li>
-						<li><NavLink to="/attractions">{t("nav.attractions")}</NavLink></li>
-						<li><NavLink to="/contact">{t("nav.contact")}</NavLink></li>
+						<li><NavLink to={`/${lang}/events`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.events")}</NavLink></li>
+						<li><NavLink to={`/${lang}/gallery`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.gallery")}</NavLink></li>
+						<li><NavLink to={`/${lang}/attractions`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.attractions")}</NavLink></li>
+						<li><NavLink to={`/${lang}/contact`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.contact")}</NavLink></li>
 					</ul>
 
 					<span className="close" onClick={() => setOpen(false)}>
