@@ -52,7 +52,8 @@
             "title": "Upcoming Events",
             "description": "Events coming up in Craiova, sorted by date."
         },
-        "noEvents": "No events to show right now."
+        "noEvents": "No events to show right now.",
+        "moreInfo": "More info"
     },
     "theApartment": {
         "subtitle": "The Apartment",

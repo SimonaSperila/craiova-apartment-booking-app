@@ -61,16 +61,17 @@ app.get("/events", (req, res) => {
     SELECT
       e.id,
       e.event_date,
-      e.location,
-      e.image,
+      e.event_time,
       e.is_popular,
+      et.location,
       et.title,
-      et.description
+      et.description,
+      et.details
     FROM events e
     INNER JOIN event_translations et
       ON e.id = et.event_id
     WHERE et.language = ?
-    ORDER BY e.event_date ASC
+    ORDER BY e.event_date ASC, e.event_time ASC
   `;
 
   db.query(sql, [lang], (err, results) => {

@@ -28,3 +28,21 @@
 .event-meta svg {
 	color: black;
 }
+
+.event-link {
+	margin-top: var(--spacing-sm);
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	color: var(--green-900);
+	font-weight: 500;
+}
+
+.event-link svg {
+	width: 12px;
+	height: 12px;
+}
+
+.event-link:hover {
+	text-decoration: underline;
+}

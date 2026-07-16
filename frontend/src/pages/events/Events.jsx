@@ -3,19 +3,9 @@ import { useTranslation } from "react-i18next";
 
 import banner from "../../assets/events-banner.jpg";
 
-import teatruImg from "../../assets/events/teatru.jpg";
-import centrulVechiImg from "../../assets/events/centrul-vechi.jpeg";
-import parcImg from "../../assets/events/parcul-nicolae-romanescu.jpg";
-
 import EventCard from "./components/event-card/EventCard";
 
 import styles from "./Events.module.css";
-
-const images = {
-    "teatru.jpg": teatruImg,
-    "centrul-vechi.jpeg": centrulVechiImg,
-    "parcul-nicolae-romanescu.jpg": parcImg
-};
 
 function Events() {
     const [events, setEvents] = useState([]);
@@ -52,7 +42,7 @@ function Events() {
                         {popularEvents.length === 0
                             ? <p>{t("eventsPage.noEvents")}</p>
                             : popularEvents.map(event => (
-                                <EventCard key={event.id} event={event} image={images[event.image]} />
+                                <EventCard key={event.id} event={event} />
                             ))
                         }
                     </div>
@@ -72,7 +62,7 @@ function Events() {
                         {futureEvents.length === 0
                             ? <p>{t("eventsPage.noEvents")}</p>
                             : futureEvents.map(event => (
-                                <EventCard key={event.id} event={event} image={images[event.image]} />
+                                <EventCard key={event.id} event={event} />
                             ))
                         }
                     </div>

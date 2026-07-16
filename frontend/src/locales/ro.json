@@ -53,7 +53,8 @@
             "title": "Evenimente viitoare",
             "description": "Evenimente care urmează să aibă loc în Craiova, în ordinea datei."
         },
-        "noEvents": "Momentan nu sunt evenimente de afișat."
+        "noEvents": "Momentan nu sunt evenimente de afișat.",
+        "moreInfo": "Mai multe detalii"
     },
     "theApartment": {
         "subtitle": "Apartamentul",
