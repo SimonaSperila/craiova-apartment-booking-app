@@ -1,4 +1,4 @@
-# Explore Craiova
+# Shakespeare Apartment Craiova
 
 A multilingual website for a short-term rental apartment in Craiova, Romania. It gives guests a digital user guide (check-in/check-out, house rules, contact info), showcases nearby attractions and events, and displays live guest reviews pulled from Booking.com.
 
