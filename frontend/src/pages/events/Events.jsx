@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
 
 import banner from "../../assets/events-banner.jpg";
 
@@ -49,22 +51,37 @@ function Events() {
                 </div>
             </div>
 
-            <div className={styles['events-section'] + " homepage-section"}>
+            <div className={styles['events-section']}>
                 <div className={styles['container'] + " container"}>
                     <div className={styles['section-header']}>
                         <div className={styles['section-header-content']}>
-                            <span className='small-title'>{t("eventsPage.future.subtitle")}</span>
-                            <h2 className='section-title'>{t("eventsPage.future.title")}</h2>
-                            <p>{t("eventsPage.future.description")}</p>
+                            <h2 className='section-title'>
+                                <FontAwesomeIcon icon={faCalendarDays} />
+                                {t("eventsPage.future.title")}
+                            </h2>
                         </div>
                     </div>
-                    <div className={styles['events-list']}>
-                        {futureEvents.length === 0
-                            ? <p>{t("eventsPage.noEvents")}</p>
-                            : futureEvents.map(event => (
-                                <EventCard key={event.id} event={event} />
-                            ))
-                        }
+                    <div className={styles['events-section-content']}>
+                        <div className={styles['events-list']}>
+                            {futureEvents.length === 0
+                                ? <p>{t("eventsPage.noEvents")}</p>
+                                : futureEvents.map(event => (
+                                    <EventCard key={event.id} event={event} />
+                                ))
+                            }
+                        </div>
+                        <div className={styles['events-section-sidebar']}>
+                            <div className={styles['events-section-sidebar-reservation']}>
+                                <span className={styles['events-section-sidebar-reservation-icon']}>
+                                    <FontAwesomeIcon icon={faCalendarDays} />
+                                </span>
+                                <h3 className={styles['events-section-sidebar-reservation-title']}>{t("eventsPage.sidebar.title")}</h3>
+                                <p className={styles['events-section-sidebar-reservation-description']}>{t("eventsPage.sidebar.description")}</p>
+                                <a href="https://www.booking.com/hotel/ro/shakespeare-apartment-craiova.en-gb.html" target="_blank" rel="noreferrer" className={styles['events-section-sidebar-reservation-button']}>
+                                    {t("eventsPage.sidebar.checkAvailability")}
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

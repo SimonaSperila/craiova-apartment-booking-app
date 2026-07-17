@@ -43,9 +43,7 @@
     },
     "eventsPage": {
         "popular": {
-            "subtitle": "Don't miss out",
-            "title": "Popular Events",
-            "description": "The most loved events happening in and around Craiova."
+            "title": "Popular Events"
         },
         "future": {
             "subtitle": "Plan ahead",
@@ -53,7 +51,12 @@
             "description": "Events coming up in Craiova, sorted by date."
         },
         "noEvents": "No events to show right now.",
-        "moreInfo": "More info"
+        "moreInfo": "More info",
+        "sidebar": {
+            "title": "Plan your visit",
+            "description": "Check the events during your stay and enjoy everything Craiova has to offer.",
+            "checkAvailability": "Book the apartment"
+        }
     },
     "theApartment": {
         "subtitle": "The Apartment",

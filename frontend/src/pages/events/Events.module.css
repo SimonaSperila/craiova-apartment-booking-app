@@ -16,6 +16,18 @@
 	gap: var(--spacing-lg);
 
 	@media (min-width: 769px) {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
+}
+
+.events-section-content {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: var(--spacing-xl);
+}
+
+.events-section-sidebar {
+	background-color: #f9f9f9;
+	border-radius: var(--radius);
+	padding: var(--spacing-lg);
 }
