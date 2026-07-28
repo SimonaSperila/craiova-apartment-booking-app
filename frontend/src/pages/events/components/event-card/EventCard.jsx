@@ -38,7 +38,7 @@ function EventCard({ event }) {
                 )}
             </div>
             <div className={styles['event-content']}>
-                <h3 className={styles['event-title']}>{event.title}</h3>
+                <p className={styles['event-title']}>{event.title}</p>
                  <p className={styles['event-meta']}>
                     {event.location && (
                         <span>

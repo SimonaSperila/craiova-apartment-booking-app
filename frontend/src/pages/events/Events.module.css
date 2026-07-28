@@ -26,8 +26,50 @@
 	gap: var(--spacing-xl);
 }
 
+.events-section-main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.events-section-main .tabs {
+	margin-top: 0;
+
+	@media (min-width: 769px) {
+		justify-content: flex-start;
+	}
+}
+
 .events-section-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xl);
+}
+
+.events-section-sidebar-reservation,
+.events-section-sidebar-past-events {
 	background-color: #f9f9f9;
 	border-radius: var(--radius);
-	padding: var(--spacing-lg);
+	border: 1px solid var(--border);
+	padding: var(--spacing-xl);
+}
+
+.events-section-sidebar-reservation-icon {
+	background-color: var(--green-900);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+}
+
+.events-section-sidebar-reservation-button {
+	margin-top: var(--spacing-md);
+	display: inline-block;
+
+	svg {
+		margin-left: 5px;
+	}
 }

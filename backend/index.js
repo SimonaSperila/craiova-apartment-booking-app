@@ -62,6 +62,7 @@ app.get("/events", (req, res) => {
       e.id,
       e.event_date,
       e.event_time,
+      e.category,
       e.is_popular,
       et.location,
       et.title,

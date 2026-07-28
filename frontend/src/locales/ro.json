@@ -43,8 +43,16 @@
         "viewMap": "Vezi pe hartă"
     },
     "eventsPage": {
-        "popular": {
-            "title": "Evenimente populare"
+        "past": {
+            "title": "Evenimente trecute",
+            "description": "Aruncă o privire la evenimentele care au avut deja loc în Craiova."
+        },
+        "categories": {
+            "all": "Toate",
+            "concerte": "Concerte",
+            "teatru": "Teatru",
+            "spectacole": "Spectacole",
+            "alteEvenimente": "Alte evenimente"
         },
         "future": {
             "subtitle": "Planifică din timp",
