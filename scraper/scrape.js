@@ -76,7 +76,7 @@ async function extractReviews(page) {
       name:
         card
           .querySelector(
-            '[data-testid="review-avatarr"] > div > div:nth-of-type(2) > div'
+            '[data-testid="review-avatar"] > div > div:nth-of-type(2) > div'
           )
           ?.textContent?.trim() || "",
       country:
