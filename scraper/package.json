@@ -2,9 +2,15 @@
   "name": "scraper",
   "version": "1.0.0",
   "main": "scrape.js",
+  "scripts": {
+    "test": "vitest run"
+  },
   "dependencies": {
-    "playwright": "1.60.0",
     "fs-extra": "^11.0.0",
-    "mysql2": "^3.0.0"
+    "mysql2": "^3.0.0",
+    "playwright": "1.60.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.10"
   }
 }

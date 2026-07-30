@@ -243,4 +243,11 @@ async function scrapeReviews() {
   }
 }
 
-scrapeReviews();
+if (require.main === module) {
+  scrapeReviews();
+}
+
+module.exports = {
+  extractReviews,
+  extractOverallScore,
+};
