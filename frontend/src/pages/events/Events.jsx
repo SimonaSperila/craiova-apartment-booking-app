@@ -6,6 +6,7 @@ import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
 import banner from "../../assets/events-banner.jpg";
 
 import EventCard from "./components/event-card/EventCard";
+import { API_BASE_URL } from "../../config";
 
 import styles from "./Events.module.css";
 
@@ -22,7 +23,7 @@ function Events() {
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
-        fetch(`http://localhost:3000/events?lang=${i18n.language}`)
+        fetch(`${API_BASE_URL}/events?lang=${i18n.language}`)
             .then(res => res.json())
             .then(data => setEvents(data));
     }, [i18n.language]);

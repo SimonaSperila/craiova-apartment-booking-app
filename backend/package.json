@@ -4,8 +4,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "fs-extra": "^11.3.5",
-    "mysql2": "^3.6.0",
-    "playwright": "^1.60.0"
+    "mysql2": "^3.6.0"
   }
 }

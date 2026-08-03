@@ -3,6 +3,7 @@ import bgReviews from '../assets/bg-reviews.jpg';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { API_BASE_URL } from '../config';
 
 function Reviews() {
     const { t } = useTranslation();
@@ -13,7 +14,7 @@ function Reviews() {
     const ITEMS_TO_SHOW = 1;
 
     useEffect(() => {
-    fetch("http://localhost:3000/reviews")
+    fetch(`${API_BASE_URL}/reviews`)
         .then(res => res.json())
         .then(data => {
             setReviews(data.reviews);

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { API_BASE_URL } from '../../../../config';
 
 import teatruImg from "../../../../assets/places/teatru.jpg";
 import centrulVechiImg from "../../../../assets/places/centrul-vechi.jpeg";
@@ -34,7 +35,7 @@ function PlacesToVisit({ place }) {
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
-    fetch(`http://localhost:3000/places?lang=${i18n.language}`)
+    fetch(`${API_BASE_URL}/places?lang=${i18n.language}`)
         .then(res => res.json())
         .then(data => {
         //console.log("🌐 FRONTEND DATA:", data);

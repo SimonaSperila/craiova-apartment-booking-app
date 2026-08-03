@@ -9,14 +9,22 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ POOL corect pentru Docker
+const ssl = process.env.DB_SSL_CA
+  ? { ca: process.env.DB_SSL_CA }
+  : process.env.DB_SSL === "true"
+  ? { rejectUnauthorized: false }
+  : undefined;
+
 const db = mysql.createPool({
   host: process.env.DB_HOST || "db",
+  port: process.env.DB_PORT || 3306,
   user: process.env.DB_USER || "user",
   password: process.env.DB_PASSWORD || "userpass",
   database: process.env.DB_NAME || "craiova",
   waitForConnections: true,
   connectionLimit: 10,
-  charset: "utf8mb4"
+  charset: "utf8mb4",
+  ssl
 });
 
 // ✔ optional: test conexiune simplu
@@ -109,6 +117,7 @@ app.get("/reviews", (req, res) => {
 });
 
 // server start
-app.listen(3000, () => {
-  console.log("Backend running on 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Backend running on ${PORT}`);
 });

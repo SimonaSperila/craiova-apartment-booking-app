@@ -5,6 +5,7 @@ import bgAvailabilityMobile from '../../../../assets/bg-availability-mobile.jpg'
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { API_BASE_URL } from '../../../../config';
 
 import styles from "./BookingAvailability.module.css";
 
@@ -13,7 +14,7 @@ function BookingAvailability() {
     const [overallScore, setOverallScore] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:3000/reviews")
+        fetch(`${API_BASE_URL}/reviews`)
             .then(res => res.json())
             .then(data => {
                 setOverallScore(data.overallScore || null);

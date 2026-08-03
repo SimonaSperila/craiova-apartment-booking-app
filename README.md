@@ -107,13 +107,22 @@ Launches a headless Chromium browser via Playwright, scrapes the configured Book
 The backend exposes:
 
 - `GET /places?lang=ro|en` — list of nearby places with translated name/description, distance, and image.
+- `GET /events?lang=ro|en` — list of events with translated title/description/location, ordered by date.
 - `GET /reviews` — latest scrape run's overall Booking.com score and review summary.
 
 ## Database schema
 
-[`backend/init.sql`](backend/init.sql) seeds two tables on first run:
+[`backend/init.sql`](backend/init.sql) seeds four tables on first run:
 
-- `places` — attraction/place records (location, image, distance from the apartment).
-- `place_translations` — per-language name/description for each place.
+- `places` / `place_translations` — attraction/place records (location, image, distance) with per-language name/description.
+- `events` / `event_translations` — event records (date, time, category) with per-language title/description/location.
+- `scrape_runs` / `reviews` — written by the scraper: one row per scrape run (overall Booking.com score) and the individual guest reviews collected in that run.
 
-The scraper additionally writes to `scrape_runs` (metadata per scrape execution — overall score, review text) and `reviews` (individual guest reviews). These tables are expected to exist in the database but are not currently part of `init.sql`.
+## Deployment (free hosting)
+
+This is one way to host a public, read-only demo of the site for free:
+
+- **Frontend → [Vercel](https://vercel.com)**: import the repo, set the project root to `frontend/`. Vercel auto-detects Vite (`npm run build`, output `dist/`). Add an environment variable `VITE_API_URL` pointing at your deployed backend URL (e.g. `https://your-backend.onrender.com`). `frontend/vercel.json` rewrites all paths to `index.html` so client-side routes like `/en/apartment` work on refresh.
+- **Backend → [Render](https://render.com)**: create a Web Service with root directory `backend/`, build command `npm install`, start command `node index.js`. Render sets `PORT` automatically; the app already reads `process.env.PORT`. Set `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` to match your database, plus `DB_SSL=true` (or `DB_SSL_CA` with a CA certificate) if your database requires SSL.
+- **Database → any free MySQL host** (e.g. [Aiven](https://aiven.io) or [Clever Cloud](https://www.clever-cloud.com)): create a MySQL instance, then load the schema/seed data by running `backend/init.sql` against it (e.g. `mysql -h <host> -P <port> -u <user> -p <database> < backend/init.sql`).
+- The **scraper** is not deployed — run it locally (pointed at the live database via env vars) whenever you want to refresh reviews.
