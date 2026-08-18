@@ -42,21 +42,14 @@
         "viewMap": "View on map"
     },
     "eventsPage": {
-        "past": {
-            "title": "Past Events",
-            "description": "Take a look at events that have already taken place in Craiova."
-        },
+        "title": "Events in Craiova",
+        "description": "Discover the most interesting events happening in Craiova throughout the year.",
         "categories": {
             "all": "All",
             "concerte": "Concerts",
             "teatru": "Theatre",
             "spectacole": "Shows",
             "alteEvenimente": "Other Events"
-        },
-        "future": {
-            "subtitle": "Plan ahead",
-            "title": "Upcoming Events",
-            "description": "Events coming up in Craiova, sorted by date."
         },
         "noEvents": "No events to show right now.",
         "moreInfo": "More info",

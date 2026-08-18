@@ -1,3 +1,23 @@
+.events-banner {
+	position: relative;
+	.container {
+		position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        color: var(--white);
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+	}
+
+	.banner-content {
+		max-width: 600px;
+	}
+}
+
 .events-section .section-header {
 	display: flex;
 	flex-wrap: wrap;
@@ -21,9 +41,11 @@
 }
 
 .events-section-content {
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	gap: var(--spacing-xl);
+	@media (min-width: 769px) {
+		display: grid;
+		gap: var(--spacing-xl);
+		grid-template-columns: 2fr 1fr;
+	}
 }
 
 .events-section-main {
@@ -44,6 +66,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xl);
+	margin-top: 100px;
 }
 
 .events-section-sidebar-reservation,

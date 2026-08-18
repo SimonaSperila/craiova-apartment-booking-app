@@ -45,18 +45,17 @@ function Events() {
                     <source media="(max-width: 768px)" srcSet={banner} />
                     <img src={banner} alt="Events Banner" />
                 </picture>
+
+                <div className={styles["container"] + " container"}>
+                    <div className={styles["banner-content"]}>
+                        <h1>{t("eventsPage.title")}</h1>    
+                        <p>{t("eventsPage.description")}</p>
+                    </div>
+                </div>
             </div>
 
             <div className={styles['events-section']}>
                 <div className={styles['container'] + " container"}>
-                    <div className={styles['section-header']}>
-                        <div className={styles['section-header-content']}>
-                            <h2 className='section-title'>
-                                <FontAwesomeIcon icon={faCalendarDays} />
-                                {t("eventsPage.future.title")}
-                            </h2>
-                        </div>
-                    </div>
                     <div className={styles['events-section-content']}>
                         <div className={styles['events-section-main']}>
                             {categories.length > 1 && (
@@ -94,23 +93,6 @@ function Events() {
                                     {t("eventsPage.sidebar.checkAvailability")}
                                     <FontAwesomeIcon icon={faCalendarDays} />
                                 </a>
-                            </div>
-
-                            <div className={styles['events-section-sidebar-past-events']}>
-                                <div className={styles['section-header']}>
-                                    <div className={styles['section-header-content']}>
-                                        <h3 className='section-title'>{t("eventsPage.past.title")}</h3>
-                                        <p>{t("eventsPage.past.description")}</p>
-                                    </div>
-                                </div>
-                                <div className={styles['events-list']}>
-                                    {pastEvents.length === 0
-                                        ? <p>{t("eventsPage.noEvents")}</p>
-                                        : pastEvents.map(event => (
-                                            <EventCard key={event.id} event={event} />
-                                        ))
-                                    }
-                                </div>
                             </div>
                         </div>
                     </div>
