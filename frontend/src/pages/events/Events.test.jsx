@@ -36,12 +36,12 @@ describe('Events page', () => {
         });
     });
 
-    it('splits events into upcoming and past lists', async () => {
+    it('only renders upcoming events, not past ones', async () => {
         render(<Events />);
 
         expect(await screen.findByText('Future Concert')).toBeInTheDocument();
         expect(await screen.findByText('Future Play')).toBeInTheDocument();
-        expect(await screen.findByText('Old Show')).toBeInTheDocument();
+        expect(screen.queryByText('Old Show')).not.toBeInTheDocument();
     });
 
     it('only builds category tabs from upcoming events', async () => {
@@ -67,8 +67,6 @@ describe('Events page', () => {
 
         expect(screen.getByText('Future Concert')).toBeInTheDocument();
         expect(screen.queryByText('Future Play')).not.toBeInTheDocument();
-        // Past events are unaffected by the upcoming-events category filter.
-        expect(screen.getByText('Old Show')).toBeInTheDocument();
     });
 
     it('shows the empty state when there are no upcoming events', async () => {
@@ -82,7 +80,7 @@ describe('Events page', () => {
 
         render(<Events />);
 
-        await screen.findByText('Old Show');
-        expect(screen.getAllByText('No events to show right now.')).toHaveLength(1);
+        expect(await screen.findByText('No events to show right now.')).toBeInTheDocument();
+        expect(screen.queryByText('Old Show')).not.toBeInTheDocument();
     });
 });
