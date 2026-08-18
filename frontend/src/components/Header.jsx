@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Logo from "./logo/Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import styles from "./logo/Logo.module.css";
 
@@ -13,6 +13,11 @@ function Header() {
   	const { i18n, t } = useTranslation();
 	const lang = i18n.language;
   	const [open, setOpen] = useState(false);
+	const location = useLocation();
+
+	useEffect(() => {
+		setOpen(false);
+	}, [location.pathname]);
 
   	return (
 		<header>
