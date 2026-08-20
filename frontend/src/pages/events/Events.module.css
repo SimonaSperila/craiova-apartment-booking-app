@@ -16,6 +16,12 @@
 	.banner-content {
 		max-width: 600px;
 	}
+
+	h1 {
+		color: var(--white);
+		margin: 0;
+		font-size: 2.5rem;
+	}
 }
 
 .events-section .section-header {
@@ -41,6 +47,7 @@
 }
 
 .events-section-content {
+	margin-top: var(--spacing-xl);
 	@media (min-width: 769px) {
 		display: grid;
 		gap: var(--spacing-xl);
@@ -66,7 +73,11 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xl);
-	margin-top: 100px;
+	margin-top: var(--spacing-xl);
+
+	@media (min-width: 769px) {
+		margin-top: 0;
+	}
 }
 
 .events-section-sidebar-reservation,

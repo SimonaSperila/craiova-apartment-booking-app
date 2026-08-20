@@ -56,23 +56,26 @@ function Events() {
 
             <div className={styles['events-section']}>
                 <div className={styles['container'] + " container"}>
+                    <div className={styles['events-section-main']}>
+                        {categories.length > 1 && (
+                            <div className="tabs">
+                                {categories.map(category => (
+                                    <button
+                                        key={category}
+                                        className={"tab" + (activeCategory === category ? " tab--active" : "")}
+                                        onClick={() => setActiveCategory(category)}
+                                    >
+                                        {category === "all"
+                                            ? t("eventsPage.categories.all")
+                                            : t(CATEGORY_LABEL_KEYS[category] || category)}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
                     <div className={styles['events-section-content']}>
-                        <div className={styles['events-section-main']}>
-                            {categories.length > 1 && (
-                                <div className="tabs">
-                                    {categories.map(category => (
-                                        <button
-                                            key={category}
-                                            className={"tab" + (activeCategory === category ? " tab--active" : "")}
-                                            onClick={() => setActiveCategory(category)}
-                                        >
-                                            {category === "all"
-                                                ? t("eventsPage.categories.all")
-                                                : t(CATEGORY_LABEL_KEYS[category] || category)}
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
+                        <div className={styles['events-section-content-list']}>
                             <div className={styles['events-list']}>
                                 {visibleEvents.length === 0
                                     ? <p>{t("eventsPage.noEvents")}</p>
@@ -82,6 +85,7 @@ function Events() {
                                 }
                             </div>
                         </div>
+
                         <div className={styles['events-section-sidebar']}>
                             <div className={styles['events-section-sidebar-reservation']}>
                                 <span className={styles['events-section-sidebar-reservation-icon']}>
