@@ -76,6 +76,12 @@
         "link1": "Politica de confidențialitate",
         "link2": "Termeni și condiții"
     },
+    "underConstruction": {
+        "imageAlt": "Ilustrație pagină în construcție",
+        "title": "În curând",
+        "message": "Lucrăm încă la această pagină. Revino în curând!",
+        "cta": "Înapoi la pagina principală"
+    },
     "apartmentPage": {
         "title": "Despre apartament si ghid de utilizare",
         "description": "Tot ce trebuie să știi pentru un sejur confortabil. Detalii despre apartament și modul de utilizare a obiectelor și facilităților disponibile.",

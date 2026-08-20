@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 380" role="img" aria-hidden="true">
+  <defs>
+    <pattern id="stripes" patternUnits="userSpaceOnUse" width="28" height="28" patternTransform="rotate(45)">
+      <rect width="28" height="28" fill="#f97316" />
+      <rect width="14" height="28" fill="#ffffff" />
+    </pattern>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="240" cy="345" rx="170" ry="18" fill="#E9E8E7" />
+
+  <!-- soft backdrop circle -->
+  <circle cx="240" cy="175" r="150" fill="#d2b583" opacity="0.18" />
+
+  <!-- caution tape ribbon -->
+  <g>
+    <rect x="30" y="150" width="420" height="34" rx="4" fill="url(#stripes)" transform="rotate(-4 240 167)" />
+    <rect x="30" y="150" width="420" height="34" rx="4" fill="none" stroke="#ffffff" stroke-width="2" transform="rotate(-4 240 167)" />
+  </g>
+
+  <!-- construction cone -->
+  <g transform="translate(120 150)">
+    <rect x="-42" y="118" width="84" height="14" rx="4" fill="#253a32" />
+    <polygon points="0,-6 34,112 -34,112" fill="#f97316" />
+    <polygon points="-22,66 22,66 27,86 -27,86" fill="#ffffff" />
+    <polygon points="-14,26 14,26 18,46 -18,46" fill="#ffffff" />
+    <rect x="-9" y="-16" width="18" height="14" rx="3" fill="#f97316" />
+  </g>
+
+  <!-- badge with tools -->
+  <g transform="translate(322 118)">
+    <circle r="56" fill="#253a32" />
+    <g stroke="#ffffff" stroke-width="7" stroke-linecap="round" fill="none">
+      <path d="M-22,22 L14,-14" />
+      <path d="M8,-30 a12,12 0 1 0 17,17 l-6,-6 2,-8 -8,2 z" fill="#ffffff" stroke="none" />
+      <path d="M-26,-24 L18,20" />
+      <path d="M-30,-30 l10,2 2,10 -8,8 -12,-12 z" fill="#ffffff" stroke="none" />
+    </g>
+  </g>
+
+  <!-- decorative sparks -->
+  <circle cx="70" cy="90" r="6" fill="#f97316" />
+  <circle cx="410" cy="230" r="5" fill="#d2b583" />
+  <circle cx="60" cy="260" r="4" fill="#253a32" opacity="0.5" />
+  <circle cx="400" cy="70" r="4" fill="#253a32" opacity="0.5" />
+</svg>

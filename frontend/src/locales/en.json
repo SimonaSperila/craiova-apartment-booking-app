@@ -75,6 +75,12 @@
         "link1": "Privacy Policy",
         "link2": "Terms and Conditions"
     },
+    "underConstruction": {
+        "imageAlt": "Under construction illustration",
+        "title": "Coming soon",
+        "message": "We're still working on this page. Please check back soon!",
+        "cta": "Back to home"
+    },
      "apartmentPage": {
         "title": "About the Apartment and Usage Guide",
         "description": "Everything you need to know for a comfortable stay. Details about the apartment and how to use the available objects and facilities.",
