@@ -1,5 +1,7 @@
 # Shakespeare Apartment Craiova
 
+**🚧 Work in Progress 🚧**
+
 A multilingual website for a short-term rental apartment in Craiova, Romania. It gives guests a digital user guide (check-in/check-out, house rules, contact info), showcases nearby attractions and events, and displays live guest reviews pulled from Booking.com.
 
 The project is split into four services, all wired together with Docker Compose:
