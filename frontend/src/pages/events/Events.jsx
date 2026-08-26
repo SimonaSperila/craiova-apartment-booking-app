@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import banner from "../../assets/events-banner.jpg";
 
 import EventCard from "./components/event-card/EventCard";
 import { API_BASE_URL } from "../../config";
+import { getActiveTemporaryBanner } from "./temporaryBanners";
 
 import styles from "./Events.module.css";
 
@@ -38,18 +40,33 @@ function Events() {
         ? futureEvents
         : futureEvents.filter(e => e.category === activeCategory);
 
+    const defaultBannerTitle = t("eventsPage.title");
+    const defaultBannerDescription = t("eventsPage.description");
+
+    const temporaryBanner = getActiveTemporaryBanner();
+    const bannerSrc = temporaryBanner ? temporaryBanner.image : banner;
+    const bannerAlt = temporaryBanner ? temporaryBanner.alt : "Events Banner";
+    const bannerTitle = temporaryBanner ? temporaryBanner.titleKey : defaultBannerTitle;
+    const bannerSubtitle = temporaryBanner ? temporaryBanner.subtitleKey : null;
+    const bannerDescription = temporaryBanner ? temporaryBanner.descriptionKey : defaultBannerDescription;
+    const bannerDate = temporaryBanner ? temporaryBanner.dateKey : null;
+
     return(
         <div className={styles["events-page"]}>
             <div className={styles["events-banner"]}>
                 <picture>
-                    <source media="(max-width: 768px)" srcSet={banner} />
-                    <img src={banner} alt="Events Banner" />
+                    <source media="(max-width: 768px)" srcSet={bannerSrc} />
+                    <img src={bannerSrc} alt={bannerAlt} />
                 </picture>
 
                 <div className={styles["container"] + " container"}>
                     <div className={styles["banner-content"]}>
-                        <h1>{t("eventsPage.title")}</h1>    
-                        <p>{t("eventsPage.description")}</p>
+                        {bannerTitle && <h1><a href="https://puppetsoccupystreet.ro/2026/08/16/program-stardust-edition-2026/" target="_blank" rel="noreferrer">
+                            {t(bannerTitle)} <FontAwesomeIcon icon={faArrowRight} /></a>
+                        </h1>}
+                        {bannerSubtitle && <p className={styles["banner-subtitle"]}>{t(bannerSubtitle)}</p>}
+                        {bannerDate && <p className={styles["banner-date"]}><FontAwesomeIcon icon={faCalendarDays} /> {t(bannerDate)}</p>}
+                        {bannerDescription && <p className={styles["banner-description"]}>{t(bannerDescription)}</p>}
                     </div>
                 </div>
             </div>

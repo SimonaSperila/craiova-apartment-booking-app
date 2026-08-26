@@ -1,5 +1,15 @@
 .events-banner {
 	position: relative;
+
+	picture {
+		display: block;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
 	.container {
 		position: absolute;
         top: 0;
@@ -15,12 +25,64 @@
 
 	.banner-content {
 		max-width: 600px;
+		background: rgba(0, 0, 0, 0.3);
+		padding: var(--spacing-lg);
+		border-radius: var(--radius);
+	}
+
+	.banner-description {
+		@media (max-width: 1585px) and (min-width: 769px) {
+			display: none;
+		}
+	}
+
+	@media (max-width: 768px) {
+		overflow: hidden;
+
+		picture {
+			position: absolute;
+			inset: 0;
+			z-index: 0;
+		}
+
+		img {
+			height: 100%;
+			object-fit: cover;
+			object-position: 68% center;
+		}
+
+		.container {
+			position: relative;
+			top: auto;
+			bottom: auto;
+			left: auto;
+			right: auto;
+			min-height: 380px;
+			padding: var(--spacing-xl) 0;
+		}
 	}
 
 	h1 {
-		color: var(--white);
 		margin: 0;
+
+		svg {
+			vertical-align: middle;
+		}
+	}
+
+	h1 a {
+		color: var(--white);
 		font-size: 2.5rem;
+	}
+
+	.banner-subtitle {
+		color: var(--orange);
+		text-transform: uppercase;
+		margin: var(--spacing-sm) 0;
+	}
+
+	.banner-date {
+		margin: var(--spacing-sm) 0;
 	}
 }
 

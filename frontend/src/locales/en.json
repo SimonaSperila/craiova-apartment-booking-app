@@ -57,6 +57,14 @@
             "title": "Plan your visit",
             "description": "Check the events during your stay and enjoy everything Craiova has to offer.",
             "checkAvailability": "Book the apartment"
+        },
+        "temporaryBanners": {
+            "puppets": {
+                "title": "Puppets Occupy Street",
+                "subtitle": "Stardust Edition",
+                "description": "The Colibri Theatre invites you to the 13th edition of the Puppets Occupy Street Festival, which will take place in Craiova from 25 August to 1 September 2026. The theme of this year's edition will be STARDUST! The festival will take place across multiple sections (performances & happenings; workshops; concerts; exhibitions; visual arts and installations; short films & animations) and will include street theatre, puppet shows, movement-based performances, interactive experiences, or anything that can bring a touch of wonder to the city of Craiova!",
+                "date": "25 August - 1 September 2026"
+            }
         }
     },
     "theApartment": {
