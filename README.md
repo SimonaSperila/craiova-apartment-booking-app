@@ -104,6 +104,8 @@ node scrape.js
 
 Launches a headless Chromium browser via Playwright, scrapes the configured Booking.com listing's reviews, and writes them to the database.
 
+> This is a personal-use script that checks the guest review score/count for my own Booking.com listing, run manually/occasionally — not a scheduled job and not run at scale.
+
 ## API
 
 The backend exposes:

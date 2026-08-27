@@ -1,3 +1,6 @@
+// Personal-use script: periodically checks the guest review score/count for
+// my own Booking.com listing (see BOOKING_URL below) so it can be shown on
+// this site. Run manually/occasionally, not scheduled or run at scale.
 const { chromium } = require("playwright");
 const mysql = require("mysql2/promise");
 
