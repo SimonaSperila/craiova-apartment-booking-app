@@ -8,13 +8,25 @@ const BOOKING_URL =
   "https://www.booking.com/hotel/ro/shakespeare-central-apartment.html";
 
 // -------------------- DB CONNECTION --------------------
-async function getDb() {
-  return await mysql.createConnection({
+async function getDb({ retries = 10, delayMs = 3000 } = {}) {
+  const config = {
     host: process.env.DB_HOST || "db",
     user: process.env.DB_USER || "user",
     password: process.env.DB_PASSWORD || "userpass",
     database: process.env.DB_NAME || "craiova",
-  });
+  };
+
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      return await mysql.createConnection(config);
+    } catch (err) {
+      if (attempt === retries) throw err;
+      console.log(
+        `DB not ready (attempt ${attempt}/${retries}): ${err.code || err.message}. Retrying in ${delayMs}ms...`
+      );
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
 }
 
 // -------------------- BROWSER --------------------
