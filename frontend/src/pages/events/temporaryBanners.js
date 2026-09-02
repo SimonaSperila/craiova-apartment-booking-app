@@ -13,6 +13,7 @@ export const TEMPORARY_BANNERS = [
         id: "puppets-2026",
         enabled: true,
         expiresOn: "2026-09-01",
+        link: "https://puppetsoccupystreet.ro/2026/08/16/program-stardust-edition-2026/",
         image: puppetsBanner,
         alt: "Stardust 2026 Events Banner",
         titleKey: "eventsPage.temporaryBanners.puppets.title",
