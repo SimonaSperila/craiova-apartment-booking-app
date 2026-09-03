@@ -42,32 +42,6 @@
         "viewAll": "Vezi toate atracțiile",
         "viewMap": "Vezi pe hartă"
     },
-    "eventsPage": {
-        "title": "Evenimente în Craiova",
-        "description": "Descoperă cele mai interesante evenimente care au loc în Craiova, pe tot parcursul anului.",
-        "categories": {
-            "all": "Toate",
-            "concerte": "Concerte",
-            "teatru": "Teatru",
-            "spectacole": "Spectacole",
-            "alteEvenimente": "Alte evenimente"
-        },
-        "noEvents": "Momentan nu sunt evenimente de afișat.",
-        "moreInfo": "Mai multe detalii",
-        "sidebar": {
-            "title": "Planifică-ți vizita",
-            "description": "Verifică evenimentele din perioada sejurului tău și bucură-te de tot ce are Craiova de oferit.",
-            "checkAvailability": "Rezervă apartamentul"
-        },
-        "temporaryBanners": {
-            "puppets": {
-                "title": "Puppets Occupy Street",
-                "subtitle": "Stardust Edition",
-                "description": "Teatrul Colibri vă invită la cea de-a 13-a ediție a Festivalului Puppets Occupy Street, care se va desfășura la Craiova în perioada 25 august – 1 septembrie 2026. Tema ediției din acest an va fi STARDUST! Festivalul se va desfășura pe mai multe secțiuni (spectacole & happenings; ateliere; concerte; expoziții; arte plastice și vizuale, instalații; scurtmetraje & animații) și va include teatru stradal, spectacole de păpuși, reprezentații bazate pe mișcare, experiențe interactive sau orice poate aduce un strop de uimire în orașul Craiova!",
-                "date": "25 August - 1 Septembrie 2026"
-            }
-        }
-    },
     "theApartment": {
         "subtitle": "Apartamentul",
         "title": "Confortul tău de acasă",
@@ -250,6 +224,48 @@
                 "text": "Dacă întâmpini orice problemă, nu ezita să ne contactezi.",
                 "phone": "Contactează-ne"
             }
+        }
+    },
+    "eventsPage": {
+        "title": "Evenimente în Craiova",
+        "description": "Descoperă cele mai interesante evenimente care au loc în Craiova, pe tot parcursul anului.",
+        "categories": {
+            "all": "Toate",
+            "concerte": "Concerte",
+            "teatru": "Teatru",
+            "spectacole": "Spectacole",
+            "alteEvenimente": "Alte evenimente"
+        },
+        "noEvents": "Momentan nu sunt evenimente de afișat.",
+        "moreInfo": "Mai multe detalii",
+        "sidebar": {
+            "title": "Planifică-ți vizita",
+            "description": "Verifică evenimentele din perioada sejurului tău și bucură-te de tot ce are Craiova de oferit.",
+            "checkAvailability": "Rezervă apartamentul",
+            "open": "Planifică-ți vizita",
+            "close": "Închide"
+        },
+        "temporaryBanners": {
+            "puppets": {
+                "title": "Puppets Occupy Street",
+                "subtitle": "Stardust Edition",
+                "description": "Teatrul Colibri vă invită la cea de-a 13-a ediție a Festivalului Puppets Occupy Street, care se va desfășura la Craiova în perioada 25 august – 1 septembrie 2026. Tema ediției din acest an va fi STARDUST! Festivalul se va desfășura pe mai multe secțiuni (spectacole & happenings; ateliere; concerte; expoziții; arte plastice și vizuale, instalații; scurtmetraje & animații) și va include teatru stradal, spectacole de păpuși, reprezentații bazate pe mișcare, experiențe interactive sau orice poate aduce un strop de uimire în orașul Craiova!",
+                "date": "25 August - 1 Septembrie 2026"
+            }
+        }
+    },
+    "galleryPage": {
+        "title": "Galerie",
+        "description": "Descoperă imagini din apartament și din împrejurimile sale.",
+        "categories": {
+            "all": "Toate",
+            "kitchen": "Bucătărie",
+            "livingRoom": "Living",
+            "bedroom": "Dormitor",
+            "bathroom": "Baie",
+            "balcony": "Balcon",
+            "hallway": "Hol",
+            "exterior": "Exterior"
         }
     }
 }

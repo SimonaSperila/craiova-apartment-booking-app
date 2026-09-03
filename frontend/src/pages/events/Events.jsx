@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import banner from "../../assets/events-banner.jpg";
 
 import EventCard from "./components/event-card/EventCard";
+import Tabs from "../../components/tabs/Tabs";
 import { API_BASE_URL } from "../../config";
 import { getActiveTemporaryBanner } from "./temporaryBanners";
 
@@ -22,6 +23,7 @@ const CATEGORY_LABEL_KEYS = {
 function Events() {
     const [events, setEvents] = useState([]);
     const [activeCategory, setActiveCategory] = useState("all");
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
@@ -80,49 +82,70 @@ function Events() {
                 <div className={styles['container'] + " container"}>
                     <div className={styles['events-section-main']}>
                         {categories.length > 1 && (
-                            <div className="tabs">
-                                {categories.map(category => (
-                                    <button
-                                        key={category}
-                                        className={"tab" + (activeCategory === category ? " tab--active" : "")}
-                                        onClick={() => setActiveCategory(category)}
-                                    >
-                                        {category === "all"
-                                            ? t("eventsPage.categories.all")
-                                            : t(CATEGORY_LABEL_KEYS[category] || category)}
-                                    </button>
-                                ))}
-                            </div>
+                            <Tabs
+                                tabs={categories.map(category => ({
+                                    id: category,
+                                    label: category === "all"
+                                        ? t("eventsPage.categories.all")
+                                        : t(CATEGORY_LABEL_KEYS[category] || category),
+                                }))}
+                                activeTab={activeCategory}
+                                onChange={setActiveCategory}
+                            />
                         )}
                     </div>
 
                     <div className={styles['events-section-content']}>
-                        <div className={styles['events-section-content-list']}>
-                            <div className={styles['events-list']}>
-                                {visibleEvents.length === 0
-                                    ? <p>{t("eventsPage.noEvents")}</p>
-                                    : visibleEvents.map(event => (
-                                        <EventCard key={event.id} event={event} />
-                                    ))
-                                }
-                            </div>
-                        </div>
-
-                        <div className={styles['events-section-sidebar']}>
-                            <div className={styles['events-section-sidebar-reservation']}>
-                                <span className={styles['events-section-sidebar-reservation-icon']}>
-                                    <FontAwesomeIcon icon={faCalendarDays} />
-                                </span>
-                                <h3 className={styles['events-section-sidebar-reservation-title']}>{t("eventsPage.sidebar.title")}</h3>
-                                <p className={styles['events-section-sidebar-reservation-description']}>{t("eventsPage.sidebar.description")}</p>
-                                <a href="https://www.booking.com/hotel/ro/shakespeare-central-apartment.html" target="_blank" rel="noreferrer" className={styles['events-section-sidebar-reservation-button'] + " btn btn-primary"}>
-                                    {t("eventsPage.sidebar.checkAvailability")}
-                                    <FontAwesomeIcon icon={faCalendarDays} />
-                                </a>
-                            </div>
+                        <div className={styles['events-list']}>
+                            {visibleEvents.length === 0
+                                ? <p>{t("eventsPage.noEvents")}</p>
+                                : visibleEvents.map(event => (
+                                    <EventCard key={event.id} event={event} />
+                                ))
+                            }
                         </div>
                     </div>
+
+                    
                 </div>
+            </div>
+
+            <button
+                className={styles['events-section-open-sidebar']}
+                onClick={() => setIsSidebarOpen(true)}
+                aria-label={t("eventsPage.sidebar.open")}
+            >
+                <span className={styles['events-section-sidebar-reservation-icon']}>
+                    <FontAwesomeIcon icon={faCalendarDays} />
+                </span>
+            </button>
+
+            {isSidebarOpen && (
+                <div
+                    className={styles['events-section-sidebar-backdrop']}
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
+            <div className={styles['events-section-sidebar-reservation'] + (isSidebarOpen ? " " + styles['is-open'] : "")}>
+                <button
+                    className={styles['events-section-sidebar-close']}
+                    onClick={() => setIsSidebarOpen(false)}
+                    aria-label={t("eventsPage.sidebar.close")}
+                >
+                    <FontAwesomeIcon icon={faXmark} />
+                </button>
+                <h3 className={styles['events-section-sidebar-reservation-title']}>
+                    <span className={styles['events-section-sidebar-reservation-icon']}>
+                        <FontAwesomeIcon icon={faCalendarDays} />
+                    </span>
+                    {t("eventsPage.sidebar.title")}
+                </h3>
+                <p className={styles['events-section-sidebar-reservation-description']}>{t("eventsPage.sidebar.description")}</p>
+                <a href="https://www.booking.com/hotel/ro/shakespeare-central-apartment.html" target="_blank" rel="noreferrer" className={styles['events-section-sidebar-reservation-button'] + " btn btn-primary"}>
+                    {t("eventsPage.sidebar.checkAvailability")}
+                    <FontAwesomeIcon icon={faCalendarDays} />
+                </a>
             </div>
         </div>
     );
