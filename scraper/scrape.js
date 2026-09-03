@@ -9,11 +9,19 @@ const BOOKING_URL =
 
 // -------------------- DB CONNECTION --------------------
 async function getDb({ retries = 10, delayMs = 3000 } = {}) {
+  const ssl = process.env.DB_SSL_CA
+    ? { ca: process.env.DB_SSL_CA }
+    : process.env.DB_SSL === "true"
+    ? { rejectUnauthorized: false }
+    : undefined;
+
   const config = {
     host: process.env.DB_HOST || "db",
+    port: process.env.DB_PORT || 3306,
     user: process.env.DB_USER || "user",
     password: process.env.DB_PASSWORD || "userpass",
     database: process.env.DB_NAME || "craiova",
+    ssl,
   };
 
   for (let attempt = 1; attempt <= retries; attempt++) {
