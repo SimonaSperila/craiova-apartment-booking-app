@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTriangleExclamation, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import ImageSlider from '../../../../components/slider/ImageSlider';
 import TextSlider from '../../../../components/slider/TextSlider';
+import Tabs from '../../../../components/tabs/Tabs';
 import styles from "./UserGuide.module.css";
 
 const TABS = [
@@ -39,17 +40,11 @@ function UserGuide() {
                 <h2>{t('apartmentPage.userGuide.title')}</h2>
                 <p>{t('apartmentPage.userGuide.description')}</p>
 
-                <div className="tabs">
-                    {TABS.map((tab) => (
-                        <button
-                            key={tab.id}
-                            className={"tab" + (activeTab === tab.id ? " tab--active" : "")}
-                            onClick={() => setActiveTab(tab.id)}
-                        >
-                            {t(`${tab.key}.title`)}
-                        </button>
-                    ))}
-                </div>
+                <Tabs
+                    tabs={TABS.map((tab) => ({ id: tab.id, label: t(`${tab.key}.title`) }))}
+                    activeTab={activeTab}
+                    onChange={setActiveTab}
+                />
 
                 <div className={styles["tab-content"] + " tab-content"}>
                     <ImageSlider key={`image-${activeTab}`} images={TAB_IMAGES[activeTab]} alt={title} />
