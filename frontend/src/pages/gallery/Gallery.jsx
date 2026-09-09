@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Tabs from "../../components/tabs/Tabs";
 import Lightbox from "../../components/lightbox/Lightbox";
 import banner from "../../assets/gallery-banner.jpg";
+import mobileBanner from "../../assets/gallery-banner-mobile.jpg";
 
 import styles from "./Gallery.module.css";
 
@@ -68,7 +69,7 @@ function Gallery() {
         <div className={styles["gallery-page"]}>
             <div className={styles["gallery-banner"]}>
                 <picture>
-                    <source media="(max-width: 768px)" srcSet={banner} />
+                    <source media="(max-width: 768px)" srcSet={mobileBanner} />
                     <img src={banner} alt="Gallery Banner" />
                 </picture>
 

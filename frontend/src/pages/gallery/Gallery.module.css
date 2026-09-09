@@ -23,7 +23,8 @@
     }
 
     .banner-content {
-        max-width: 600px;
+        max-width: 400px;
+        text-align: center;
     }
 }
 
@@ -51,7 +52,7 @@
     }
 
     @media (min-width: 769px) {
-        column-count: 3;
+        column-count: 4;
     }
 }
 
