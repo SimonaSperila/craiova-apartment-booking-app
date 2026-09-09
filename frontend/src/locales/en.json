@@ -10,10 +10,10 @@
     },
     "nav": {
         "home": "Home",
-        "apartment": "Apartment",
+        "apartment": "The Property",
         "events": "Events",
         "gallery": "Gallery",
-        "attractions": "Places to Visit",
+        "attractions": "Local Area",
         "contact": "Contact"
     },
     "benefitsHomepage": {
