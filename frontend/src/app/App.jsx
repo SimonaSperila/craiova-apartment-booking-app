@@ -9,6 +9,7 @@ import UnderConstruction from "../components/UnderConstruction/UnderConstruction
 import Home from "../pages/home/Home";
 import Apartment from "../pages/apartment/Apartment";
 import Events from "../pages/events/Events";
+import Gallery from "../pages/gallery/Gallery";
 
 function ComingSoonPage({ navKey }) {
 	const { t } = useTranslation();
@@ -26,7 +27,7 @@ function App() {
 					<Route index element={<Home />} />
 					<Route path="apartment" element={<Apartment />} />
 					<Route path="events" element={<Events />} />
-					<Route path="gallery" element={<ComingSoonPage navKey="gallery" />} />
+					<Route path="gallery" element={<Gallery />} />
 					<Route path="attractions" element={<ComingSoonPage navKey="attractions" />} />
 					<Route path="contact" element={<ComingSoonPage navKey="contact" />} />
 				</Route>
