@@ -7,8 +7,6 @@ import Logo from "./logo/Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { NavLink, useLocation } from "react-router-dom";
 
-import styles from "./logo/Logo.module.css";
-
 function Header() {
   	const { i18n, t } = useTranslation();
 	const lang = i18n.language;

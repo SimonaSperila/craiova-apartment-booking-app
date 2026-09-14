@@ -266,5 +266,38 @@
             "hallway": "Hallway",
             "exterior": "Exterior"
         }
+    },
+    "localAreaPage": {
+        "title": "Discover Craiova",
+        "description": "Stay in the heart of the city and enjoy everything Craiova has to offer. From beautiful landmarks and cultural events to charming cafés and local restaurants, the city blends history, art and a vibrant atmosphere — all within walking distance or a short ride from your apartment.",
+        "bannerIcons": {
+            "landmark": "Landmarks",
+            "theater": "Theater & Events",
+            "coffee": "Cafés & Restaurants",
+            "location": "Easy Access & Transport"
+        },
+        "restaurantsSection": {
+            "title": "Where to Eat",
+            "subtitle": "Food & Drink",
+            "description": "Restaurants near the apartment, just a few steps away.",
+            "viewMap": "View on Google Maps",
+            "noResults": "No restaurants in this category.",
+            "categories": {
+                "romanian": "Romanian",
+                "pizza": "Pizza",
+                "mediterranean": "Mediterranean",
+                "contemporary": "Contemporary",
+                "fusion": "Fusion",
+                "italian": "Italian",
+                "international": "International",
+                "steakhouse": "Steakhouse",
+                "brunch": "Brunch",
+                "fineDining": "Fine Dining",
+                "wineBar": "Wine Bar",
+                "burgers": "Burgers",
+                "pub": "Pub",
+                "asian": "Asian"
+            }
+        }
     }
 }

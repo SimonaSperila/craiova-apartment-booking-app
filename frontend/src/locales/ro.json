@@ -267,5 +267,38 @@
             "hallway": "Hol",
             "exterior": "Exterior"
         }
+    },
+    "localAreaPage": {
+        "title": "Descoperă Craiova",
+        "description": "Bucură-te de oraș chiar din inima Craiovei și descoperă tot ce are de oferit. De la obiective culturale și evenimente, la cafenele cochete și restaurante locale, Craiova îmbină istoria, arta și atmosfera vibrantă a orașului — multe dintre ele fiind la câțiva pași sau la o scurtă plimbare cu mașina de apartament.",
+        "bannerIcons": {
+            "landmark": "Obiective turistice",
+            "theater": "Teatru și evenimente",
+            "coffee": "Cafenele și restaurante",
+            "location": "Acces facil și transport"
+        },
+        "restaurantsSection": {
+            "title": "Unde să mănânci",
+            "subtitle": "Mâncare și băutură",
+            "description": "Restaurantele din apropierea apartamentului, la câțiva pași distanță.",
+            "viewMap": "Vezi pe Google Maps",
+            "noResults": "Niciun restaurant pentru această categorie.",
+            "categories": {
+                "romanian": "Românesc",
+                "pizza": "Pizza",
+                "mediterranean": "Mediteranean",
+                "contemporary": "Contemporan",
+                "fusion": "Fusion",
+                "italian": "Italian",
+                "international": "Internațional",
+                "steakhouse": "Steakhouse",
+                "brunch": "Brunch",
+                "fineDining": "Fine Dining",
+                "wineBar": "Bar de vinuri",
+                "burgers": "Burgeri",
+                "pub": "Pub",
+                "asian": "Asiatic"
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ import Home from "../pages/home/Home";
 import Apartment from "../pages/apartment/Apartment";
 import Events from "../pages/events/Events";
 import Gallery from "../pages/gallery/Gallery";
+import LocalArea from "../pages/local-area/LocalArea";
 
 function ComingSoonPage({ navKey }) {
 	const { t } = useTranslation();
@@ -28,7 +29,7 @@ function App() {
 					<Route path="apartment" element={<Apartment />} />
 					<Route path="events" element={<Events />} />
 					<Route path="gallery" element={<Gallery />} />
-					<Route path="attractions" element={<ComingSoonPage navKey="attractions" />} />
+					<Route path="attractions" element={<LocalArea />} />
 					<Route path="contact" element={<ComingSoonPage navKey="contact" />} />
 				</Route>
 			</Routes>

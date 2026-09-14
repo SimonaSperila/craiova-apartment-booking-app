@@ -128,6 +128,35 @@ INSERT INTO `places` VALUES (1,140,44.31915952,23.79910704,'teatru.jpg','2026-05
 UNLOCK TABLES;
 
 --
+-- Table structure for table `restaurants`
+--
+
+DROP TABLE IF EXISTS `restaurants`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `restaurants` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `distance_m` int NOT NULL,
+  `google_maps_url` varchar(500) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `rating` decimal(2,1) DEFAULT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `restaurants`
+--
+
+LOCK TABLES `restaurants` WRITE;
+/*!40000 ALTER TABLE `restaurants` DISABLE KEYS */;
+INSERT INTO `restaurants` (`id`, `name`, `distance_m`, `google_maps_url`, `rating`, `category`) VALUES (1,'Restaurant Ardelenesc Oșanu',260,'https://maps.app.goo.gl/YxvGWuhrQCAZEyr98',4.4,'Romanian'),(2,'Trattoria 64',950,'https://maps.app.goo.gl/j1sgYEodM1pmHezE6',4.9,'Pizza'),(3,'SteSo Restaurant',600,'https://maps.app.goo.gl/X9qqxbDRQvtTyzgF6',4.9,'Mediterranean'),(4,'Artizan35',850,'https://maps.app.goo.gl/v7JJmD5UwoJ5gxbL8',4.5,'Contemporary'),(5,'Craft',700,'https://maps.app.goo.gl/Pno7vgCySoc4SNAi7',4.6,'Fusion'),(6,'The Manor Restaurant & Lounge',900,'https://maps.app.goo.gl/rntqywULNGreHxEE6',4.6,'Contemporary'),(7,'Padella1895',800,'https://maps.app.goo.gl/bkxEyCRkdehu8x1G6',4.5,'Italian'),(8,'Restaurant Voga Craiova',350,'https://maps.app.goo.gl/FJVjPeMarNmef6xj6',4.7,'International'),(9,'Epoca Steak House & Wine Bar Restaurant',900,'https://maps.app.goo.gl/S3BrdyBDnY9VggmZ8',4.5,'Steakhouse'),(10,'Casa Ghincea',700,'https://maps.app.goo.gl/SiyY1vT6HTheWxFB7',4.4,'Romanian'),(11,'Nolla Brunch',700,'https://maps.app.goo.gl/SdZrSQXm4BxKQ1Zh7',4.9,'Brunch'),(12,'Nobel Cuisine by Andrei Voica',700,'https://maps.app.goo.gl/izMcFNW4fWc35kRo9',4.5,'Fine Dining'),(13,'Trattoria Il Calcio',950,'https://maps.app.goo.gl/4kRB72RUY6ZSieEv8',4.4,'Italian'),(14,'La Papanu',160,'https://maps.app.goo.gl/ns49C5Cbupa4sNBy6',4.4,'Contemporary'),(15,'Bottega del Vino',650,'https://maps.app.goo.gl/yP1YPrwC8CfsDMzWA',4.4,'Wine Bar'),(16,'One Garden',400,'https://maps.app.goo.gl/CgnqpgLqGtkyZran7',4.2,'International'),(17,'Sofia',650,'https://maps.app.goo.gl/HXr9qdq8tL4SWJSi8',4.3,'International'),(18,'Downtown - Contemporary Bar & Food',350,'https://maps.app.goo.gl/Kfsb7HmQqBbZKwbV8',4.2,'Contemporary'),(19,'Mr.Burger',400,'https://maps.app.goo.gl/FWPiEFGbNtoTZH399',4.8,'Burgers'),(20,'Curtea Veche Biergarten',600,'https://maps.app.goo.gl/QngWwXv9528M75AS9',4.6,'Pub'),(21,'Pho Chanh',350,'https://maps.app.goo.gl/6kPNp2kt26ouFR4t7',4.8,'Asian');
+/*!40000 ALTER TABLE `restaurants` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `reviews`
 --
 

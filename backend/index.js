@@ -89,6 +89,20 @@ app.get("/events", (req, res) => {
   });
 });
 
+// GET restaurants
+app.get("/restaurants", (req, res) => {
+  const sql = `
+    SELECT id, name, distance_m, google_maps_url, rating, category
+    FROM restaurants
+    ORDER BY id ASC
+  `;
+
+  db.query(sql, (err, results) => {
+    if (err) return res.status(500).json(err);
+    res.json(results);
+  });
+});
+
 app.get("/reviews", (req, res) => {
   const sqlRun = `
     SELECT id, score_number, score_text, reviews_text

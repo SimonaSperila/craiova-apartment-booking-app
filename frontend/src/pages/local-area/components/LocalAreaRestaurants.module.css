@@ -1,0 +1,99 @@
+.local-area-restaurants {
+    padding: var(--spacing-xl) 0;
+}
+
+.local-area-restaurants-header {
+    max-width: 620px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.restaurants-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.restaurant-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--spacing-lg) var(--spacing-xl-r);
+}
+
+.restaurant-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.restaurant-top {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.restaurant-top h3 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.restaurant-category {
+    background: var(--gray-200);
+    color: var(--gray-700);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 4px 10px;
+    border-radius: var(--radius);
+}
+
+.restaurant-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: var(--gray-700);
+}
+
+.restaurant-meta svg {
+    color: var(--gray-500);
+    margin-right: 6px;
+}
+
+.restaurant-rating {
+    color: var(--gray-900);
+    font-weight: 600;
+}
+
+.restaurant-rating svg {
+    color: var(--orange);
+}
+
+.btn-map {
+    flex-shrink: 0;
+    background: var(--bg-btn-secondary);
+    color: #000;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-map:hover {
+    text-decoration: none;
+    background-color: color-mix(in srgb, var(--bg-btn-secondary) 80%, transparent);
+}
