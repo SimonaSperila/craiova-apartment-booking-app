@@ -283,6 +283,15 @@
             "description": "Restaurantele din apropierea apartamentului, la câțiva pași distanță.",
             "viewMap": "Vezi pe Google Maps",
             "noResults": "Niciun restaurant pentru această categorie.",
+            "showMore": "Arată mai mult",
+            "showLess": "Arată mai puțin",
+            "recommendation": {
+                "badge": "Recomandarea noastră",
+                "descriptions": {
+                    "1": "Cu 4.4 din 5 pe Google și recenzii care laudă porțiile generoase și bucătăria ardelenească autentică, e alegerea noastră pentru o masă tradițională — și la doar 260 m de apartament, perfect pentru o seară fără planuri de transport.",
+                    "24": "Cu 4.5 din 5 pe Google, ECLER by DesserTime este alegerea noastră pentru ceva dulce — eclere fine și prăjituri de casă, la doar 230 m de apartament."
+                }
+            },
             "categories": {
                 "romanian": "Românesc",
                 "pizza": "Pizza",
@@ -297,8 +306,18 @@
                 "wineBar": "Bar de vinuri",
                 "burgers": "Burgeri",
                 "pub": "Pub",
-                "asian": "Asiatic"
+                "asian": "Asiatic",
+                "dessertShop": "Cofetărie"
             }
+        },
+        "placesSection": {
+            "subtitle": "Descoperă Craiova",
+            "title": "Ce să vizitezi",
+            "description": "Obiective turistice și locuri de plimbare la scurtă distanță de apartament.",
+            "viewMap": "Vezi pe hartă",
+            "noResults": "Niciun obiectiv turistic disponibil momentan.",
+            "showMore": "Arată mai mult",
+            "showLess": "Arată mai puțin"
         }
     }
 }

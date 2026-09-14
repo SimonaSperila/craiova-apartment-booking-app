@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faStar, faArrowRightLong, faHeart, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
-import Tabs from "../../../components/tabs/Tabs";
-import { API_BASE_URL } from "../../../config";
+import { API_BASE_URL } from "../../../../config";
 import styles from "./LocalAreaRestaurants.module.css";
 
 const CATEGORY_LABEL_KEYS = {
@@ -22,9 +21,10 @@ const CATEGORY_LABEL_KEYS = {
     Burgers: "localAreaPage.restaurantsSection.categories.burgers",
     Pub: "localAreaPage.restaurantsSection.categories.pub",
     Asian: "localAreaPage.restaurantsSection.categories.asian",
+    "Dessert Shop": "localAreaPage.restaurantsSection.categories.dessertShop",
 };
 
-const DEFAULT_CATEGORY = "Romanian";
+const INITIAL_VISIBLE_COUNT = 4;
 
 const formatDistance = (distance) => {
     const value = Number(distance);
@@ -40,7 +40,7 @@ const formatDistance = (distance) => {
 
 function LocalAreaRestaurants() {
     const [restaurants, setRestaurants] = useState([]);
-    const [activeCategory, setActiveCategory] = useState(DEFAULT_CATEGORY);
+    const [showAll, setShowAll] = useState(false);
     const { t } = useTranslation();
 
     useEffect(() => {
@@ -49,34 +49,23 @@ function LocalAreaRestaurants() {
             .then(data => setRestaurants(data));
     }, []);
 
-    const categories = [...new Set(restaurants.map(r => r.category).filter(Boolean))];
-    const visibleRestaurants = restaurants.filter(r => r.category === activeCategory);
+    const visibleRestaurants = showAll ? restaurants : restaurants.slice(0, INITIAL_VISIBLE_COUNT);
+    const recommendedRestaurants = restaurants.filter(r => Number(r.recommended) === 1);
 
     return (
         <div className={styles["local-area-restaurants"]}>
-            <div className={styles["container"] + " container"}>
+            <div className="container">
                 <div className={styles["local-area-restaurants-header"]}>
                     <span className="small-title">{t("localAreaPage.restaurantsSection.subtitle")}</span>
                     <h2>{t("localAreaPage.restaurantsSection.title")}</h2>
                     <p>{t("localAreaPage.restaurantsSection.description")}</p>
                 </div>
 
-                {categories.length > 0 && (
-                    <Tabs
-                        tabs={categories.map(category => ({
-                            id: category,
-                            label: t(CATEGORY_LABEL_KEYS[category] || category),
-                        }))}
-                        activeTab={activeCategory}
-                        onChange={setActiveCategory}
-                    />
-                )}
-
                 <div className={styles["restaurants-list"]}>
-                    {visibleRestaurants.length === 0
+                    {restaurants.length === 0
                         ? <p>{t("localAreaPage.restaurantsSection.noResults")}</p>
                         : visibleRestaurants.map(restaurant => (
-                            <div key={restaurant.id} className={styles["restaurant-item"]}>
+                            <div key={restaurant.id} className="row-card">
                                 <div className={styles["restaurant-main"]}>
                                     <div className={styles["restaurant-top"]}>
                                         <h3>{restaurant.name}</h3>
@@ -99,14 +88,62 @@ function LocalAreaRestaurants() {
                                     href={restaurant.google_maps_url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={styles["btn-map"]}
+                                    className="btn-map"
                                 >
+                                    <FontAwesomeIcon icon={faArrowRightLong} />
                                     {t("localAreaPage.restaurantsSection.viewMap")}
                                 </a>
                             </div>
                         ))
                     }
                 </div>
+
+                {restaurants.length > INITIAL_VISIBLE_COUNT && (
+                    <div className="show-more-wrapper">
+                        <button
+                            type="button"
+                            className="btn-show-more"
+                            onClick={() => setShowAll(prev => !prev)}
+                        >
+                            {showAll
+                                ? t("localAreaPage.restaurantsSection.showLess")
+                                : t("localAreaPage.restaurantsSection.showMore")}
+                        </button>
+                    </div>
+                )}
+
+                <div className={styles["recommendation-section"]}>
+                    {recommendedRestaurants.map(recommendedRestaurant => (
+                        <div key={recommendedRestaurant.id} className={styles["recommend-card"]}>
+                            <div className={styles["recommend-icon"]}>
+                                <FontAwesomeIcon icon={faHeart} />
+                            </div>
+                            <div className={styles["recommend-body"]}>
+                                <span className={styles["recommend-badge"]}>
+                                    {t("localAreaPage.restaurantsSection.recommendation.badge")}
+                                </span>
+                                <div className={styles["recommend-top"]}>
+                                    <h3>{recommendedRestaurant.name}</h3>
+                                    <span className={styles["restaurant-category"]}>
+                                        {t(CATEGORY_LABEL_KEYS[recommendedRestaurant.category] || recommendedRestaurant.category)}
+                                    </span>
+                                </div>
+                                <p>{t(`localAreaPage.restaurantsSection.recommendation.descriptions.${recommendedRestaurant.id}`)}</p>
+                                <a
+                                    href={recommendedRestaurant.google_maps_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles["btn-recommend"]}
+                                >
+                                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                    {t("localAreaPage.restaurantsSection.viewMap")}
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="section-divider"></div>
             </div>
         </div>
     );

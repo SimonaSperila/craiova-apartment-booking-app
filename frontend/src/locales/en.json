@@ -282,6 +282,15 @@
             "description": "Restaurants near the apartment, just a few steps away.",
             "viewMap": "View on Google Maps",
             "noResults": "No restaurants in this category.",
+            "showMore": "Show more",
+            "showLess": "Show less",
+            "recommendation": {
+                "badge": "Our Recommendation",
+                "descriptions": {
+                    "1": "With 4.4 out of 5 on Google and reviews praising the generous portions and authentic Ardelenesc cooking, it's our pick for a traditional meal — and just 260 m from the apartment, no need to plan transport.",
+                    "24": "With 4.5 out of 5 on Google, ECLER by DesserTime is our pick for something sweet — delicate eclairs and homemade pastries, just 230 m from the apartment."
+                }
+            },
             "categories": {
                 "romanian": "Romanian",
                 "pizza": "Pizza",
@@ -296,8 +305,18 @@
                 "wineBar": "Wine Bar",
                 "burgers": "Burgers",
                 "pub": "Pub",
-                "asian": "Asian"
+                "asian": "Asian",
+                "dessertShop": "Dessert Shop"
             }
+        },
+        "placesSection": {
+            "subtitle": "Discover Craiova",
+            "title": "What to Visit",
+            "description": "Landmarks and places to explore within a short walk of the apartment.",
+            "viewMap": "View on map",
+            "noResults": "No landmarks available right now.",
+            "showMore": "Show more",
+            "showLess": "Show less"
         }
     }
 }

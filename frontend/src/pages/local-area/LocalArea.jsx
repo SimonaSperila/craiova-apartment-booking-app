@@ -4,7 +4,8 @@ import mobileBanner from "../../assets/gallery-banner-mobile.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLandmark, faMasksTheater, faMugHot, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-import LocalAreaSection from "./components/LocalAreaRestaurants";
+import LocalAreaSection from "./components/restaurants/LocalAreaRestaurants";
+import LocalAreaPlacesToVisit from "./components/places-to-visit/LocalAreaPlacesToVisit";
 import styles from "./LocalArea.module.css";
 
 
@@ -25,7 +26,7 @@ function LocalArea() {
                             <h1>{t("localAreaPage.title")}</h1>
                             <p>{t("localAreaPage.description")}</p>
                         </div>
-                        <div className={styles["banner-icons"]}>
+                        {/* <div className={styles["banner-icons"]}>
                             <div className={styles["banner-icon"]}>
                                 <FontAwesomeIcon icon={faLandmark} />
                                 <p>{t("localAreaPage.bannerIcons.landmark")}</p>
@@ -42,12 +43,13 @@ function LocalArea() {
                                 <FontAwesomeIcon icon={faLocationDot} />
                                 <p>{t("localAreaPage.bannerIcons.location")}</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
             
             <LocalAreaSection />
+            <LocalAreaPlacesToVisit />
         </div>
     );
 };

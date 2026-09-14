@@ -1,0 +1,213 @@
+.local-area-restaurants {
+    padding: var(--spacing-xl) 0;
+}
+
+.local-area-restaurants-header {
+    max-width: 620px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.restaurants-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.restaurant-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.restaurant-top {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.restaurant-top h3 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.restaurant-category {
+    background: var(--gray-200);
+    color: var(--gray-700);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 4px 10px;
+    border-radius: var(--radius);
+}
+
+.restaurant-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: var(--gray-700);
+}
+
+.restaurant-meta svg {
+    color: var(--gray-500);
+    margin-right: 6px;
+}
+
+.restaurant-rating {
+    color: var(--gray-900);
+    font-weight: 600;
+}
+
+.restaurant-rating svg {
+    color: var(--orange);
+}
+
+.recommendation-section {
+    margin-top: var(--spacing-lg-r);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    background: var(--bg-btn-secondary);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+}
+
+.recommend-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.recommend-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--green-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+.recommend-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.recommend-badge {
+    text-transform: uppercase;
+    color: var(--green-900);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.recommend-top {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+.recommend-top h3 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.recommend-body p {
+    color: var(--gray-900);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 0 14px;
+}
+
+.btn-recommend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: var(--green-900);
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 11px 18px;
+    border-radius: var(--radius);
+    text-decoration: none;
+
+    svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.btn-recommend:hover {
+    text-decoration: none;
+    background: var(--green-700);
+}
+
+@media (min-width: 769px) {
+    .recommend-card {
+        margin-top: var(--spacing-lg);
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 22px;
+        padding: 28px 32px;
+    }
+
+    .recommend-icon {
+        width: 48px;
+        height: 48px;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .recommend-body {
+        min-width: 240px;
+    }
+
+    .recommend-badge {
+        font-size: 0.78rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .recommend-top {
+        gap: var(--spacing-sm-r);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .recommend-top h3 {
+        font-size: 1.3rem;
+    }
+
+    .recommend-body p {
+        font-size: 0.95rem;
+        margin: 0 0 var(--spacing-lg-r);
+        max-width: 600px;
+    }
+
+    .btn-recommend {
+        display: inline-flex;
+        padding: var(--spacing-sm-r) var(--spacing-lg);
+    }
+}

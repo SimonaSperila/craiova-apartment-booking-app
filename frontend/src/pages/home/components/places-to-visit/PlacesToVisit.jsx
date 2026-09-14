@@ -55,7 +55,9 @@ function PlacesToVisit({ place }) {
                     <a href="/places" className={styles['btn'] + " btn btn-primary"}>{t("placesToVisit.viewAll")}</a>
                 </div>
                 <div className={styles['places-list']}>
-                    {places.map(p => (
+                    {places
+                        .filter(p => Number(p.show_on_homepage) === 1)
+                        .map(p => (
                         <div key={p.id} className={styles['place-item']}>
                             <img src={images[p.image]} alt={p.name} className={styles['place-image']} />
                             <h3>{p.name}</h3>
@@ -65,7 +67,7 @@ function PlacesToVisit({ place }) {
                                     <FontAwesomeIcon icon={faLocationDot} />
                                     {formatDistance(p.distance_m)}
                                 </span>
-                                <a href={`https://www.google.com/maps?q=${p.latitude},${p.longitude}`} target="_blank" rel="noopener noreferrer" className={styles['btn-map']}>{t("placesToVisit.viewMap")}</a>
+                                <a href={p.google_maps_url} target="_blank" rel="noopener noreferrer" className={styles['btn-map']}>{t("placesToVisit.viewMap")}</a>
                             </p>
                         </div>
                     ))}
