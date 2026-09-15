@@ -34,7 +34,7 @@ function LocalAreaPlacesToVisit() {
     const visiblePlaces = showAll ? places : places.slice(0, INITIAL_VISIBLE_COUNT);
 
     return (
-        <div className={styles["local-area-places"]}>
+        <div id="what-to-visit" className={styles["local-area-places"]}>
             <div className="container">
                 <div className={styles["local-area-places-header"]}>
                     <span className="small-title">{t("localAreaPage.placesSection.subtitle")}</span>

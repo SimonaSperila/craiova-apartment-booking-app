@@ -104,6 +104,21 @@ app.get("/restaurants", (req, res) => {
   });
 });
 
+// GET local_businesses
+app.get("/local-businesses", (req, res) => {
+  const sql = `
+    SELECT id, name, distance_m, category, google_maps_url, is_24_7 
+    FROM local_businesses
+    ORDER BY distance_m ASC
+  `;
+
+  db.query(sql, (err, results) => {
+    if (err) return res.status(500).json(err);
+    res.json(results);
+  });
+});
+
+// GET reviews
 app.get("/reviews", (req, res) => {
   const sqlRun = `
     SELECT id, score_number, score_text, reviews_text

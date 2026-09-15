@@ -13,7 +13,7 @@
         "apartment": "The Property",
         "events": "Events",
         "gallery": "Gallery",
-        "attractions": "Local Area",
+        "local-area": "Local Area",
         "contact": "Contact"
     },
     "benefitsHomepage": {
@@ -287,8 +287,8 @@
             "recommendation": {
                 "badge": "Our Recommendation",
                 "descriptions": {
-                    "1": "With 4.4 out of 5 on Google and reviews praising the generous portions and authentic Ardelenesc cooking, it's our pick for a traditional meal — and just 260 m from the apartment, no need to plan transport.",
-                    "24": "With 4.5 out of 5 on Google, ECLER by DesserTime is our pick for something sweet — delicate eclairs and homemade pastries, just 230 m from the apartment."
+                    "1": "Authentic Transylvanian cuisine and generous portions, just 260 m from the apartment. Our choice for a traditional, delicious meal within easy walking distance.",
+                    "24": "ECLER by DesserTime is our recommendation for lovers of fine desserts. Discover delicious eclairs and homemade cakes, carefully prepared. Just 230 m from the apartment, it is the perfect spot for a sweet treat."
                 }
             },
             "categories": {
@@ -317,6 +317,21 @@
             "noResults": "No landmarks available right now.",
             "showMore": "Show more",
             "showLess": "Show less"
+        },
+       "businessSection": {
+            "subtitle": "Practical",
+            "title": "Shopping Nearby",
+            "description": "Everything you need for everyday or occasional shopping, just steps or a few minutes' walk from the apartment.",
+            "noResults": "No shops available right now.",
+            "open24": "Open 24/7",
+            "categories": {
+                "mall": "Mall",
+                "drogherie": "Drogherie",
+                "coffeeShop": "Coffee Shop",
+                "centrucommercial": "Commercial Center",
+                "supermarket": "Supermarket",
+                "farmacie": "Pharmacy"
+            }
         }
     }
 }

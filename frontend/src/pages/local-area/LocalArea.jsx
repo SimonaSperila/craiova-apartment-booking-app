@@ -1,16 +1,46 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import banner from "../../assets/local-area-banner.jpg";
-import mobileBanner from "../../assets/gallery-banner-mobile.jpg";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLandmark, faMasksTheater, faMugHot, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import mobileBanner from "../../assets/local-area-banner-mobile.jpg";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faLandmark, faMasksTheater, faMugHot, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 import LocalAreaSection from "./components/restaurants/LocalAreaRestaurants";
 import LocalAreaPlacesToVisit from "./components/places-to-visit/LocalAreaPlacesToVisit";
+import LocalBusinesses from "./components/local-businesses/LocalBusinesses";
 import styles from "./LocalArea.module.css";
 
 
 function LocalArea() {
     const { t } = useTranslation();
+    const location = useLocation();
+
+    useEffect(() => {
+        if (!location.hash) return;
+
+        const scrollToHash = () => {
+            const el = document.querySelector(location.hash);
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+            }
+        };
+
+        scrollToHash();
+
+        // Images and the restaurants/places lists load asynchronously and
+        // shift the page height afterwards, so keep correcting the scroll
+        // position while the layout is still settling.
+        const observer = new ResizeObserver(scrollToHash);
+        observer.observe(document.body);
+
+        const stopObserving = setTimeout(() => observer.disconnect(), 2000);
+
+        return () => {
+            observer.disconnect();
+            clearTimeout(stopObserving);
+        };
+    }, [location]);
 
     return (
         <div className={styles["local-area-page"]}>
@@ -50,6 +80,7 @@ function LocalArea() {
             
             <LocalAreaSection />
             <LocalAreaPlacesToVisit />
+            <LocalBusinesses />
         </div>
     );
 };

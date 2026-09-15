@@ -13,7 +13,7 @@
         "apartment": "Apartament",
         "events": "Evenimente",
         "gallery": "Galerie",
-        "attractions": "Împrejurimi",
+        "local-area": "Împrejurimi",
         "contact": "Contact"
     },
     "benefitsHomepage": {
@@ -288,8 +288,8 @@
             "recommendation": {
                 "badge": "Recomandarea noastră",
                 "descriptions": {
-                    "1": "Cu 4.4 din 5 pe Google și recenzii care laudă porțiile generoase și bucătăria ardelenească autentică, e alegerea noastră pentru o masă tradițională — și la doar 260 m de apartament, perfect pentru o seară fără planuri de transport.",
-                    "24": "Cu 4.5 din 5 pe Google, ECLER by DesserTime este alegerea noastră pentru ceva dulce — eclere fine și prăjituri de casă, la doar 230 m de apartament."
+                    "1": "Bucătărie ardelenească autentică și porții generoase, la doar 260 m de apartament. Este alegerea noastră pentru o masă tradițională, gustoasă și ușor accesibilă pe jos.",
+                    "24": "ECLER by DesserTime este recomandarea noastră pentru iubitorii de deserturi fine. Descoperă eclere delicioase și prăjituri de casă, pregătite cu grijă. La doar 230 m de apartament, este locul perfect pentru o pauză dulce."
                 }
             },
             "categories": {
@@ -318,6 +318,21 @@
             "noResults": "Niciun obiectiv turistic disponibil momentan.",
             "showMore": "Arată mai mult",
             "showLess": "Arată mai puțin"
+        },
+        "businessSection": {
+            "subtitle": "Practic",
+            "title": "Cumpărături prin apropiere",
+            "description": "Tot ce ai nevoie pentru cumpărături zilnice sau de ocazie, la câțiva pași sau minute de mers de apartament.",
+            "noResults": "Niciun magazin disponibil momentan.",
+            "open24": "Non-stop",
+            "categories": {
+                "mall": "Mall",
+                "drogherie": "Drogherie",
+                "coffeeShop": "Cafenea",
+                "centrucommercial": "Centru comercial",
+                "supermarket": "Supermarket",
+                "farmacie": "Farmacie"
+            }
         }
     }
 }

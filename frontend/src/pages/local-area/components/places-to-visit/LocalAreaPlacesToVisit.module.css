@@ -9,9 +9,13 @@
 
 .places-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
     margin-top: var(--spacing-xl);
+
+    @media (min-width: 769px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .place-main {

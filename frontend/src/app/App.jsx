@@ -29,7 +29,7 @@ function App() {
 					<Route path="apartment" element={<Apartment />} />
 					<Route path="events" element={<Events />} />
 					<Route path="gallery" element={<Gallery />} />
-					<Route path="attractions" element={<LocalArea />} />
+					<Route path="local-area" element={<LocalArea />} />
 					<Route path="contact" element={<ComingSoonPage navKey="contact" />} />
 				</Route>
 			</Routes>
