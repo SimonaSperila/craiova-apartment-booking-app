@@ -211,7 +211,13 @@ nav {
 
 		.footer-links {
 			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 			gap: var(--spacing-lg);
+
+			@media (min-width: 769px) {
+				justify-content: flex-end;
+			}
 
 			a {
 				font-size: 0.9rem;

@@ -56,7 +56,8 @@
     "footer": {
         "copyright": "Toate drepturile rezervate.",
         "link1": "Politica de confidențialitate",
-        "link2": "Termeni și condiții"
+        "link2": "Termeni și condiții",
+        "link3": "Politica de cookie-uri"
     },
     "underConstruction": {
         "imageAlt": "Ilustrație pagină în construcție",

@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
 import Logo from "./logo/Logo";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const lang = i18n.language;
 
     return (
         <footer className="footer">
@@ -15,7 +17,7 @@ function Footer() {
                     <div className="contact-info">
                         <p><FontAwesomeIcon icon={faLocationDot} /> Craiova, Romania</p>
                         <p><FontAwesomeIcon icon={faPhone} /> <a href="tel:+40767813197">+40 767 813 197</a></p>
-                        <p><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:info@shakespearecentral.ro">info@shakespearecentral.ro</a></p>
+                        <p><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:shakespeare.central.apartment@gmail.com">shakespeare.central.apartment@gmail.com</a></p>
                     </div>
                     <div className="social-media">
                         <a href="https://www.facebook.com/profile.php?id=61585732636429" target="_blank" rel="noopener noreferrer">
@@ -33,8 +35,9 @@ function Footer() {
                     </div>
 
                     <div className="footer-links">
-                        <a href="/privacy">{t('footer.link1')}</a>
-                        <a href="/terms">{t('footer.link2')}</a>
+                        <Link to={`/${lang}/privacy-policy`}>{t('footer.link1')}</Link>
+                        <Link to={`/${lang}/terms-and-conditions`}>{t('footer.link2')}</Link>
+                        <Link to={`/${lang}/cookie-policy`}>{t('footer.link3')}</Link>
                     </div>
                 </div>
             </div>

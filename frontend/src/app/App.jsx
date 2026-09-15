@@ -10,6 +10,9 @@ import Home from "../pages/home/Home";
 import Apartment from "../pages/apartment/Apartment";
 import Events from "../pages/events/Events";
 import Gallery from "../pages/gallery/Gallery";
+import PrivacyPolicy from "../pages/privacy-policy/PrivacyPolicy";
+import CookiePolicy from "../pages/cookie-policy/CookiePolicy";
+import TermsAndConditions from "../pages/terms-and-conditions/TermsAndConditions";
 
 function ComingSoonPage({ navKey }) {
 	const { t } = useTranslation();
@@ -30,6 +33,9 @@ function App() {
 					<Route path="gallery" element={<Gallery />} />
 					<Route path="attractions" element={<ComingSoonPage navKey="attractions" />} />
 					<Route path="contact" element={<ComingSoonPage navKey="contact" />} />
+					<Route path="privacy-policy" element={<PrivacyPolicy />} />
+					<Route path="cookie-policy" element={<CookiePolicy />} />
+					<Route path="terms-and-conditions" element={<TermsAndConditions />} />
 				</Route>
 			</Routes>
 
