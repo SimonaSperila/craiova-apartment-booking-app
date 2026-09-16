@@ -112,37 +112,39 @@ function LocalAreaRestaurants() {
                     </div>
                 )}
 
-                <div className={styles["recommendation-section"]}>
-                    {recommendedRestaurants.map(recommendedRestaurant => (
-                        <div key={recommendedRestaurant.id} className={styles["recommend-card"]}>
-                            <div className={styles["recommend-icon"]}>
-                                <FontAwesomeIcon icon={faHeart} />
-                            </div>
-                            <div className={styles["recommend-body"]}>
-                                <span className={styles["recommend-badge"]}>
-                                    {t(`localAreaPage.restaurantsSection.recommendation.badge.${recommendedRestaurant.id}`)}
-                                </span>
-                                <div className={styles["recommend-top"]}>
-                                    <h3>{recommendedRestaurant.name}</h3>
-                                    <span className={styles["restaurant-category"]}>
-                                        {t(CATEGORY_LABEL_KEYS[recommendedRestaurant.category] || recommendedRestaurant.category)}
-                                    </span>
+                {recommendedRestaurants.length > 1 && (
+                    <div className={styles["recommendation-section"]}>
+                        {recommendedRestaurants.map(recommendedRestaurant => (
+                            <div key={recommendedRestaurant.id} className={styles["recommend-card"]}>
+                                <div className={styles["recommend-icon"]}>
+                                    <FontAwesomeIcon icon={faHeart} />
                                 </div>
-                                <p>{t(`localAreaPage.restaurantsSection.recommendation.descriptions.${recommendedRestaurant.id}`)}</p>
-                                <a
-                                    href={recommendedRestaurant.google_maps_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles["btn-recommend"]}
-                                >
-                                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                                    {t("localAreaPage.restaurantsSection.viewMap")}
-                                </a>
+                                <div className={styles["recommend-body"]}>
+                                    <span className={styles["recommend-badge"]}>
+                                        {t(`localAreaPage.restaurantsSection.recommendation.badge.${recommendedRestaurant.id}`)}
+                                    </span>
+                                    <div className={styles["recommend-top"]}>
+                                        <h3>{recommendedRestaurant.name}</h3>
+                                        <span className={styles["restaurant-category"]}>
+                                            {t(CATEGORY_LABEL_KEYS[recommendedRestaurant.category] || recommendedRestaurant.category)}
+                                        </span>
+                                    </div>
+                                    <p>{t(`localAreaPage.restaurantsSection.recommendation.descriptions.${recommendedRestaurant.id}`)}</p>
+                                    <a
+                                        href={recommendedRestaurant.google_maps_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles["btn-recommend"]}
+                                    >
+                                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                        {t("localAreaPage.restaurantsSection.viewMap")}
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-
+                        ))}
+                    </div>
+                )}
+                
                 <div className="section-divider"></div>
             </div>
         </div>
