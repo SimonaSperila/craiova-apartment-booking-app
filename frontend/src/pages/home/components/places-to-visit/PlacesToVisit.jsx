@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
@@ -52,10 +53,12 @@ function PlacesToVisit({ place }) {
                         <h2 className='section-title'>{t("placesToVisit.title")}</h2>
                         <p>{t("placesToVisit.description")}</p>
                     </div>
-                    <a href="/places" className={styles['btn'] + " btn btn-primary"}>{t("placesToVisit.viewAll")}</a>
+                    <Link to={`/${i18n.language}/local-area#what-to-visit`} className={styles['btn'] + " btn btn-primary"}>{t("placesToVisit.viewAll")}</Link>
                 </div>
                 <div className={styles['places-list']}>
-                    {places.map(p => (
+                    {places
+                        .filter(p => Number(p.show_on_homepage) === 1)
+                        .map(p => (
                         <div key={p.id} className={styles['place-item']}>
                             <img src={images[p.image]} alt={p.name} className={styles['place-image']} />
                             <h3>{p.name}</h3>
@@ -65,7 +68,7 @@ function PlacesToVisit({ place }) {
                                     <FontAwesomeIcon icon={faLocationDot} />
                                     {formatDistance(p.distance_m)}
                                 </span>
-                                <a href={`https://www.google.com/maps?q=${p.latitude},${p.longitude}`} target="_blank" rel="noopener noreferrer" className={styles['btn-map']}>{t("placesToVisit.viewMap")}</a>
+                                <a href={p.google_maps_url} target="_blank" rel="noopener noreferrer" className={styles['btn-map']}>{t("placesToVisit.viewMap")}</a>
                             </p>
                         </div>
                     ))}

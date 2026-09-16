@@ -41,18 +41,19 @@ app.get("/places", (req, res) => {
   const lang = req.query.lang || "ro";
 
   const sql = `
-    SELECT 
+    SELECT
       p.id,
       p.distance_m,
-      p.latitude,
-      p.longitude,
+      p.google_maps_url,
       p.image,
+      p.show_on_homepage,
       pt.name,
       pt.description
     FROM places p
-    INNER JOIN place_translations pt 
+    INNER JOIN place_translations pt
       ON p.id = pt.place_id
     WHERE pt.language = ?
+    ORDER BY p.distance_m ASC
   `;
 
   db.query(sql, [lang], (err, results) => {
@@ -89,6 +90,35 @@ app.get("/events", (req, res) => {
   });
 });
 
+// GET restaurants
+app.get("/restaurants", (req, res) => {
+  const sql = `
+    SELECT id, name, distance_m, google_maps_url, rating, category, recommended
+    FROM restaurants
+    ORDER BY distance_m ASC
+  `;
+
+  db.query(sql, (err, results) => {
+    if (err) return res.status(500).json(err);
+    res.json(results);
+  });
+});
+
+// GET local_businesses
+app.get("/local-businesses", (req, res) => {
+  const sql = `
+    SELECT id, name, distance_m, category, google_maps_url, is_24_7 
+    FROM local_businesses
+    ORDER BY distance_m ASC
+  `;
+
+  db.query(sql, (err, results) => {
+    if (err) return res.status(500).json(err);
+    res.json(results);
+  });
+});
+
+// GET reviews
 app.get("/reviews", (req, res) => {
   const sqlRun = `
     SELECT id, score_number, score_text, reviews_text

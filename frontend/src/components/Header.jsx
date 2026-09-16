@@ -7,8 +7,6 @@ import Logo from "./logo/Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { NavLink, useLocation } from "react-router-dom";
 
-import styles from "./logo/Logo.module.css";
-
 function Header() {
   	const { i18n, t } = useTranslation();
 	const lang = i18n.language;
@@ -32,7 +30,7 @@ function Header() {
 						<li><NavLink to={`/${lang}/apartment`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.apartment")}</NavLink></li>
 						<li><NavLink to={`/${lang}/events`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.events")}</NavLink></li>
 						<li><NavLink to={`/${lang}/gallery`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.gallery")}</NavLink></li>
-						<li><NavLink to={`/${lang}/attractions`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.attractions")}</NavLink></li>
+						<li><NavLink to={`/${lang}/local-area`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.local-area")}</NavLink></li>
 						<li><NavLink to={`/${lang}/contact`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.contact")}</NavLink></li>
 					</ul>
 

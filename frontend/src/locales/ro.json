@@ -13,7 +13,7 @@
         "apartment": "Apartament",
         "events": "Evenimente",
         "gallery": "Galerie",
-        "attractions": "Împrejurimi",
+        "local-area": "Împrejurimi",
         "contact": "Contact"
     },
     "benefitsHomepage": {
@@ -267,6 +267,76 @@
             "balcony": "Balcon",
             "hallway": "Hol",
             "exterior": "Exterior"
+        }
+    },
+    "localAreaPage": {
+        "title": "Descoperă Craiova",
+        "description": "Bucură-te de oraș chiar din inima Craiovei și descoperă tot ce are de oferit. De la obiective culturale și evenimente, la cafenele cochete și restaurante locale, Craiova îmbină istoria, arta și atmosfera vibrantă a orașului — multe dintre ele fiind la câțiva pași sau la o scurtă plimbare cu mașina de apartament.",
+        "bannerIcons": {
+            "landmark": "Obiective turistice",
+            "theater": "Teatru și evenimente",
+            "coffee": "Cafenele și restaurante",
+            "location": "Acces facil și transport"
+        },
+        "restaurantsSection": {
+            "title": "Unde să mănânci",
+            "subtitle": "Mâncare și băutură",
+            "description": "Restaurantele din apropierea apartamentului, la câțiva pași distanță.",
+            "viewMap": "Vezi pe Google Maps",
+            "noResults": "Niciun restaurant pentru această categorie.",
+            "showMore": "Arată mai mult",
+            "showLess": "Arată mai puțin",
+            "recommendation": {
+                "badge": {
+                    "1": "Recomandarea noastră - Ceva tradițional",
+                    "24": "Recomandarea noastră - Ceva dulce"
+                },
+                "descriptions": {
+                    "1": "Bucătărie ardelenească autentică și porții generoase, la doar 260 m de apartament. Este alegerea noastră pentru o masă tradițională, gustoasă și ușor accesibilă pe jos.",
+                    "24": "ECLER by DesserTime este recomandarea noastră pentru iubitorii de deserturi fine. Descoperă eclere delicioase și prăjituri de casă, pregătite cu grijă. La doar 230 m de apartament, este locul perfect pentru o pauză dulce."
+                }
+            },
+            "categories": {
+                "romanian": "Românesc",
+                "pizza": "Pizza",
+                "mediterranean": "Mediteranean",
+                "contemporary": "Contemporan",
+                "fusion": "Fusion",
+                "italian": "Italian",
+                "international": "Internațional",
+                "steakhouse": "Steakhouse",
+                "brunch": "Brunch",
+                "fineDining": "Fine Dining",
+                "wineBar": "Bar de vinuri",
+                "burgers": "Burgeri",
+                "pub": "Pub",
+                "asian": "Asiatic",
+                "dessertShop": "Cofetărie"
+            }
+        },
+        "placesSection": {
+            "subtitle": "Descoperă Craiova",
+            "title": "Ce să vizitezi",
+            "description": "Obiective turistice și locuri de plimbare la scurtă distanță de apartament.",
+            "viewMap": "Vezi pe hartă",
+            "noResults": "Niciun obiectiv turistic disponibil momentan.",
+            "showMore": "Arată mai mult",
+            "showLess": "Arată mai puțin"
+        },
+        "businessSection": {
+            "subtitle": "Practic",
+            "title": "Cumpărături prin apropiere",
+            "description": "Tot ce ai nevoie pentru cumpărături zilnice sau de ocazie, la câțiva pași sau minute de mers de apartament.",
+            "noResults": "Niciun magazin disponibil momentan.",
+            "open24": "Non-stop",
+            "categories": {
+                "mall": "Mall",
+                "drogherie": "Drogherie",
+                "coffeeShop": "Cafenea",
+                "centrucommercial": "Centru comercial",
+                "supermarket": "Supermarket",
+                "farmacie": "Farmacie"
+            }
         }
     }
 }
