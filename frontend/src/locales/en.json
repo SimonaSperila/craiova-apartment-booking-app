@@ -55,7 +55,8 @@
     "footer": {
         "copyright": "All rights reserved.",
         "link1": "Privacy Policy",
-        "link2": "Terms and Conditions"
+        "link2": "Terms and Conditions",
+        "link3": "Cookie Policy"
     },
     "underConstruction": {
         "imageAlt": "Under construction illustration",
