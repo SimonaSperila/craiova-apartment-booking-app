@@ -73,6 +73,34 @@ INSERT INTO `events` VALUES (5,'2026-09-18 00:00:00','19:00:00','concerte',0,'20
 UNLOCK TABLES;
 
 --
+-- Table structure for table `local_businesses`
+--
+
+DROP TABLE IF EXISTS `local_businesses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `local_businesses` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `distance_m` int NOT NULL,
+  `category` varchar(100) NOT NULL,
+  `google_maps_url` varchar(500) NOT NULL,
+  `is_24_7` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `local_businesses`
+--
+
+LOCK TABLES `local_businesses` WRITE;
+/*!40000 ALTER TABLE `local_businesses` DISABLE KEYS */;
+INSERT INTO `local_businesses` VALUES (1,'Electroputere Mall',3100,'Mall','https://maps.app.goo.gl/efzfQq6fUHYPtC5q8',0),(2,'Promenada Mall',2900,'Mall','https://maps.app.goo.gl/a9RKBfNfM97QAYhr7',0),(3,'DM',140,'Drogherie','https://maps.app.goo.gl/sv4XzzDDqXT1sxt86',0),(4,'Mercur Center',400,'Centru comercial','https://maps.app.goo.gl/UCb5kZeu6PusB9A4A',0),(5,'MyAuchan',300,'Supermarket','https://maps.app.goo.gl/dtRUdz8cQ3mqcKbVA',0),(6,'Catena',70,'Farmacie','https://maps.app.goo.gl/f7vzfMHFuvjFUJtG7',0),(7,'5 To Go',73,'Cafenea','https://maps.app.goo.gl/48Ty9GQha1FprR6J6',0),(8,'Profi',550,'Supermarket','https://maps.app.goo.gl/sjQTo1GekMxE37E58',1);
+/*!40000 ALTER TABLE `local_businesses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `place_translations`
 --
 

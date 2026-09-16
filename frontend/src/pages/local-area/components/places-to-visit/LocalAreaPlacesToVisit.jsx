@@ -28,7 +28,7 @@ function LocalAreaPlacesToVisit() {
     useEffect(() => {
         fetch(`${API_BASE_URL}/places?lang=${i18n.language}`)
             .then(res => res.json())
-            .then(data => setPlaces(data));
+            .then(data => setPlaces(Array.isArray(data) ? data : []));
     }, [i18n.language]);
 
     const visiblePlaces = showAll ? places : places.slice(0, INITIAL_VISIBLE_COUNT);

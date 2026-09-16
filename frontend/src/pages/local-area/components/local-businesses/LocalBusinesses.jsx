@@ -51,7 +51,7 @@ function LocalBusinesses() {
     useEffect(() => {
         fetch(`${API_BASE_URL}/local-businesses`)
             .then(res => res.json())
-            .then(data => setBusinesses(data));
+            .then(data => setBusinesses(Array.isArray(data) ? data : []));
     }, []);
 
     return (
