@@ -46,7 +46,7 @@ function LocalAreaRestaurants() {
     useEffect(() => {
         fetch(`${API_BASE_URL}/restaurants`)
             .then(res => res.json())
-            .then(data => setRestaurants(data));
+            .then(data => setRestaurants(Array.isArray(data) ? data : []));
     }, []);
 
     const visibleRestaurants = showAll ? restaurants : restaurants.slice(0, INITIAL_VISIBLE_COUNT);
