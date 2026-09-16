@@ -286,7 +286,10 @@
             "showMore": "Arată mai mult",
             "showLess": "Arată mai puțin",
             "recommendation": {
-                "badge": "Recomandarea noastră",
+                "badge": {
+                    "1": "Recomandarea noastră - Ceva tradițional",
+                    "24": "Recomandarea noastră - Ceva dulce"
+                },
                 "descriptions": {
                     "1": "Bucătărie ardelenească autentică și porții generoase, la doar 260 m de apartament. Este alegerea noastră pentru o masă tradițională, gustoasă și ușor accesibilă pe jos.",
                     "24": "ECLER by DesserTime este recomandarea noastră pentru iubitorii de deserturi fine. Descoperă eclere delicioase și prăjituri de casă, pregătite cu grijă. La doar 230 m de apartament, este locul perfect pentru o pauză dulce."

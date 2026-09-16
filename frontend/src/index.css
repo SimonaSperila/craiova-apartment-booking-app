@@ -269,7 +269,7 @@ img {
     border-radius: var(--radius);
     padding: var(--spacing-lg-r) var(--spacing-md-r);
 
-    @media (min-width: 769px) {
+    @media (min-width: 1025px) {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;

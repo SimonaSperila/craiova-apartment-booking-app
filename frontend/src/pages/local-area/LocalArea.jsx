@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import banner from "../../assets/local-area-banner.jpg";
 import mobileBanner from "../../assets/local-area-banner-mobile.jpg";
+import { useBodyClass } from "../../hooks/useBodyClass";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faLandmark, faMasksTheater, faMugHot, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,6 +16,8 @@ import styles from "./LocalArea.module.css";
 function LocalArea() {
     const { t } = useTranslation();
     const location = useLocation();
+
+    useBodyClass("local-area-page");
 
     useEffect(() => {
         if (!location.hash) return;

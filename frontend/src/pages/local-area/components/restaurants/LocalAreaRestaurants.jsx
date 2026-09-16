@@ -120,7 +120,7 @@ function LocalAreaRestaurants() {
                             </div>
                             <div className={styles["recommend-body"]}>
                                 <span className={styles["recommend-badge"]}>
-                                    {t("localAreaPage.restaurantsSection.recommendation.badge")}
+                                    {t(`localAreaPage.restaurantsSection.recommendation.badge.${recommendedRestaurant.id}`)}
                                 </span>
                                 <div className={styles["recommend-top"]}>
                                     <h3>{recommendedRestaurant.name}</h3>

@@ -285,7 +285,10 @@
             "showMore": "Show more",
             "showLess": "Show less",
             "recommendation": {
-                "badge": "Our Recommendation",
+                "badge": {
+                    "1": "Our Recommendation - Something Traditional",
+                    "24": "Our Recommendation - Something Sweet"
+                },
                 "descriptions": {
                     "1": "Authentic Transylvanian cuisine and generous portions, just 260 m from the apartment. Our choice for a traditional, delicious meal within easy walking distance.",
                     "24": "ECLER by DesserTime is our recommendation for lovers of fine desserts. Discover delicious eclairs and homemade cakes, carefully prepared. Just 230 m from the apartment, it is the perfect spot for a sweet treat."
