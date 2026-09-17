@@ -338,5 +338,27 @@
                 "farmacie": "Farmacie"
             }
         }
+    },
+    "contactPage": {
+        "title": "Contact",
+        "description": "Ai o întrebare despre apartament sau vrei să planifici sejurul? Suntem aici să te ajutăm.",
+        "addressSection": {
+            "title": "Adresă",
+            "address": "Str. A.I. Cuza, Nr. 9 Bloc 156apt, Scara 7, 200402 Craiova, Romania",
+            "viewMap": "Vezi pe hartă"
+        },
+        "detailsSection": {
+            "title": "Detalii contact",
+            "hoster": "Gazdă",
+            "phoneLabel": "Telefon",
+            "emailLabel": "Email",
+            "bookingText": "Rezervă-ți sejurul direct și vezi disponibilitatea în timp real.",
+            "bookingButton": "Rezervă pe Booking.com"
+        },
+        "reviewSection": {
+            "title": "Ți-a plăcut sejurul?",
+            "description": "Dacă ți-a plăcut apartamentul, ne poți lăsa o recenzie pe Google — ne ajută enorm și le e de folos altor călători.",
+            "button": "Lasă o recenzie pe Google"
+        }
     }
 }

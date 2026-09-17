@@ -292,6 +292,7 @@ img {
     font-weight: 500;
     text-decoration: none;
     white-space: nowrap;
+    max-width: 200px;
 }
 
 .btn-map svg {

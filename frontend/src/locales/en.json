@@ -337,5 +337,27 @@
                 "farmacie": "Pharmacy"
             }
         }
+    },
+    "contactPage": {
+        "title": "Contact",
+        "description": "Have a question about the apartment or want to plan your stay? We're here to help.",
+        "addressSection": {
+            "title": "Address",
+            "address": "Str. A.I. Cuza, Nr. 9 Bloc 156apt, Scara 7, 200402 Craiova, Romania",
+            "viewMap": "View on map"
+        },
+        "detailsSection": {
+            "title": "Contact details",
+            "hoster": "Host",
+            "phoneLabel": "Phone",
+            "emailLabel": "Email",
+            "bookingText": "Book your stay directly and see real-time availability.",
+            "bookingButton": "Book on Booking.com"
+        },
+        "reviewSection": {
+            "title": "Enjoyed your stay?",
+            "description": "If you enjoyed the apartment, you can leave us a review on Google — it helps us a lot and helps other travelers too.",
+            "button": "Leave a Google review"
+        }
     }
 }
