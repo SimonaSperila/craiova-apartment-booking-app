@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import balconright from "../../../../assets/apartment/1.jpg";
+import livingright from "../../../../assets/apartment/living.jpg";
+import kitchenright from "../../../../assets/apartment/kitchen.jpg";
 import dormitor from "../../../../assets/apartment/dormitor.jpg";
 import Logo from "../../../../components/logo/Logo";
 import { NavLink } from "react-router-dom";
@@ -24,8 +25,8 @@ function TheApartment() {
 
                     <div className={styles["apartment-images"]}>
                         <img src={dormitor} alt="Apartment bedroom" className={styles["first-image"]} />
-                        <img src={balconright} alt="Apartment living room" className={styles["second-image"]} />
-                        <img src={balconright} alt="Apartment living room" className={styles["third-image"]} />
+                        <img src={livingright} alt="Apartment living room" className={styles["second-image"]} />
+                        <img src={kitchenright} alt="Apartment kitchen" className={styles["third-image"]} />
                     </div>
                 </div>
             </div>
