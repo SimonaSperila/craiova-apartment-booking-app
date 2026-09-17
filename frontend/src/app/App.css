@@ -2,6 +2,10 @@
 header {
   padding: var(--spacing-lg) 0;
   background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   .container {
     display: flex;
@@ -23,7 +27,7 @@ header {
 
 nav {
     display: none;
-	position: absolute;
+	position: fixed;
 	background-color: #fff;
 	top: 0;
 	left: 0;

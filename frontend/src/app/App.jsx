@@ -5,6 +5,7 @@ import './App.css'
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UnderConstruction from "../components/UnderConstruction/UnderConstruction";
+import ScrollToTop from "./ScrollToTop";
 
 import Home from "../pages/home/Home";
 import Apartment from "../pages/apartment/Apartment";
@@ -24,6 +25,7 @@ function ComingSoonPage({ navKey }) {
 function App() {
 	return (
 		<BrowserRouter>
+			<ScrollToTop />
 			<Header />
 
 			<Routes>
