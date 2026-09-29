@@ -7,6 +7,8 @@ import { faCar } from '@fortawesome/free-solid-svg-icons';
 
 import styles from "./Benefits.module.css";
 
+const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/6wCBb1cxGXoqqwZR7";
+
 function Benefits() {
     const { t } = useTranslation();  
 
@@ -19,6 +21,7 @@ function Benefits() {
                     </span>
                     <h2>{t("benefitsHomepage.benefit1.title")}</h2>
                     <p>{t("benefitsHomepage.benefit1.description")}</p>
+                    <a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className={styles["btn-map"]}></a>
                 </div>
 
                 <div className={styles["benefit-item"]}>

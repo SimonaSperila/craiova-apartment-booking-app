@@ -9,10 +9,7 @@ import mobileBanner from "../../assets/contact-page-banner-mobile.jpg";
 import { useBodyClass } from "../../hooks/useBodyClass";
 import styles from "./Contact.module.css";
 
-// TODO: swap in the listing's real Google Maps place once it's set up.
-const MAPS_QUERY = "Shakespeare Central Apartment, Craiova, Romania";
-const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_QUERY)}`;
-const GOOGLE_MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(MAPS_QUERY)}&output=embed`;
+const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/6wCBb1cxGXoqqwZR7";
 
 function Contact() {
     const { t } = useTranslation();
@@ -50,13 +47,7 @@ function Contact() {
                             <p className={styles["address-text"]}>{t("contactPage.addressSection.address")}</p>
 
                             <div className={styles["map-embed"]}>
-                                <iframe
-                                    src={GOOGLE_MAPS_EMBED_URL}
-                                    title="Shakespeare Apartment Craiova - Google Maps"
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                    allowFullScreen
-                                />
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2854.558177785468!2d23.795216!3d44.3190327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4752d7d2f8967bef%3A0xa520f78d5381698a!2sShakespeare%20Central%20Apartment!5e0!3m2!1sro!2sro!4v1790673314814!5m2!1sro!2sro" width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
                             </div>
 
                             <a
