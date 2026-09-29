@@ -25,15 +25,64 @@
     }
 }
 
+/* Mobile: auto-scrolling carousel. The track is rendered twice and each copy
+   slides left by its own width, so the loop restarts seamlessly. */
 .apartment-details-right {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background-color: white;
 
+    &:hover .apartment-details-right-track,
+    &:active .apartment-details-right-track {
+        animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        overflow-x: auto;
+    }
+
     @media (min-width: 769px) {
+        display: block;
+        overflow: visible;
+    }
+}
+
+.apartment-details-right-track {
+    display: flex;
+    flex-shrink: 0;
+    animation: apartment-details-scroll 40s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+    }
+
+    @media (min-width: 769px) {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
+        animation: none;
+    }
+}
+
+.apartment-details-right-track-clone {
+    @media (prefers-reduced-motion: reduce) {
+        display: none;
+    }
+
+    @media (min-width: 769px) {
+        display: none;
+    }
+}
+
+@keyframes apartment-details-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
     }
 }
 
@@ -43,11 +92,17 @@
     gap: var(--spacing-md);
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid var(--border);
-    padding: var(--spacing-lg) 0;
+    flex: 0 0 auto;
+    min-width: 120px;
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    border-right: 1px solid var(--border);
 
-    &:last-child {
-        border-bottom: none;
+    @media (min-width: 769px) {
+        min-width: 0;
+        padding: var(--spacing-lg) 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
     }
 
     &:nth-last-child(-n+3) {

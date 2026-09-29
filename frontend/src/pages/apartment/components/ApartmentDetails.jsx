@@ -53,10 +53,18 @@ function ApartmentDetails() {
                 </div>
 
                 <div className={styles["apartment-details-right"]}>
-                    {detailsListRight.map((item, index) => (
-                        <div className={styles["apartment-details-right-item"]} key={index}>
-                            <FontAwesomeIcon icon={icons[item.icon]} />
-                            <span>{item.text}</span>
+                    {[false, true].map((isClone) => (
+                        <div
+                            key={isClone ? "clone" : "main"}
+                            className={styles["apartment-details-right-track"] + (isClone ? " " + styles["apartment-details-right-track-clone"] : "")}
+                            aria-hidden={isClone || undefined}
+                        >
+                            {detailsListRight.map((item, index) => (
+                                <div className={styles["apartment-details-right-item"]} key={index}>
+                                    <FontAwesomeIcon icon={icons[item.icon]} />
+                                    <span>{item.text}</span>
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </div>
