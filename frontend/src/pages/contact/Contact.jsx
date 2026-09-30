@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
-import { faLocationDot, faPhone, faEnvelope, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faPhone, faEnvelope, faArrowRightLong, faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 import banner from "../../assets/contact-page-banner.jpg";
 import mobileBanner from "../../assets/contact-page-banner-mobile.jpg";
@@ -10,9 +11,12 @@ import { useBodyClass } from "../../hooks/useBodyClass";
 import styles from "./Contact.module.css";
 
 const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/6wCBb1cxGXoqqwZR7";
+const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2854.558177785468!2d23.795216!3d44.3190327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4752d7d2f8967bef%3A0xa520f78d5381698a!2sShakespeare%20Central%20Apartment!5e0!3m2!1sro!2sro!4v1790673314814!5m2!1sro!2sro";
 
 function Contact() {
     const { t } = useTranslation();
+    // The Google Maps embed sets third-party cookies, so it only loads after an explicit click.
+    const [mapLoaded, setMapLoaded] = useState(false);
 
     useBodyClass("contact-page");
 
@@ -47,7 +51,29 @@ function Contact() {
                             <p className={styles["address-text"]}>{t("contactPage.addressSection.address")}</p>
 
                             <div className={styles["map-embed"]}>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2854.558177785468!2d23.795216!3d44.3190327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4752d7d2f8967bef%3A0xa520f78d5381698a!2sShakespeare%20Central%20Apartment!5e0!3m2!1sro!2sro!4v1790673314814!5m2!1sro!2sro" width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                                {mapLoaded ? (
+                                    <iframe
+                                        src={GOOGLE_MAPS_EMBED_URL}
+                                        title={t("contactPage.addressSection.mapTitle")}
+                                        width="600"
+                                        height="450"
+                                        allowFullScreen
+                                        loading="lazy"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                    ></iframe>
+                                ) : (
+                                    <div className={styles["map-placeholder"]}>
+                                        <FontAwesomeIcon icon={faMapLocationDot} />
+                                        <p>{t("contactPage.addressSection.mapNotice")}</p>
+                                        <button
+                                            type="button"
+                                            className="btn btn-secondary"
+                                            onClick={() => setMapLoaded(true)}
+                                        >
+                                            {t("contactPage.addressSection.loadMap")}
+                                        </button>
+                                    </div>
+                                )}
                             </div>
 
                             <a

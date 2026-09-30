@@ -344,7 +344,10 @@
         "addressSection": {
             "title": "Address",
             "address": "Str. A.I. Cuza, Nr. 9 Bloc 156apt, Scara 7, 200402 Craiova, Romania",
-            "viewMap": "View on map"
+            "viewMap": "View on map",
+            "mapTitle": "Map of the apartment's location",
+            "mapNotice": "The map is provided by Google Maps. When loaded, Google may set cookies and process data such as your IP address.",
+            "loadMap": "Show map"
         },
         "detailsSection": {
             "title": "Contact details",

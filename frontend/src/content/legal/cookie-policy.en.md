@@ -1,6 +1,6 @@
 # Cookie Policy
 
-*Last updated: September 15, 2026*
+*Last updated: September 30, 2026*
 
 ## 1. What are cookies
 
@@ -19,6 +19,10 @@ If this changes in the future (for example, if traffic-analysis tools are introd
 ## 3. Third-party cookies
 
 The Site contains links to third-party platforms: **Booking.com** (for bookings), **Google Maps** (for locating attractions), and **Facebook** and **Instagram** (social media). If you follow these links, you will be taken to those platforms, which may set their own cookies according to their own privacy/cookie policies, over which we have no control.
+
+The Contact page offers an interactive **Google Maps** map. The map is not loaded automatically: it only loads after you click the "Show map" button. Once loaded, Google may set its own cookies and process data such as your IP address, according to [Google's Privacy Policy](https://policies.google.com/privacy).
+
+The website's fonts are hosted on our own server, so no data is sent to third parties (such as Google Fonts) when loading them.
 
 ## 4. How to manage cookies
 

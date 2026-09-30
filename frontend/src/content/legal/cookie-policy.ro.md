@@ -1,6 +1,6 @@
 # Politica de cookie-uri
 
-*Ultima actualizare: 15 septembrie 2026*
+*Ultima actualizare: 30 septembrie 2026*
 
 ## 1. Ce sunt cookie-urile
 
@@ -19,6 +19,10 @@ Dacă această situație se va schimba în viitor (de exemplu, prin introducerea
 ## 3. Servicii externe
 
 Site-ul conține linkuri către platforme terțe: **Booking.com** (pentru rezervări), **Google Maps** (pentru localizarea atracțiilor), **Facebook** și **Instagram** (rețele sociale). Dacă accesezi aceste linkuri, vei fi direcționat către site-urile respective, care își pot seta propriile cookie-uri, conform politicilor proprii de confidențialitate/cookie-uri, asupra cărora nu avem control.
+
+Pagina de Contact oferă o hartă interactivă **Google Maps**. Harta nu se încarcă automat: se încarcă doar după ce apeși butonul „Afișează harta”. După încărcare, Google își poate seta propriile cookie-uri și poate prelucra date precum adresa IP, conform [Politicii de confidențialitate Google](https://policies.google.com/privacy).
+
+Fonturile site-ului sunt găzduite pe serverul propriu, astfel încât la încărcarea lor nu se transmit date către terți (precum Google Fonts).
 
 ## 4. Cum poți gestiona cookie-urile
 

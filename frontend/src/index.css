@@ -1,6 +1,6 @@
 :root {
-  --main-font: "Work Sans", sans-serif;
-  --secondary-font: "Newsreader", serif;
+  --main-font: "Work Sans Variable", sans-serif;
+  --secondary-font: "Newsreader Variable", serif;
 
   --heading-font: var(--secondary-font);
 

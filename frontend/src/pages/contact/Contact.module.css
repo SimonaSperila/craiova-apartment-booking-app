@@ -125,6 +125,31 @@
     }
 }
 
+.map-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md-r);
+    text-align: center;
+    background: var(--gray-200);
+
+    svg {
+        width: 28px;
+        height: 28px;
+        color: var(--green-900);
+    }
+
+    p {
+        color: var(--gray-700);
+        font-size: 0.8rem;
+        line-height: 1.4;
+        max-width: 320px;
+    }
+}
+
 .detail-row {
     display: flex;
     align-items: center;
