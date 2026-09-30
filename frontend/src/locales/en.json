@@ -19,19 +19,23 @@
     "benefitsHomepage": {
         "benefit1": {
             "title": "Central Location",
-            "description": "Just a few steps from major attractions, restaurants, and public transport."
+            "description": "Just a few steps from major attractions, restaurants, and public transport.",
+            "cta": "View on map"
         },
         "benefit2": {
             "title": "Comfort & Style",
-            "description": "Modern, spacious design equipped with everything you need for a pleasant stay."
+            "description": "Modern, spacious design equipped with everything you need for a pleasant stay.",
+            "cta": "View gallery"
         },
         "benefit3": {
             "title": "Fast Wi-Fi",
-            "description": "Free high-speed internet, ideal for work or relaxation."
+            "description": "Free high-speed internet, ideal for work or relaxation.",
+            "note": "Connection details are available in the apartment."
         },
         "benefit4": {
             "title": "Parking",
-            "description": "Parking options available nearby."
+            "description": "Residential parking space, number 27.",
+            "cta": "View parking location"
         }
     },
     "placesToVisit": {

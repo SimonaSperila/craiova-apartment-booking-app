@@ -19,20 +19,24 @@
     "benefitsHomepage": {
         "benefit1": {
             "title": "Locație centrală",
-            "description": "La câțiva pași de principalele atracții, restaurante și transport public."
+            "description": "La câțiva pași de principalele atracții, restaurante și transport public.",
+            "cta": "Vezi pe hartă"
         },
               
         "benefit2": {
             "title": "Confort & Stil",
-            "description": "Design modern, spațios și dotat cu tot ce ai nevoie pentru un sejur plăcut."
+            "description": "Design modern, spațios și dotat cu tot ce ai nevoie pentru un sejur plăcut.",
+            "cta": "Vezi galeria"
         },
         "benefit3": {
             "title": "Wi-Fi rapid",
-            "description": "Internet de mare viteză gratuit, ideal pentru muncă sau relaxare."
+            "description": "Internet de mare viteză gratuit, ideal pentru muncă sau relaxare.",
+            "note": "Datele de conectare le găsești în apartament."
         },
         "benefit4": {
             "title": "Parcare",
-            "description": "Opțiuni de parcare disponibile în apropiere."
+            "description": "Loc de parcare rezidențial, cu numărul 27.",
+            "cta": "Vezi locația parcării"
         }
     },
     "placesToVisit": {

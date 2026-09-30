@@ -19,12 +19,69 @@
 	text-align: center;
 	position: relative;
 
-	.btn-map {
+	.benefit-link {
 		position: absolute;
 		top: 0;
 		left: 0;
 		bottom: 0;
 		right: 0;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		border-radius: var(--radius);
+	}
+
+	.benefit-link:focus-visible {
+		outline: 2px solid var(--green-700);
+		outline-offset: 4px;
+	}
+}
+
+.benefit-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	margin-top: var(--spacing-sm);
+	color: var(--green-700);
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	text-underline-offset: 4px;
+	transition: text-decoration-color 0.2s ease;
+
+	svg {
+		transition: transform 0.2s ease;
+	}
+}
+
+.benefit-icon {
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.benefit-note {
+	display: inline-block;
+	margin-top: var(--spacing-sm);
+	color: var(--gray-700);
+	font-size: 0.7rem;
+	font-style: italic;
+}
+
+.benefit-item:has(.benefit-link):hover,
+.benefit-item:has(.benefit-link:focus-visible) {
+	.benefit-icon {
+		background-color: var(--green-700);
+		border-color: var(--green-700);
+		color: var(--white);
+	}
+
+	.benefit-cta {
+		text-decoration-color: currentColor;
+	}
+
+	.benefit-cta svg {
+		transform: translateX(4px);
 	}
 }
 
