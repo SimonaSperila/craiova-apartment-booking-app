@@ -4,10 +4,19 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import roFlag from "../assets/flags/ro.svg";
 import gbFlag from "../assets/flags/gb.svg";
+import bgFlag from "../assets/flags/bg.svg";
+import srFlag from "../assets/flags/sr.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { SUPPORTED_LANGUAGES } from "../i18n";
+
+const LANGUAGES = [
+	{ code: "ro", flag: roFlag, name: "Română" },
+	{ code: "en", flag: gbFlag, name: "English" },
+	{ code: "bg", flag: bgFlag, name: "Български" },
+	{ code: "sr", flag: srFlag, name: "Srpski" },
+];
 
 function LanguageSwitcher() {
     const { i18n } = useTranslation();
@@ -26,31 +35,25 @@ function LanguageSwitcher() {
 		}
     };
 
-  const currentLang = i18n.language;
+  const currentLang = LANGUAGES.find((l) => l.code === i18n.language) || LANGUAGES[0];
 
   	return (
     	<div className="lang-switcher">
 			{/* BUTON PRINCIPAL */}
 			<button className="lang-button" onClick={() => setOpen(!open)}>
-				<img src={currentLang === "ro" ? roFlag : gbFlag} width="15" height="15" alt="lang" />
-				<span>{currentLang.toUpperCase()}</span>
+				<img src={currentLang.flag} width="15" height="15" alt="lang" />
+				<span>{currentLang.code.toUpperCase()}</span>
 				<FontAwesomeIcon icon={faAngleDown} />
 			</button>
 
 			{/* DROPDOWN */}
 			{open && (
 				<div className="lang-dropdown">
-					{currentLang !== "ro" && (
-					<button onClick={() => changeLang("ro")}>
-						<img src={roFlag} width="15" height="15" alt="Română" /> RO
+					{LANGUAGES.filter((l) => l.code !== currentLang.code).map((l) => (
+					<button key={l.code} onClick={() => changeLang(l.code)}>
+						<img src={l.flag} width="15" height="15" alt={l.name} /> {l.code.toUpperCase()}
 					</button>
-					)}
-
-					{currentLang !== "en" && (
-					<button onClick={() => changeLang("en")}>
-						<img src={gbFlag} width="15" height="15" alt="English" /> EN
-					</button>
-					)}
+					))}
 				</div>
 			)}
 		</div>

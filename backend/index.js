@@ -51,12 +51,17 @@ app.get("/places", (req, res) => {
       pt.description
     FROM places p
     INNER JOIN place_translations pt
-      ON p.id = pt.place_id
-    WHERE pt.language = ?
+      ON pt.id = (
+        SELECT id FROM place_translations
+        WHERE place_id = p.id AND language IN (?, 'en')
+        ORDER BY language = ? DESC
+        LIMIT 1
+      )
     ORDER BY p.distance_m ASC
   `;
 
-  db.query(sql, [lang], (err, results) => {
+  // Falls back to the English translation when the requested language is missing.
+  db.query(sql, [lang, lang], (err, results) => {
     if (err) return res.status(500).json(err);
     res.json(results);
   });
@@ -79,12 +84,17 @@ app.get("/events", (req, res) => {
       et.details
     FROM events e
     INNER JOIN event_translations et
-      ON e.id = et.event_id
-    WHERE et.language = ?
+      ON et.id = (
+        SELECT id FROM event_translations
+        WHERE event_id = e.id AND language IN (?, 'en')
+        ORDER BY language = ? DESC
+        LIMIT 1
+      )
     ORDER BY e.event_date ASC, e.event_time ASC
   `;
 
-  db.query(sql, [lang], (err, results) => {
+  // Falls back to the English translation when the requested language is missing.
+  db.query(sql, [lang, lang], (err, results) => {
     if (err) return res.status(500).json(err);
     res.json(results);
   });

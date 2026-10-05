@@ -149,13 +149,13 @@
 	right: 0;
 	max-width: 350px;
 	display: none;
-	z-index: 1000;
 
 	@media (min-width: 769px) {
 		display: block;
 	}
 
 	@media (max-width: 768px) {
+		z-index: 1000;
 		&.is-open {
 			display: block;
 			top: 50%;

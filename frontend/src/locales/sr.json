@@ -1,0 +1,370 @@
+{
+    "logo": {
+        "title": "Shakespeare",
+        "subtitle": "central apartment"
+    },
+    "banner": {
+        "title": "Shakespeare Central Apartment",
+        "subtitle": "Dobro došli u",
+        "body": "Moderan i elegantan apartman smešten u samom srcu Krajove, na samo nekoliko koraka od najvažnijih turističkih atrakcija, restorana i prodavnica. Ovaj apartman je savršen za sve koji žele da istraže grad i uživaju u svemu što on nudi."
+    },
+    "nav": {
+        "home": "Početna",
+        "apartment": "Apartman",
+        "events": "Događaji",
+        "gallery": "Galerija",
+        "local-area": "Okolina",
+        "contact": "Kontakt"
+    },
+    "benefitsHomepage": {
+        "benefit1": {
+            "title": "Centralna lokacija",
+            "description": "Na samo nekoliko koraka od glavnih atrakcija, restorana i javnog prevoza.",
+            "cta": "Pogledajte na mapi"
+        },
+        "benefit2": {
+            "title": "Udobnost i stil",
+            "description": "Moderan i prostran dizajn, opremljen svime što vam je potrebno za prijatan boravak.",
+            "cta": "Pogledajte galeriju"
+        },
+        "benefit3": {
+            "title": "Brzi Wi-Fi",
+            "description": "Besplatan brzi internet, idealan za rad ili odmor.",
+            "note": "Podatke za povezivanje ćete pronaći u apartmanu."
+        },
+        "benefit4": {
+            "title": "Parking",
+            "description": "Parking mesto na stambenom parkingu, broj 27.",
+            "cta": "Pogledajte lokaciju parkinga"
+        }
+    },
+    "placesToVisit": {
+        "subtitle": "Otkrijte Krajovu",
+        "title": "Mesta za posetu",
+        "description": "Krajova je grad bogat istorijom, kulturom i prirodnim lepotama. Evo nekih od najvažnijih mesta koja ne smete propustiti tokom posete.",
+        "viewAll": "Pogledajte sve atrakcije",
+        "viewMap": "Pogledajte na mapi"
+    },
+    "theApartment": {
+        "subtitle": "Apartman",
+        "title": "Vaš dom daleko od kuće",
+        "description": "Shakespeare Central Apartment vam pruža privatnost i udobnost doma, u samom centru grada.",
+        "viewDetails": "Upoznajte apartman"
+    },
+    "bookingAvailability": {
+        "subtitle": "Proverite dostupnost i rezervišite svoj boravak.",
+        "title": "Spremni za sledeću posetu Krajovi?",
+        "checkAvailability": "Proverite dostupnost"
+    },
+    "footer": {
+        "copyright": "Sva prava zadržana.",
+        "link1": "Politika privatnosti",
+        "link2": "Uslovi korišćenja",
+        "link3": "Politika kolačića"
+    },
+    "underConstruction": {
+        "imageAlt": "Ilustracija stranice u izradi",
+        "title": "Uskoro",
+        "message": "Još uvek radimo na ovoj stranici. Svratite ponovo uskoro!",
+        "cta": "Nazad na početnu"
+    },
+    "apartmentPage": {
+        "title": "O apartmanu i uputstvo za korišćenje",
+        "description": "Sve što treba da znate za udoban boravak. Detalji o apartmanu i načinu korišćenja dostupnih uređaja i sadržaja.",
+        "apartmentDetailsLeft": {
+            "title": "Detalji o apartmanu",
+            "description": "Moderan dvosoban apartman u centru Krajove, na nekoliko minuta od glavnih znamenitosti. Idealan za parove, porodice ili poslovna putovanja.",
+            "list": [
+                {
+                    "icon": "area",
+                    "text": "Površina: 42 m²"
+                },
+                {
+                    "icon": "users",
+                    "text": "Kapacitet: 1 - 4 osobe"
+                },
+                {
+                    "icon": "bed",
+                    "text": "Spavaća soba: 1 bračni krevet"
+                },
+                {
+                    "icon": "couch",
+                    "text": "Dnevna soba: 1 razvlačna sofa"
+                },
+                {
+                    "icon": "utensils",
+                    "text": "Kuhinja: potpuno opremljena"
+                },
+                {
+                    "icon": "shower",
+                    "text": "Kupatilo: 1 kupatilo sa tušem"
+                },
+                {
+                    "icon": "balcony",
+                    "text": "Balkon: 1 balkon sa pogledom na pozorište"
+                },
+                {
+                    "icon": "building",
+                    "text": "Sprat: 3, bez lifta"
+                },
+                {
+                    "icon": "wifi",
+                    "text": "Wi-Fi: besplatan i brz"
+                }
+            ]
+        },
+        "apartmentDetailsRight": {
+            "list": [
+                {
+                    "icon": "wifi",
+                    "text": "Brzi Wi-Fi"
+                },
+                {
+                    "icon": "ac",
+                    "text": "Klima uređaj"
+                },
+                {
+                    "icon": "tv",
+                    "text": "Smart TV"
+                },
+                {
+                    "icon": "kitchen",
+                    "text": "Potpuno opremljena kuhinja"
+                },
+                {
+                    "icon": "coffee",
+                    "text": "Aparat za kafu"
+                },
+                {
+                    "icon": "hairdryer",
+                    "text": "Fen za kosu"
+                },
+                {
+                    "icon": "slippers",
+                    "text": "Papuče"
+                },
+                {
+                    "icon": "kettle",
+                    "text": "Električno kuvalo za vodu"
+                },
+                {
+                    "icon": "parking",
+                    "text": "Parking mesto na stambenom parkingu, broj 27"
+                }
+            ]
+        },
+        "userGuide": {
+            "title": "Uputstvo za korišćenje",
+            "description": "Jednostavna uputstva za pravilno korišćenje glavnih uređaja u apartmanu.",
+            "tabs": {
+                "coffeeMachine": {
+                    "title": "Aparat za kafu",
+                    "description1": {
+                        "title": "Priprema šoljice kafe",
+                        "text": [
+                            "Proverite da li je rezervoar za vodu napunjen i da li u odeljku ima kafe u zrnu.",
+                            "Pritisnite dugme Power i sačekajte oko 30 sekundi da aparat završi zagrevanje i automatsko ispiranje.",
+                            "Postavite šoljicu ispod dozatora za kafu.",
+                            "Izaberite željeni napitak: espresso, Espresso Lungo, kafa, Iced Coffee (kafa sa ledom)",
+                            "Po želji možete podesiti: jačinu kafe (dugme sa zrnom kafe), količinu kafe (dugme sa šoljicom), temperaturu (dugme sa termometrom)",
+                            "Pritisnite dugme ▶⏸ (Start) sa desne strane da započnete pripremu kafe.",
+                            "Sačekajte da se priprema završi i uživajte u kafi."
+                        ]
+                    },
+                    "description2": {
+                        "title": "Priprema mlečne pene",
+                        "text": [
+                            "Uronite parnu cevčicu u posudu sa hladnim mlekom.",
+                            "Izaberite funkciju Steam.",
+                            "Lagano okrećite posudu kako biste dobili finu penu.",
+                            "Nakon upotrebe odmah očistite parnu cevčicu."
+                        ]
+                    },
+                    "description3": {
+                        "title": "Priprema tople vode",
+                        "text": [
+                            "Postavite šolju ili bokal ispod parne cevčice.",
+                            "Izaberite Hot Water.",
+                            "Aparat će dati toplu vodu za čaj ili druge napitke."
+                        ]
+                    }
+                },
+                "airConditioning": {
+                    "title": "Klima uređaj",
+                    "description": "Uputstvo za korišćenje klima uređaja."
+                },
+                "smartTv": {
+                    "title": "Smart TV",
+                    "description": "Uputstvo za korišćenje smart televizora."
+                },
+                "heating": {
+                    "title": "Grejanje",
+                    "description": "Uputstvo za korišćenje sistema grejanja."
+                },
+                "other": {
+                    "title": "Ostalo",
+                    "description": "Ostala uputstva za korišćenje."
+                }
+            },
+            "userGuideFooterRules": {
+                "title": "Važna pravila",
+                "list": [
+                    "Pušenje u apartmanu je zabranjeno.",
+                    "Kućni ljubimci nisu dozvoljeni.",
+                    "Poštujte mir i komšije.",
+                    "Nemojte organizovati žurke ili događaje.",
+                    "Prilikom odlaska ostavite apartman čist i uredan."
+                ]
+            },
+            "userGuideFooterChecInOut": {
+                "title": "Prijava/Odjava",
+                "list": [
+                    "Prijava: 15:00",
+                    "Odjava: 11:00"
+                ]
+            },
+            "userGuideFooterContact": {
+                "title": "Potrebna vam je pomoć?",
+                "text": "Ako naiđete na bilo kakav problem, slobodno nas kontaktirajte.",
+                "phone": "Kontaktirajte nas"
+            }
+        }
+    },
+    "eventsPage": {
+        "title": "Događaji u Krajovi",
+        "description": "Otkrijte najzanimljivije događaje koji se održavaju u Krajovi tokom cele godine.",
+        "categories": {
+            "all": "Sve",
+            "concerte": "Koncerti",
+            "teatru": "Pozorište",
+            "spectacole": "Predstave",
+            "alteEvenimente": "Ostali događaji"
+        },
+        "noEvents": "Trenutno nema događaja za prikaz.",
+        "moreInfo": "Više informacija",
+        "sidebar": {
+            "title": "Isplanirajte posetu",
+            "description": "Pogledajte događaje tokom vašeg boravka i uživajte u svemu što Krajova nudi.",
+            "checkAvailability": "Rezervišite apartman",
+            "open": "Isplanirajte posetu",
+            "close": "Zatvori"
+        },
+        "temporaryBanners": {
+            "puppets": {
+                "title": "Puppets Occupy Street",
+                "subtitle": "Stardust Edition",
+                "description": "Pozorište Colibri vas poziva na 13. izdanje festivala Puppets Occupy Street, koji će se održati u Krajovi od 25. avgusta do 1. septembra 2026. Tema ovogodišnjeg izdanja je STARDUST! Festival će obuhvatiti više segmenata (predstave i hepeninzi; radionice; koncerti; izložbe; likovna i vizuelna umetnost i instalacije; kratki filmovi i animacije) i uključiće ulično pozorište, lutkarske predstave, izvođenja zasnovana na pokretu, interaktivna iskustva i sve što može uneti malo čarolije u grad Krajovu!",
+                "date": "25. avgust - 1. septembar 2026."
+            }
+        }
+    },
+    "galleryPage": {
+        "title": "Sve što vam je potrebno za udoban boravak",
+        "description": "",
+        "categories": {
+            "all": "Sve",
+            "kitchen": "Kuhinja",
+            "livingRoom": "Dnevna soba",
+            "bedroom": "Spavaća soba",
+            "bathroom": "Kupatilo",
+            "balcony": "Balkon",
+            "hallway": "Hodnik",
+            "exterior": "Spoljašnjost"
+        }
+    },
+    "localAreaPage": {
+        "title": "Otkrijte Krajovu",
+        "description": "Odsednite u srcu grada i uživajte u svemu što Krajova nudi. Od lepih znamenitosti i kulturnih događaja do šarmantnih kafića i lokalnih restorana, grad spaja istoriju, umetnost i živu atmosferu — sve na pešačkoj udaljenosti ili kratkoj vožnji od apartmana.",
+        "bannerIcons": {
+            "landmark": "Znamenitosti",
+            "theater": "Pozorište i događaji",
+            "coffee": "Kafići i restorani",
+            "location": "Lak pristup i prevoz"
+        },
+        "restaurantsSection": {
+            "title": "Gde jesti",
+            "subtitle": "Hrana i piće",
+            "description": "Restorani u blizini apartmana, na samo nekoliko koraka.",
+            "viewMap": "Pogledajte na Google Maps",
+            "noResults": "Nema restorana u ovoj kategoriji.",
+            "showMore": "Prikaži više",
+            "showLess": "Prikaži manje",
+            "recommendation": {
+                "badge": {
+                    "1": "Naša preporuka - nešto tradicionalno",
+                    "24": "Naša preporuka - nešto slatko"
+                },
+                "descriptions": {
+                    "1": "Autentična transilvanijska kuhinja i obilne porcije, na samo 260 m od apartmana. Naš izbor za tradicionalan i ukusan obrok na kratkoj pešačkoj udaljenosti.",
+                    "24": "ECLER by DesserTime je naša preporuka za ljubitelje finih deserta. Otkrijte ukusne ekler kolače i domaće torte, pažljivo pripremljene. Na samo 230 m od apartmana, savršeno mesto za slatku pauzu."
+                }
+            },
+            "categories": {
+                "romanian": "Rumunska",
+                "pizza": "Pica",
+                "mediterranean": "Mediteranska",
+                "contemporary": "Savremena",
+                "fusion": "Fjužn",
+                "italian": "Italijanska",
+                "international": "Internacionalna",
+                "steakhouse": "Stejkhaus",
+                "brunch": "Branč",
+                "fineDining": "Fine dining",
+                "wineBar": "Vinski bar",
+                "burgers": "Burgeri",
+                "pub": "Pab",
+                "asian": "Azijska",
+                "dessertShop": "Poslastičarnica"
+            }
+        },
+        "placesSection": {
+            "subtitle": "Otkrijte Krajovu",
+            "title": "Šta posetiti",
+            "description": "Znamenitosti i mesta za istraživanje na kratkoj pešačkoj udaljenosti od apartmana.",
+            "viewMap": "Pogledajte na mapi",
+            "noResults": "Trenutno nema dostupnih znamenitosti.",
+            "showMore": "Prikaži više",
+            "showLess": "Prikaži manje"
+        },
+        "businessSection": {
+            "subtitle": "Praktično",
+            "title": "Kupovina u blizini",
+            "description": "Sve što vam je potrebno za svakodnevnu ili povremenu kupovinu, na nekoliko koraka ili minuta hoda od apartmana.",
+            "noResults": "Trenutno nema dostupnih prodavnica.",
+            "open24": "Otvoreno 24/7",
+            "categories": {
+                "mall": "Tržni centar",
+                "drogherie": "Drogerija",
+                "coffeeShop": "Kafić",
+                "centrucommercial": "Trgovinski centar",
+                "supermarket": "Supermarket",
+                "farmacie": "Apoteka"
+            }
+        }
+    },
+    "contactPage": {
+        "title": "Kontakt",
+        "description": "Imate pitanje o apartmanu ili želite da isplanirate boravak? Tu smo da pomognemo.",
+        "addressSection": {
+            "title": "Adresa",
+            "address": "Str. A.I. Cuza, Nr. 9 Bloc 156apt, Scara 7, 200402 Craiova, Romania",
+            "viewMap": "Pogledajte na mapi",
+            "mapTitle": "Mapa lokacije apartmana",
+            "mapNotice": "Mapu obezbeđuje Google Maps. Prilikom učitavanja, Google može postaviti kolačiće i obrađivati podatke kao što je vaša IP adresa.",
+            "loadMap": "Prikaži mapu"
+        },
+        "detailsSection": {
+            "title": "Kontakt podaci",
+            "hoster": "Domaćin",
+            "phoneLabel": "Telefon",
+            "emailLabel": "Email",
+            "bookingText": "Rezervišite boravak direktno i pogledajte dostupnost u realnom vremenu.",
+            "bookingButton": "Rezervišite na Booking.com"
+        },
+        "reviewSection": {
+            "title": "Svideo vam se boravak?",
+            "description": "Ako vam se apartman dopao, možete nam ostaviti recenziju na Google-u — to nam mnogo znači, a pomaže i drugim putnicima.",
+            "button": "Ostavite Google recenziju"
+        }
+    }
+}

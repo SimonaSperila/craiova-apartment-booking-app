@@ -5,10 +5,10 @@ import { useBodyClass } from "../../hooks/useBodyClass";
 
 import styles from "./LegalContent.module.css";
 
-function LegalContent({ contentRo, contentEn }) {
+function LegalContent({ content: contentByLang }) {
     useBodyClass("page-legal");
     const { i18n } = useTranslation();
-    const content = i18n.language === "en" ? contentEn : contentRo;
+    const content = contentByLang[i18n.language] || contentByLang.ro;
 
     return (
         <section className={styles["legal-page"]}>

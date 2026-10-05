@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { INTL_LOCALES } from "../../../../i18n";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faClock, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,8 +10,10 @@ const formatShortDate = (dateString, locale) => {
 
     if (isNaN(date.getTime())) return { month: "", day: "" };
 
-    const month = new Intl.DateTimeFormat(locale, { month: "short" }).format(date).replace(".", "");
-    const day = new Intl.DateTimeFormat(locale, { day: "2-digit" }).format(date);
+    // Format day and month together — some locales (e.g. bg) render a lone short month as a number.
+    const parts = new Intl.DateTimeFormat(locale, { day: "2-digit", month: "short" }).formatToParts(date);
+    const month = parts.find((p) => p.type === "month").value.replace(".", "");
+    const day = parts.find((p) => p.type === "day").value;
 
     return { month, day };
 };
@@ -25,8 +28,9 @@ const formatTime = (timeString, locale) => {
 
 function EventCard({ event }) {
     const { t, i18n } = useTranslation();
-    const { month, day } = formatShortDate(event.event_date, i18n.language);
-    const time = event.event_time ? formatTime(event.event_time, i18n.language) : "";
+    const locale = INTL_LOCALES[i18n.language] || i18n.language;
+    const { month, day } = formatShortDate(event.event_date, locale);
+    const time = event.event_time ? formatTime(event.event_time, locale) : "";
 
     return (
         <div className={styles['event-item']}>
