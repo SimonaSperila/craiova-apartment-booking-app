@@ -3,7 +3,7 @@
         "title": "Shakespeare",
         "subtitle": "central apartment"
     },
-    "banner": { 
+    "banner": {
         "title": "Shakespeare Central Apartment",
         "subtitle": "Welcome to",
         "body": "A modern and elegant apartment located right in the heart of Craiova, just a few steps away from the most important tourist attractions, restaurants, and shops. This apartment is perfect for those who want to explore the city and enjoy everything it has to offer."
@@ -68,7 +68,7 @@
         "message": "We're still working on this page. Please check back soon!",
         "cta": "Back to home"
     },
-     "apartmentPage": {
+    "apartmentPage": {
         "title": "About the Apartment and Usage Guide",
         "description": "Everything you need to know for a comfortable stay. Details about the apartment and how to use the available objects and facilities.",
         "apartmentDetailsLeft": {
@@ -114,7 +114,7 @@
             ]
         },
         "apartmentDetailsRight": {
-           "list": [
+            "list": [
                 {
                     "icon": "wifi",
                     "text": "High-speed Wi-Fi"
@@ -326,7 +326,7 @@
             "showMore": "Show more",
             "showLess": "Show less"
         },
-       "businessSection": {
+        "businessSection": {
             "subtitle": "Practical",
             "title": "Shopping Nearby",
             "description": "Everything you need for everyday or occasional shopping, just steps or a few minutes' walk from the apartment.",
@@ -366,5 +366,17 @@
             "description": "If you enjoyed the apartment, you can leave us a review on Google — it helps us a lot and helps other travelers too.",
             "button": "Leave a Google review"
         }
+    },
+    "reviews": {
+        "scoreLabels": {
+            "exceptional": "Exceptional",
+            "superb": "Superb",
+            "fabulous": "Fabulous",
+            "veryGood": "Very good",
+            "good": "Good",
+            "pleasant": "Pleasant"
+        },
+        "count_one": "{{count}} review",
+        "count_other": "{{count}} reviews"
     }
 }

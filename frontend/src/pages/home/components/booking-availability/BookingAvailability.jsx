@@ -9,6 +9,28 @@ import { API_BASE_URL } from '../../../../config';
 
 import styles from "./BookingAvailability.module.css";
 
+// etichetele de scor de pe Booking.com (în română) → chei de traducere
+const SCORE_LABEL_KEYS = {
+    "excepțional": "exceptional",
+    "superb": "superb",
+    "fabulos": "fabulous",
+    "foarte bine": "veryGood",
+    "bine": "good",
+    "plăcut": "pleasant",
+};
+
+function translateScoreText(text, t) {
+    // Booking folosește uneori sedila "ţ"/"ş" în loc de virgulă "ț"/"ș"
+    const normalized = text.trim().toLowerCase().replace(/ţ/g, "ț").replace(/ş/g, "ș");
+    const key = SCORE_LABEL_KEYS[normalized];
+    return key ? t(`reviews.scoreLabels.${key}`) : text;
+}
+
+function translateReviewsText(text, t) {
+    const count = parseInt(text.replace(/\D/g, ""), 10);
+    return Number.isNaN(count) ? text : t("reviews.count", { count });
+}
+
 function BookingAvailability() {
     const { t } = useTranslation();
     const [overallScore, setOverallScore] = useState(null);
@@ -33,8 +55,8 @@ function BookingAvailability() {
                     <div className={styles['overall-score']}>
                         <span className={styles['score-number']}>{overallScore.scoreNumber}</span>
                         <p>
-                            <span className={styles['score-text']}>{overallScore.scoreText}</span>
-                            <span className={styles['reviews-text']}>{overallScore.reviewsText}</span>
+                            <span className={styles['score-text']}>{translateScoreText(overallScore.scoreText ?? "", t)}</span>
+                            <span className={styles['reviews-text']}>{translateReviewsText(overallScore.reviewsText ?? "", t)}</span>
                         </p>
                     </div>
                 )}

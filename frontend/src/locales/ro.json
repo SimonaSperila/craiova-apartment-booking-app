@@ -3,7 +3,7 @@
         "title": "Shakespeare",
         "subtitle": "central apartment"
     },
-    "banner": { 
+    "banner": {
         "title": "Shakespeare Central apartament",
         "subtitle": "Bine ati venit la",
         "body": "Un apartament modern și elegant situat chiar în inima orașului Craiova, la doar câțiva pași de cele mai importante atracții turistice, restaurante și magazine. Acest apartament este perfect pentru cei care doresc să exploreze orașul și să se bucure de tot ce are de oferit."
@@ -22,7 +22,6 @@
             "description": "La câțiva pași de principalele atracții, restaurante și transport public.",
             "cta": "Vezi pe hartă"
         },
-              
         "benefit2": {
             "title": "Confort & Stil",
             "description": "Design modern, spațios și dotat cu tot ce ai nevoie pentru un sejur plăcut.",
@@ -115,7 +114,7 @@
             ]
         },
         "apartmentDetailsRight": {
-           "list": [
+            "list": [
                 {
                     "icon": "wifi",
                     "text": "Wi-Fi rapid"
@@ -367,5 +366,18 @@
             "description": "Dacă ți-a plăcut apartamentul, ne poți lăsa o recenzie pe Google — ne ajută enorm și le e de folos altor călători.",
             "button": "Lasă o recenzie pe Google"
         }
+    },
+    "reviews": {
+        "scoreLabels": {
+            "exceptional": "Excepțional",
+            "superb": "Superb",
+            "fabulous": "Fabulos",
+            "veryGood": "Foarte bine",
+            "good": "Bine",
+            "pleasant": "Plăcut"
+        },
+        "count_one": "{{count}} evaluare",
+        "count_few": "{{count}} evaluări",
+        "count_other": "{{count}} de evaluări"
     }
 }

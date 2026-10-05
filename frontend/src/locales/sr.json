@@ -366,5 +366,18 @@
             "description": "Ako vam se apartman dopao, možete nam ostaviti recenziju na Google-u — to nam mnogo znači, a pomaže i drugim putnicima.",
             "button": "Ostavite Google recenziju"
         }
+    },
+    "reviews": {
+        "scoreLabels": {
+            "exceptional": "Izuzetno",
+            "superb": "Vrhunsko",
+            "fabulous": "Fantastično",
+            "veryGood": "Vrlo dobro",
+            "good": "Dobro",
+            "pleasant": "Prijatno"
+        },
+        "count_one": "{{count}} recenzija",
+        "count_few": "{{count}} recenzije",
+        "count_other": "{{count}} recenzija"
     }
 }
