@@ -107,6 +107,9 @@ nav {
 
 .lang-switcher {
 	position: relative;
+	background: #d7d2d2;
+	padding: 5px;
+	border-radius: var(--border-radius);
 	
 	@media (min-width: 769px) {
 		position: absolute;
@@ -130,12 +133,12 @@ nav {
 
 .lang-dropdown {
 	position: absolute;
-	width: 100%;
 	margin-top: 2px;
 	background: #d7d2d2;
 	padding: 5px;
 	border-radius: var(--border-radius);
-	left: -5px;
+	left: 0;
+	right: 0;
 }
 
 .lang-dropdown button{
