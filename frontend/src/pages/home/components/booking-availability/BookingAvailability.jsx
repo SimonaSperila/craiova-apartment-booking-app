@@ -9,14 +9,20 @@ import { API_BASE_URL } from '../../../../config';
 
 import styles from "./BookingAvailability.module.css";
 
-// etichetele de scor de pe Booking.com (în română) → chei de traducere
+// etichetele de scor de pe Booking.com → chei de traducere
+// (limba paginii scrape-uite depinde de unde rulează scraper-ul, deci acceptăm și română, și engleză)
 const SCORE_LABEL_KEYS = {
     "excepțional": "exceptional",
+    "exceptional": "exceptional",
     "superb": "superb",
     "fabulos": "fabulous",
+    "fabulous": "fabulous",
     "foarte bine": "veryGood",
+    "very good": "veryGood",
     "bine": "good",
+    "good": "good",
     "plăcut": "pleasant",
+    "pleasant": "pleasant",
 };
 
 function translateScoreText(text, t) {
