@@ -214,10 +214,6 @@
                         "To turn off the heater, press the ⏻ button again."
                     ],
                     "note": "<strong>Attention:</strong> Do not cover the unit and keep curtains, bed linens and other textile objects at least 1 meter away. Turn off and unplug the unit when leaving the apartment."
-                },
-                "other": {
-                    "title": "Other",
-                    "description": "Other usage instructions."
                 }
             },
             "userGuideFooterRules": {

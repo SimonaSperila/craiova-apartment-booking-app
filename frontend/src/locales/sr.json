@@ -214,10 +214,6 @@
                         "Da isključite grejalicu, ponovo pritisnite dugme ⏻."
                     ],
                     "note": "<strong>Pažnja:</strong> Ne pokrivajte uređaj i držite zavese, posteljinu i ostale tekstilne predmete na udaljenosti od najmanje 1 metar. Isključite uređaj i izvucite ga iz utičnice kada napuštate apartman."
-                },
-                "other": {
-                    "title": "Ostalo",
-                    "description": "Ostala uputstva za korišćenje."
                 }
             },
             "userGuideFooterRules": {

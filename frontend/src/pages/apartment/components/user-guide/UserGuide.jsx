@@ -11,8 +11,7 @@ const TABS = [
     { id: "coffee-machine", key: "apartmentPage.userGuide.tabs.coffeeMachine", slider: true },
     { id: "heating", key: "apartmentPage.userGuide.tabs.heating" },
     { id: "air-conditioning", key: "apartmentPage.userGuide.tabs.airConditioning" },
-    { id: "smart-tv", key: "apartmentPage.userGuide.tabs.smartTv" },
-    { id: "other", key: "apartmentPage.userGuide.tabs.other" },
+    { id: "smart-tv", key: "apartmentPage.userGuide.tabs.smartTv" }
 ];
 
 const TAB_IMAGE_MODULES = import.meta.glob(
