@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTriangleExclamation, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import ImageSlider from '../../../../components/slider/ImageSlider';
@@ -8,10 +8,10 @@ import Tabs from '../../../../components/tabs/Tabs';
 import styles from "./UserGuide.module.css";
 
 const TABS = [
-    { id: "coffee-machine", key: "apartmentPage.userGuide.tabs.coffeeMachine" },
+    { id: "coffee-machine", key: "apartmentPage.userGuide.tabs.coffeeMachine", slider: true },
+    { id: "heating", key: "apartmentPage.userGuide.tabs.heating" },
     { id: "air-conditioning", key: "apartmentPage.userGuide.tabs.airConditioning" },
     { id: "smart-tv", key: "apartmentPage.userGuide.tabs.smartTv" },
-    { id: "heating", key: "apartmentPage.userGuide.tabs.heating" },
     { id: "other", key: "apartmentPage.userGuide.tabs.other" },
 ];
 
@@ -28,11 +28,28 @@ const TAB_IMAGES = TABS.reduce((acc, tab) => {
     return acc;
 }, {});
 
+// Renders a translated field; strings may contain basic HTML tags (<strong>, <i>, <br/>), parsed by <Trans>.
+function GuideField({ value, i18nKey }) {
+    const hasTitledText = value && typeof value === 'object' && !Array.isArray(value) && 'text' in value;
+    const content = hasTitledText ? value.text : value;
+    const contentKey = hasTitledText ? `${i18nKey}.text` : i18nKey;
+
+    return (
+        <>
+            {hasTitledText && value.title && <h4 className={styles["guide-field-title"]}><Trans i18nKey={`${i18nKey}.title`} /></h4>}
+            {Array.isArray(content)
+                ? <ul>{content.map((_, index) => <li key={index}><Trans i18nKey={`${contentKey}.${index}`} /></li>)}</ul>
+                : <p><Trans i18nKey={contentKey} /></p>}
+        </>
+    );
+}
+
 function UserGuide() {
     const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState(TABS[0].id);
     const activeTabConfig = TABS.find((tab) => tab.id === activeTab);
     const { title, subtitle, ...tabFields } = t(activeTabConfig.key, { returnObjects: true });
+    const activeImage = TAB_IMAGES[activeTab][0];
 
     return (
         <div className="container">
@@ -46,10 +63,30 @@ function UserGuide() {
                     onChange={setActiveTab}
                 />
 
-                <div className={styles["tab-content"] + " tab-content"}>
-                    <ImageSlider key={`image-${activeTab}`} images={TAB_IMAGES[activeTab]} alt={title} />
-                    <TextSlider key={`text-${activeTab}`} fields={Object.entries(tabFields)} showArrows={false} />
-                </div>
+                {activeTabConfig.slider ? (
+                    <div className={styles["tab-content"] + " tab-content"} data-tab={activeTab}>
+                        <ImageSlider key={`image-${activeTab}`} images={TAB_IMAGES[activeTab]} alt={title} />
+                        <TextSlider
+                            key={`text-${activeTab}`}
+                            fields={Object.entries(tabFields)}
+                            showArrows={false}
+                            renderField={(field, value) => (
+                                <GuideField value={value} i18nKey={`${activeTabConfig.key}.${field}`} />
+                            )}
+                        />
+                    </div>
+                ) : (
+                    <div className={styles["tab-content"] + (activeImage ? "" : " " + styles["tab-content--text-only"]) + " tab-content"} data-tab={activeTab}>
+                        {activeImage && <img className={styles["tab-image"]} src={activeImage} alt={title} />}
+                        <div className={styles["tab-text"]}>
+                            {Object.entries(tabFields).map(([field, value]) => (
+                                <div key={field} className={styles["guide-field"]} data-field={field}>
+                                    <GuideField value={value} i18nKey={`${activeTabConfig.key}.${field}`} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 <div className={styles["user-guide-footer"]}>
                     <div className={styles["user-guide-footer-item"] + " important-rules"}>

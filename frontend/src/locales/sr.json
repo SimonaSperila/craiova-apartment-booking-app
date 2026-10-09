@@ -199,7 +199,21 @@
                 },
                 "heating": {
                     "title": "Grejanje",
-                    "description": "Uputstvo za korišćenje sistema grejanja."
+                    "description1": "Apartman se greje kroz centralnu sistem na gradu.",
+                    "description2": "Ako želite dodatnu toplinu, imate sledeće opcije:",
+                    "text": [
+                        "U dnevnoj sobi: klima uređaj, koji se može koristiti u režimu gretanja (HEAT)",
+                        "U spavaćoj sobi: električni grejač ZASS."
+                    ],
+                    "description3": "Kako se koristi ZASS konvektor u spavaćoj sobi:",
+                    "text2": [
+                        "Uključite glavni prekidač sa bočne strane uređaja.",
+                        "Pritisnite dugme ⏻ na daljinskom upravljaču da uključite grejalicu.",
+                        "Pritiskajte MODE dok ne izaberete režim Komfor.",
+                        "Pritisnite TEMP, a zatim strelicama ▲ i ▼ podesite željenu temperaturu.",
+                        "Da isključite grejalicu, ponovo pritisnite dugme ⏻."
+                    ],
+                    "note": "<strong>Pažnja:</strong> Ne pokrivajte uređaj i držite zavese, posteljinu i ostale tekstilne predmete na udaljenosti od najmanje 1 metar. Isključite uređaj i izvucite ga iz utičnice kada napuštate apartman."
                 },
                 "other": {
                     "title": "Ostalo",

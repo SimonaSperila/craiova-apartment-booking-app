@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './TextSlider.module.css';
 
-function TextSlider({ fields, showArrows = true }) {
+function TextSlider({ fields, showArrows = true, renderField }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
     if (!fields || fields.length === 0) return null;
@@ -21,10 +21,14 @@ function TextSlider({ fields, showArrows = true }) {
         <div className={styles["text-slider"]}>
             <div className={styles["text-slider-viewport"]}>
                 <div className={styles["text-slider-field"]} data-field={field}>
-                    {fieldTitle && <h4 className={styles["text-slider-title"]}>{fieldTitle}</h4>}
-                    {Array.isArray(content)
-                        ? <ul>{content.map((item, index) => <li key={index}>{item}</li>)}</ul>
-                        : <p>{content}</p>}
+                    {renderField ? renderField(field, value) : (
+                        <>
+                            {fieldTitle && <h4 className={styles["text-slider-title"]}>{fieldTitle}</h4>}
+                            {Array.isArray(content)
+                                ? <ul>{content.map((item, index) => <li key={index}>{item}</li>)}</ul>
+                                : <p>{content}</p>}
+                        </>
+                    )}
                 </div>
 
                 {showArrows && fields.length > 1 && (

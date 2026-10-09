@@ -199,7 +199,21 @@
                 },
                 "heating": {
                     "title": "Heating",
-                    "description": "Instructions for using the heating system."
+                    "description1": "The apartment benefits from heating through the city's centralized system.",
+                    "description2": "If you desire additional warmth, you have the following options:",
+                    "text": [
+                        "In the living room: the air conditioning unit, which can be used on the heating mode (HEAT)",
+                        "In the bedroom: the electric heating panel ZASS."
+                    ],
+                    "description3": "How to use the ZASS heater in the bedroom:",
+                    "text2": [
+                        "Turn on the main switch on the side of the unit.",
+                        "Press the ⏻ button on the remote control to turn on the heater.",
+                        "Press MODE until you select the Comfort mode.",
+                        "Press TEMP, then use the ▲ and ▼ arrows to set the desired temperature.",
+                        "To turn off the heater, press the ⏻ button again."
+                    ],
+                    "note": "<strong>Attention:</strong> Do not cover the unit and keep curtains, bed linens and other textile objects at least 1 meter away. Turn off and unplug the unit when leaving the apartment."
                 },
                 "other": {
                     "title": "Other",

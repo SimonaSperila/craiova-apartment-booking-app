@@ -14,12 +14,41 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
+        margin-top: 0;
 
         @media (min-width: 769px) {
             grid-template-columns: 1fr 1fr;
             gap: 80px;
         }
     }
+
+    .tab-content--text-only {
+        @media (min-width: 769px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .tab-image {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        object-fit: cover;
+    }
+
+    .tab-text {
+        text-align: left;
+    }
+
+    .guide-field-title {
+        margin: 0 0 var(--spacing-sm, 8px) 0;
+    }
+
+    .guide-field + .guide-field {
+        margin-top: var(--spacing-md, 16px);
+    }
+
+    /* Per-tab / per-field styling, e.g.:
+       [data-tab="heating"] [data-field="description2"] { font-weight: bold; } */
 
     ul li {
         list-style-type: number;
@@ -90,5 +119,15 @@
     a {
         display: inline-block;
         margin-top: 10px;
+    }
+}
+
+
+[data-tab="heating"] {
+    align-items: center;
+
+    [data-field="description1"],
+    [data-field="description3"] {
+        font-weight: bold;
     }
 }
