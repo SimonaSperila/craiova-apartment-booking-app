@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTriangleExclamation, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faTriangleExclamation, faClock, faPhone, faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import ImageSlider from '../../../../components/slider/ImageSlider';
 import TextSlider from '../../../../components/slider/TextSlider';
 import Tabs from '../../../../components/tabs/Tabs';
@@ -27,7 +27,10 @@ const TAB_IMAGES = TABS.reduce((acc, tab) => {
     return acc;
 }, {});
 
-// Renders a translated field; strings may contain basic HTML tags (<strong>, <i>, <br/>), parsed by <Trans>.
+// Custom tags usable in translation strings, e.g. "Press the <power/> button".
+const TRANS_COMPONENTS = { power: <FontAwesomeIcon icon={faPowerOff} /> };
+
+// Renders a translated field; strings may contain basic HTML tags (<strong>, <i>, <br/>) and TRANS_COMPONENTS tags, parsed by <Trans>.
 function GuideField({ value, i18nKey }) {
     const hasTitledText = value && typeof value === 'object' && !Array.isArray(value) && 'text' in value;
     const content = hasTitledText ? value.text : value;
@@ -37,8 +40,8 @@ function GuideField({ value, i18nKey }) {
         <>
             {hasTitledText && value.title && <h4 className={styles["guide-field-title"]}><Trans i18nKey={`${i18nKey}.title`} /></h4>}
             {Array.isArray(content)
-                ? <ul>{content.map((_, index) => <li key={index}><Trans i18nKey={`${contentKey}.${index}`} /></li>)}</ul>
-                : <p><Trans i18nKey={contentKey} /></p>}
+                ? <ul>{content.map((_, index) => <li key={index}><Trans i18nKey={`${contentKey}.${index}`} components={TRANS_COMPONENTS} /></li>)}</ul>
+                : <p><Trans i18nKey={contentKey} components={TRANS_COMPONENTS} /></p>}
         </>
     );
 }

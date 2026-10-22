@@ -208,10 +208,10 @@
                     "description3": "Cum se utilizează convectorul ZASS din dormitor:",
                     "text2": [
                         "Porniți întrerupătorul principal de pe lateralul aparatului.",
-                        "Apăsați butonul ⏻ de pe telecomandă pentru a porni încălzitorul.",
+                        "Apăsați butonul <power/> de pe telecomandă pentru a porni încălzitorul.",
                         "Apăsați MODE până selectați modul Confort.",
                         "Apăsați TEMP, apoi utilizați săgețile ▲ și ▼ pentru a seta temperatura dorită.",
-                        "Pentru a opri încălzitorul, apăsați din nou butonul ⏻."
+                        "Pentru a opri încălzitorul, apăsați din nou butonul <power/>."
                     ],
                     "note": "<strong>Atenție:</strong> Nu acoperiți aparatul și păstrați perdelele, lenjeria de pat și celelalte obiecte textile la o distanță de cel puțin 1 metru. Opriți și deconectați aparatul atunci când părăsiți apartamentul."
                 }
