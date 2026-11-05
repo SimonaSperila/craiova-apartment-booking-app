@@ -1,6 +1,6 @@
 # Politica de confidențialitate
 
-*Ultima actualizare: 15 septembrie 2026*
+*Ultima actualizare: 5 noiembrie 2026*
 
 ## 1. Introducere
 
@@ -29,6 +29,8 @@ Site-ul nu conține formular de contact, formular de rezervare, cont de utilizat
 Prin urmare, site-ul nu solicită în mod direct vizitatorilor numele, adresa de email, numărul de telefon sau datele de plată pentru efectuarea unei rezervări.
 
 În funcție de modul în care este configurat site-ul și de serviciile tehnice utilizate, pot fi procesate anumite date tehnice necesare funcționării și securității site-ului, cum ar fi adresa IP, tipul dispozitivului, browserul utilizat și informații tehnice despre accesarea site-ului.
+
+Site-ul utilizează **Vercel Web Analytics**, furnizat de Vercel Inc., pentru a măsura traficul în mod agregat (pagini vizitate, site-ul de proveniență, țară, tip de dispozitiv și browser). Acest serviciu nu folosește cookie-uri și nu ne permite să identificăm vizitatorii. Pentru detalii, consultați [Politica de confidențialitate Vercel](https://vercel.com/legal/privacy-policy).
 
 ## 4. Rezervările prin Booking.com
 

@@ -1,6 +1,6 @@
 # Politika kolačića
 
-*Poslednje ažuriranje: 30. septembar 2026.*
+*Poslednje ažuriranje: 5. novembar 2026.*
 
 ## 1. Šta su kolačići
 
@@ -10,11 +10,11 @@ Kolačići su male tekstualne datoteke koje se smeštaju na vaš uređaj kada po
 
 Veb-sajt **Shakespeare Central Apartment** ne koristi kolačiće za oglašavanje, profilisanje ili praćenje aktivnosti korisnika.
 
-Veb-sajt ne koristi servise za analitiku ili praćenje, kao što su Google Analytics, Meta Pixel ili slični servisi.
+Veb-sajt koristi **Vercel Web Analytics** za merenje saobraćaja u zbirnom obliku (posećene stranice, veb-sajt sa kog dolazite, zemlja, vrsta uređaja i pregledač). Ovaj servis ne koristi kolačiće i ne omogućava nam da identifikujemo posetioce. Veb-sajt ne koristi druge servise za analitiku ili praćenje, kao što su Google Analytics ili Meta Pixel.
 
-Po potrebi se mogu koristiti samo tehnologije ili tehnički podaci koji su neophodni za rad i bezbednost veb-sajta.
+U ostalim slučajevima, po potrebi se mogu koristiti samo tehnologije ili tehnički podaci koji su neophodni za rad i bezbednost veb-sajta.
 
-Ako se to u budućnosti promeni (na primer, ako se uvedu alati za analizu saobraćaja), ažuriraćemo ovu politiku i, ako je potrebno, zatražiti vašu saglasnost putem banera za kolačiće.
+Ako se to u budućnosti promeni (na primer, ako se uvedu alati za analitiku koji koriste kolačiće), ažuriraćemo ovu politiku i, ako je potrebno, zatražiti vašu saglasnost putem banera za kolačiće.
 
 ## 3. Kolačići trećih strana
 
