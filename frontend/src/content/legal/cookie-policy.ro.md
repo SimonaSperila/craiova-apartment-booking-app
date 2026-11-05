@@ -1,6 +1,6 @@
 # Politica de cookie-uri
 
-*Ultima actualizare: 30 septembrie 2026*
+*Ultima actualizare: 5 noiembrie 2026*
 
 ## 1. Ce sunt cookie-urile
 
@@ -10,11 +10,11 @@ Cookie-urile sunt fișiere text de mici dimensiuni, plasate pe dispozitivul tău
 
 Site-ul **Shakespeare Central Apartment** nu utilizează cookie-uri pentru publicitate, profilare sau urmărirea activității utilizatorilor.
 
-Site-ul nu utilizează servicii de analiză sau tracking, precum Google Analytics, Meta Pixel sau alte servicii similare.
+Site-ul utilizează **Vercel Web Analytics** pentru a măsura traficul în mod agregat (pagini vizitate, site-ul de proveniență, țară, tip de dispozitiv și browser). Acest serviciu nu folosește cookie-uri și nu ne permite să identificăm vizitatorii. Site-ul nu utilizează alte servicii de analiză sau tracking, precum Google Analytics sau Meta Pixel.
 
-Pot fi utilizate doar tehnologii sau date tehnice strict necesare pentru funcționarea și securitatea site-ului, în măsura în care acestea sunt necesare.
+În rest, pot fi utilizate doar tehnologii sau date tehnice strict necesare pentru funcționarea și securitatea site-ului, în măsura în care acestea sunt necesare.
 
-Dacă această situație se va schimba în viitor (de exemplu, prin introducerea unor instrumente de analiză a traficului), vom actualiza această politică și, dacă este necesar, vom solicita consimțământul tău printr-un banner de cookie-uri.
+Dacă această situație se va schimba în viitor (de exemplu, prin introducerea unor instrumente de analiză care folosesc cookie-uri), vom actualiza această politică și, dacă este necesar, vom solicita consimțământul tău printr-un banner de cookie-uri.
 
 ## 3. Servicii externe
 

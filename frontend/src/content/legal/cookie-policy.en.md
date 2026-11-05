@@ -1,6 +1,6 @@
 # Cookie Policy
 
-*Last updated: September 30, 2026*
+*Last updated: November 5, 2026*
 
 ## 1. What are cookies
 
@@ -10,11 +10,11 @@ Cookies are small text files placed on your device when you visit a website, typ
 
 The **Shakespeare Central Apartment** website does not use cookies for advertising, profiling, or tracking users' activity.
 
-The website does not use analytics or tracking services such as Google Analytics, Meta Pixel, or similar services.
+The website uses **Vercel Web Analytics** to measure traffic in aggregate (pages visited, referring website, country, device type, and browser). This service does not use cookies and does not allow us to identify visitors. The website does not use other analytics or tracking services such as Google Analytics or Meta Pixel.
 
-Only technologies or technical data that are strictly necessary for the operation and security of the website may be used, where required.
+Otherwise, only technologies or technical data that are strictly necessary for the operation and security of the website may be used, where required.
 
-If this changes in the future (for example, if traffic-analysis tools are introduced), we will update this policy and, if required, request your consent through a cookie banner.
+If this changes in the future (for example, if analytics tools that use cookies are introduced), we will update this policy and, if required, request your consent through a cookie banner.
 
 ## 3. Third-party cookies
 

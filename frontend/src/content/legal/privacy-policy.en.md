@@ -1,6 +1,6 @@
 # Privacy Policy
 
-*Last updated: September 15, 2026*
+*Last updated: November 5, 2026*
 
 ## 1. Introduction
 
@@ -28,6 +28,8 @@ The website does not contain a contact form, booking form, user account system, 
 Therefore, the website does not directly request visitors to provide their name, email address, telephone number, or payment details in order to make a reservation.
 
 Depending on the website's technical configuration and the services used, certain technical information may be processed when you visit the website, such as your IP address, device type, browser type, and technical information relating to your access to the website.
+
+The website uses **Vercel Web Analytics**, provided by Vercel Inc., to measure traffic in aggregate (pages visited, referring website, country, device type, and browser). This service does not use cookies and does not allow us to identify visitors. For details, please see the [Vercel Privacy Policy](https://vercel.com/legal/privacy-policy).
 
 ## 4. Bookings Through Booking.com
 

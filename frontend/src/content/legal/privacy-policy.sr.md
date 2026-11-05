@@ -1,6 +1,6 @@
 # Politika privatnosti
 
-*Poslednje ažuriranje: 15. septembar 2026.*
+*Poslednje ažuriranje: 5. novembar 2026.*
 
 ## 1. Uvod
 
@@ -28,6 +28,8 @@ Veb-sajt ne sadrži kontakt formular, formular za rezervaciju, sistem korisničk
 Stoga veb-sajt ne traži direktno od posetilaca da navedu svoje ime, e-mail adresu, broj telefona ili podatke o plaćanju radi rezervacije.
 
 U zavisnosti od tehničke konfiguracije veb-sajta i korišćenih servisa, prilikom posete veb-sajtu mogu se obrađivati određene tehničke informacije, kao što su vaša IP adresa, vrsta uređaja, vrsta pregledača i tehničke informacije u vezi sa vašim pristupom veb-sajtu.
+
+Veb-sajt koristi **Vercel Web Analytics**, koji pruža Vercel Inc., za merenje saobraćaja u zbirnom obliku (posećene stranice, veb-sajt sa kog dolazite, zemlja, vrsta uređaja i pregledač). Ovaj servis ne koristi kolačiće i ne omogućava nam da identifikujemo posetioce. Za detalje pogledajte [Politiku privatnosti kompanije Vercel](https://vercel.com/legal/privacy-policy).
 
 ## 4. Rezervacije putem Booking.com
 
