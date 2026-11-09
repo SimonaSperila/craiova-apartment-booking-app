@@ -27,7 +27,7 @@ export const TEMPORARY_BANNERS = [
     {
         id: "christmas-market-2026",
         enabled: true,
-        expiresOn: "2027-01-07",
+        expiresOn: "2027-01-04",
         image: {
             ro: christmasMarketBannerRo,
             en: christmasMarketBannerEn,
