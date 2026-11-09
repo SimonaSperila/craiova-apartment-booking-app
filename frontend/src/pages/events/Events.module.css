@@ -88,6 +88,13 @@
 	}
 }
 
+/* Banner-specific styles for temporary banners (see temporaryBanners.js `className`) */
+.christmas-market-2026 {
+	picture {
+		position: static;
+	}
+}
+
 .events-section .section-header {
 	display: flex;
 	flex-wrap: wrap;

@@ -9,7 +9,7 @@ import banner from "../../assets/events-banner.jpg";
 import EventCard from "./components/event-card/EventCard";
 import Tabs from "../../components/tabs/Tabs";
 import { API_BASE_URL } from "../../config";
-import { getActiveTemporaryBanner } from "./temporaryBanners";
+import { getActiveTemporaryBanner, localizedBannerValue } from "./temporaryBanners";
 
 import styles from "./Events.module.css";
 
@@ -46,8 +46,10 @@ function Events() {
     const defaultBannerDescription = t("eventsPage.description");
 
     const temporaryBanner = getActiveTemporaryBanner();
-    const bannerSrc = temporaryBanner ? temporaryBanner.image : banner;
-    const bannerAlt = temporaryBanner ? temporaryBanner.alt : "Events Banner";
+    const lang = i18n.language;
+    const bannerSrc = temporaryBanner ? localizedBannerValue(temporaryBanner.image, lang) : banner;
+    const bannerMobileSrc = temporaryBanner ? (localizedBannerValue(temporaryBanner.mobileImage, lang) || bannerSrc) : banner;
+    const bannerAlt = temporaryBanner ? localizedBannerValue(temporaryBanner.alt, lang) : "Events Banner";
     const bannerTitle = temporaryBanner ? temporaryBanner.titleKey : defaultBannerTitle;
     const bannerSubtitle = temporaryBanner ? temporaryBanner.subtitleKey : null;
     const bannerDescription = temporaryBanner ? temporaryBanner.descriptionKey : defaultBannerDescription;
@@ -56,12 +58,13 @@ function Events() {
 
     return(
         <div className={styles["events-page"]}>
-            <div className={styles["events-banner"]}>
+            <div className={[styles["events-banner"], temporaryBanner?.className && styles[temporaryBanner.className]].filter(Boolean).join(" ")}>
                 <picture>
-                    <source media="(max-width: 768px)" srcSet={bannerSrc} />
+                    <source media="(max-width: 768px)" srcSet={bannerMobileSrc} />
                     <img src={bannerSrc} alt={bannerAlt} />
                 </picture>
 
+                {(bannerTitle || bannerSubtitle || bannerDate || bannerDescription) && (
                 <div className={styles["container"] + " container"}>
                     <div className={styles["banner-content"]}>
                         {bannerTitle && <h1> {bannerLink ? (
@@ -76,6 +79,7 @@ function Events() {
                         {bannerDescription && <p className={styles["banner-description"]}>{t(bannerDescription)}</p>}
                     </div>
                 </div>
+                )}
             </div>
 
             <div className={styles['events-section']}>
