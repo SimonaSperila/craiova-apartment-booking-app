@@ -6,7 +6,13 @@
     "banner": {
         "title": "Shakespeare Central apartament",
         "subtitle": "Bine ati venit la",
-        "body": "Un apartament modern și elegant situat chiar în inima orașului Craiova, la doar câțiva pași de cele mai importante atracții turistice, restaurante și magazine. Acest apartament este perfect pentru cei care doresc să exploreze orașul și să se bucure de tot ce are de oferit."
+        "body": "Un apartament modern și elegant situat chiar în inima orașului Craiova, la doar câțiva pași de cele mai importante atracții turistice, restaurante și magazine. Acest apartament este perfect pentru cei care doresc să exploreze orașul și să se bucure de tot ce are de oferit.",
+        "christmas": {
+            "subtitle": "Crăciun în centrul Craiovei",
+            "title": "Pregătit de sărbători",
+            "body": "Petrece sărbătorile la doar câțiva pași de Târgul de Crăciun, într-un apartament decorat de sărbători, cald și primitor.",
+            "cta": "Vezi cum arată apartamentul de Crăciun"
+        }
     },
     "nav": {
         "home": "Acasă",
@@ -272,6 +278,7 @@
         "title": "Tot ce ai nevoie pentru un sejur confortabil",
         "description": "",
         "categories": {
+            "christmas": "Crăciun",
             "all": "Toate",
             "kitchen": "Bucătărie",
             "livingRoom": "Living",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useSearchParams } from "react-router-dom";
 
 import Tabs from "../../components/tabs/Tabs";
 import Lightbox from "../../components/lightbox/Lightbox";
@@ -10,7 +11,11 @@ import styles from "./Gallery.module.css";
 
 const ALL_TAB_ID = "all";
 
+// `excludeFromAll`: seasonal photos (e.g. Christmas decorations) get their own tab
+// but are left out of "all", so they don't misrepresent the apartment off-season.
+// A tab can be opened directly with ?tab=<id> (e.g. /ro/gallery?tab=christmas).
 const CATEGORIES = [
+    { id: "christmas", key: "galleryPage.categories.christmas", excludeFromAll: true },
     { id: "kitchen", key: "galleryPage.categories.kitchen" },
     { id: "living-room", key: "galleryPage.categories.livingRoom" },
     { id: "bedroom", key: "galleryPage.categories.bedroom" },
@@ -42,7 +47,9 @@ const TABS = AVAILABLE_CATEGORIES.length > 0
 
 function getImagesForTab(tabId) {
     if (tabId === ALL_TAB_ID) {
-        return AVAILABLE_CATEGORIES.flatMap((category) =>
+        return AVAILABLE_CATEGORIES
+            .filter((category) => !category.excludeFromAll)
+            .flatMap((category) =>
             category.images.map((src) => ({ src, categoryKey: category.key }))
         );
     }
@@ -52,7 +59,11 @@ function getImagesForTab(tabId) {
 
 function Gallery() {
     const { t } = useTranslation();
-    const [activeTab, setActiveTab] = useState(TABS[0]?.id);
+    const [searchParams] = useSearchParams();
+    const requestedTab = searchParams.get("tab");
+    const [activeTab, setActiveTab] = useState(
+        TABS.some((tab) => tab.id === requestedTab) ? requestedTab : TABS[0]?.id
+    );
     const [lightboxIndex, setLightboxIndex] = useState(null);
 
     const activeImages = getImagesForTab(activeTab).map((image) => ({

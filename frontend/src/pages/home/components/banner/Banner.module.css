@@ -30,9 +30,21 @@
 .banner-content {
  	 max-width: 500px;
 
+	.banner-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--spacing-sm);
+		margin-top: var(--spacing-lg);
+	}
+
+	.banner-cta {
+		display: inline-block;
+		padding: var(--spacing-md);
+	}
+
   	.check-availability-btn-banner {
 	  	display: inline-block;
-	  	margin-top: var(--spacing-lg);
 		  background-color: white;
 		  padding: var(--spacing-md);
       border-radius: var(--radius);
@@ -58,3 +70,9 @@
   display: block;
 }
 /*END BANNER*/
+/* Hero-specific styles for temporary heroes (see temporaryHeroes.js `className`) */
+.christmas-2026 {
+  h1 {
+    max-width: 500px;
+  }
+}

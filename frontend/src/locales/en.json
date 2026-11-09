@@ -6,7 +6,13 @@
     "banner": {
         "title": "Shakespeare Central Apartment",
         "subtitle": "Welcome to",
-        "body": "A modern and elegant apartment located right in the heart of Craiova, just a few steps away from the most important tourist attractions, restaurants, and shops. This apartment is perfect for those who want to explore the city and enjoy everything it has to offer."
+        "body": "A modern and elegant apartment located right in the heart of Craiova, just a few steps away from the most important tourist attractions, restaurants, and shops. This apartment is perfect for those who want to explore the city and enjoy everything it has to offer.",
+        "christmas": {
+            "subtitle": "Christmas in the heart of Craiova",
+            "title": "Ready for the holidays",
+            "body": "Spend the holidays just a few steps from the Christmas Market, in a warm and welcoming apartment decorated for the season.",
+            "cta": "See the apartment at Christmas"
+        }
     },
     "nav": {
         "home": "Home",
@@ -272,6 +278,7 @@
         "title": "Everything You Need for a Comfortable Stay",
         "description": "",
         "categories": {
+            "christmas": "Christmas",
             "all": "All",
             "kitchen": "Kitchen",
             "livingRoom": "Living Room",

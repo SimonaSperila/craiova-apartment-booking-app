@@ -1,3 +1,4 @@
+import { getActiveBanner, localizedBannerValue } from "../../utils/temporaryBanners";
 import puppetsBanner from "../../assets/puppets-banner.png";
 import christmasMarketBannerRo from "../../assets/christmas-market-2026.jpg";
 import christmasMarketBannerEn from "../../assets/christmas-market-2026-en.jpg";
@@ -62,22 +63,8 @@ export const TEMPORARY_BANNERS = [
     },
 ];
 
-function isExpired(banner) {
-    if (!banner.expiresOn) return false;
-
-    // Treat expiresOn as "valid through the end of this day" in local time.
-    const expiry = new Date(`${banner.expiresOn}T23:59:59.999`);
-    return Date.now() > expiry.getTime();
-}
-
-// Resolves a banner field that is either a plain value or a { ro, en, bg, sr } map.
-export function localizedBannerValue(value, lang) {
-    if (value && typeof value === "object") {
-        return value[lang] || value.ro;
-    }
-    return value;
-}
+export { localizedBannerValue };
 
 export function getActiveTemporaryBanner() {
-    return TEMPORARY_BANNERS.find(banner => banner.enabled && !isExpired(banner)) || null;
+    return getActiveBanner(TEMPORARY_BANNERS);
 }

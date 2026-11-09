@@ -6,7 +6,13 @@
     "banner": {
         "title": "Shakespeare Central Apartment",
         "subtitle": "Dobro došli u",
-        "body": "Moderan i elegantan apartman smešten u samom srcu Krajove, na samo nekoliko koraka od najvažnijih turističkih atrakcija, restorana i prodavnica. Ovaj apartman je savršen za sve koji žele da istraže grad i uživaju u svemu što on nudi."
+        "body": "Moderan i elegantan apartman smešten u samom srcu Krajove, na samo nekoliko koraka od najvažnijih turističkih atrakcija, restorana i prodavnica. Ovaj apartman je savršen za sve koji žele da istraže grad i uživaju u svemu što on nudi.",
+        "christmas": {
+            "subtitle": "Božić u srcu Krajove",
+            "title": "Spreman za praznike",
+            "body": "Provedite praznike samo nekoliko koraka od Božićnog sajma, u toplom i prijatnom apartmanu ukrašenom za praznike.",
+            "cta": "Pogledajte apartman za Božić"
+        }
     },
     "nav": {
         "home": "Početna",
@@ -272,6 +278,7 @@
         "title": "Sve što vam je potrebno za udoban boravak",
         "description": "",
         "categories": {
+            "christmas": "Božić",
             "all": "Sve",
             "kitchen": "Kuhinja",
             "livingRoom": "Dnevna soba",
