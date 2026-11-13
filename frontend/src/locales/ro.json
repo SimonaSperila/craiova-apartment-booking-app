@@ -462,6 +462,11 @@
                 }
             ]
         },
+        "map": {
+            "title": "Harta târgului",
+            "imageAlt": "Harta Târgului de Crăciun Craiova cu toate zonele: Piața Mihai Viteazul, patinoarul, roata panoramică, zonele food, scena și Labirintul Elfilor, plus Shakespeare Central Apartment, chiar lângă parcarea subterană",
+            "hint": "Apasă pe hartă pentru a o deschide la dimensiune completă."
+        },
         "discover": {
             "title": "Descoperă Tărâmul Elfilor",
             "items": {

@@ -461,6 +461,11 @@
                 }
             ]
         },
+        "map": {
+            "title": "Market map",
+            "imageAlt": "Map of the Craiova Christmas Market showing all areas: Mihai Viteazul Square, the ice rink, the Ferris wheel, food areas, the stage and the Elves Labyrinth, plus Shakespeare Central Apartment, right next to the underground car park",
+            "hint": "Tap the map to open it in full size."
+        },
         "discover": {
             "title": "Discover the Land of the Elves",
             "items": {

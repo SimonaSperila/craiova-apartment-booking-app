@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -29,6 +29,29 @@ describe('Christmas Market page', () => {
 
         expect(screen.getByText('A giant 9-metre Santa Claus')).toBeInTheDocument();
         expect(screen.getAllByRole('listitem').filter(li => li.querySelector('img'))).toHaveLength(4);
+    });
+
+    it('shows the market map translated into the current language', () => {
+        for (const lang of ['ro', 'en', 'bg', 'sr']) {
+            i18n.changeLanguage(lang);
+            const { unmount } = render(<ChristmasMarket />);
+            const map = screen.getByAltText(/Shakespeare Central Apartment/);
+            expect(map.getAttribute('src')).toContain(`christmas-market-map.${lang}.webp`);
+            unmount();
+        }
+    });
+
+    it('opens the map in the lightbox and closes it again', () => {
+        render(<ChristmasMarket />);
+        const map = screen.getByAltText(/Shakespeare Central Apartment/);
+
+        fireEvent.click(map);
+        const enlarged = screen.getAllByAltText(/Shakespeare Central Apartment/);
+        expect(enlarged).toHaveLength(2);
+        expect(enlarged[1]).toHaveAttribute('src', map.getAttribute('src'));
+
+        fireEvent.click(screen.getByRole('button', { name: 'Close' }));
+        expect(screen.getAllByAltText(/Shakespeare Central Apartment/)).toHaveLength(1);
     });
 
     it('has the same structure in every supported language', () => {
