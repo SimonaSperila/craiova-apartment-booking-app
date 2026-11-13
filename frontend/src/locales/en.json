@@ -20,7 +20,8 @@
         "events": "Events",
         "gallery": "Gallery",
         "local-area": "Local Area",
-        "contact": "Contact"
+        "contact": "Contact",
+        "christmasMarket": "Christmas Market"
     },
     "benefitsHomepage": {
         "benefit1": {
@@ -395,5 +396,84 @@
         },
         "count_one": "{{count}} review",
         "count_other": "{{count}} reviews"
+    },
+    "christmasMarketPage": {
+        "hero": {
+            "eyebrow": "Craiova • 13 November 2026 – 3 January 2027",
+            "title": "The Land of the Elves",
+            "tagline": "The magic of Christmas awaits you in the heart of Craiova.",
+            "cta": "See the programme",
+            "imageAlt": "Illustration of the Craiova Christmas Market at night: lit-up stalls, the giant tree and the Ferris wheel"
+        },
+        "intro": {
+            "title": "Craiova opens the Land of the Elves",
+            "text1": "The Christmas Market opens on Friday, 13 November 2026, at 18:00.",
+            "text2": "A spectacular edition, with more than two million lights and plenty of attractions."
+        },
+        "facts": {
+            "dates": {
+                "title": "13 Nov 2026 – 3 Jan 2027",
+                "text": "Open daily"
+            },
+            "location": {
+                "title": "Mihai Viteazul Square",
+                "text": "Official opening • 18:00"
+            },
+            "lights": {
+                "title": "Over 2 million",
+                "text": "lights"
+            }
+        },
+        "program": {
+            "title": "Opening programme",
+            "venues": [
+                {
+                    "name": "Mihai Viteazul Square",
+                    "schedule": [
+                        {
+                            "time": "18:00",
+                            "label": "MC Cătălin Măruță"
+                        },
+                        {
+                            "time": "18:30",
+                            "label": "Official opening"
+                        }
+                    ],
+                    "highlights": [
+                        "Interactive stilt-walking show",
+                        "The elf fairy and the snow ballerina",
+                        "Santa's flying sleigh",
+                        "Fireworks"
+                    ]
+                },
+                {
+                    "name": "Frații Buzești Square",
+                    "schedule": [
+                        {
+                            "time": "19:00 – 20:00",
+                            "label": "Winter Wonderland, Oltenia Philharmonic + DJ set by Mr Shtef"
+                        },
+                        {
+                            "time": "20:00 – 21:00",
+                            "label": "DJ set by Emil Safta"
+                        }
+                    ]
+                }
+            ]
+        },
+        "discover": {
+            "title": "Discover the Land of the Elves",
+            "items": {
+                "toyFactory": "The Toy Factory and the ice rink",
+                "tree": "The 21-metre tree with a little train",
+                "santa": "A giant 9-metre Santa Claus",
+                "wheel": "The Ferris wheel and kids' attractions"
+            }
+        },
+        "stay": {
+            "title": "Stay just steps from the market",
+            "text": "Shakespeare Central Apartment is in the centre of Craiova, only a few minutes' walk from the Christmas Market. After an evening among the lights, come back to a warm, festively decorated apartment.",
+            "cta": "Check availability"
+        }
     }
 }

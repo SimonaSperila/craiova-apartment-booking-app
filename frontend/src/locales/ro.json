@@ -20,7 +20,8 @@
         "events": "Evenimente",
         "gallery": "Galerie",
         "local-area": "Împrejurimi",
-        "contact": "Contact"
+        "contact": "Contact",
+        "christmasMarket": "Târgul de Crăciun"
     },
     "benefitsHomepage": {
         "benefit1": {
@@ -396,5 +397,84 @@
         "count_one": "{{count}} evaluare",
         "count_few": "{{count}} evaluări",
         "count_other": "{{count}} de evaluări"
+    },
+    "christmasMarketPage": {
+        "hero": {
+            "eyebrow": "Craiova • 13 noiembrie 2026 – 3 ianuarie 2027",
+            "title": "Tărâmul Elfilor",
+            "tagline": "Magia Crăciunului te așteaptă în inima Craiovei.",
+            "cta": "Descoperă programul",
+            "imageAlt": "Ilustrație cu Târgul de Crăciun din Craiova seara: căsuțe luminate, bradul uriaș și roata panoramică"
+        },
+        "intro": {
+            "title": "Craiova deschide Tărâmul Elfilor",
+            "text1": "Târgul de Crăciun se inaugurează vineri, 13 noiembrie 2026, la ora 18:00.",
+            "text2": "O ediție spectaculoasă, cu peste două milioane de beculețe și numeroase atracții."
+        },
+        "facts": {
+            "dates": {
+                "title": "13 nov. 2026 – 3 ian. 2027",
+                "text": "Deschis zilnic"
+            },
+            "location": {
+                "title": "Piața Mihai Viteazul",
+                "text": "Deschiderea oficială • 18:00"
+            },
+            "lights": {
+                "title": "Peste 2 milioane",
+                "text": "de luminițe"
+            }
+        },
+        "program": {
+            "title": "Programul deschiderii",
+            "venues": [
+                {
+                    "name": "Piața Mihai Viteazul",
+                    "schedule": [
+                        {
+                            "time": "18:00",
+                            "label": "MC Cătălin Măruță"
+                        },
+                        {
+                            "time": "18:30",
+                            "label": "Deschiderea oficială"
+                        }
+                    ],
+                    "highlights": [
+                        "Spectacol interactiv pe picioroange",
+                        "Zâna elfilor și balerina zăpezii",
+                        "Sania zburătoare a lui Moș Crăciun",
+                        "Foc de artificii"
+                    ]
+                },
+                {
+                    "name": "Piața Frații Buzești",
+                    "schedule": [
+                        {
+                            "time": "19:00 – 20:00",
+                            "label": "Winter Wonderland, Filarmonica Oltenia + DJ set by Mr Shtef"
+                        },
+                        {
+                            "time": "20:00 – 21:00",
+                            "label": "DJ set by Emil Safta"
+                        }
+                    ]
+                }
+            ]
+        },
+        "discover": {
+            "title": "Descoperă Tărâmul Elfilor",
+            "items": {
+                "toyFactory": "Fabrica de Jucării și patinoarul",
+                "tree": "Bradul de 21 metri cu trenuleț",
+                "santa": "Moș Crăciun uriaș de 9 metri",
+                "wheel": "Roata panoramică și atracțiile pentru copii"
+            }
+        },
+        "stay": {
+            "title": "Cazare la câțiva pași de târg",
+            "text": "Shakespeare Central Apartment se află în centrul Craiovei, la doar câteva minute de mers pe jos de Târgul de Crăciun. După o seară printre lumini, te întorci într-un apartament cald, decorat de sărbători.",
+            "cta": "Verifică disponibilitatea"
+        }
     }
 }

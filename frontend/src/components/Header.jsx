@@ -3,9 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faSnowflake } from '@fortawesome/free-regular-svg-icons';
 import Logo from "./logo/Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { NavLink, useLocation } from "react-router-dom";
+import { CHRISTMAS_MARKET, isChristmasMarketActive } from "../pages/christmas-market/christmasMarketConfig";
 
 function Header() {
   	const { i18n, t } = useTranslation();
@@ -29,6 +31,14 @@ function Header() {
 						<li><NavLink to="/">{t("nav.home")}</NavLink></li>
 						<li><NavLink to={`/${lang}/apartment`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.apartment")}</NavLink></li>
 						<li><NavLink to={`/${lang}/events`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.events")}</NavLink></li>
+						{isChristmasMarketActive() && (
+							<li className="nav-item-festive">
+								<NavLink to={`/${lang}/${CHRISTMAS_MARKET.path}`} className={({ isActive }) => (isActive ? "nav-festive active" : "nav-festive")}>
+									<FontAwesomeIcon icon={faSnowflake} className="nav-festive-icon" />
+									{t("nav.christmasMarket")}
+								</NavLink>
+							</li>
+						)}
 						<li><NavLink to={`/${lang}/gallery`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.gallery")}</NavLink></li>
 						<li><NavLink to={`/${lang}/local-area`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.local-area")}</NavLink></li>
 						<li><NavLink to={`/${lang}/contact`} className={({ isActive }) => (isActive ? "active" : "")}>{t("nav.contact")}</NavLink></li>

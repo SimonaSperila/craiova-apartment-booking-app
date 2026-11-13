@@ -95,6 +95,82 @@ nav {
 	}
 }
 
+/* Seasonal menu link (e.g. Christmas Market) — styled to stand out from the rest */
+nav ul .nav-item-festive {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: var(--spacing-sm) 0 var(--spacing-md);
+
+	@media (min-width: 769px) {
+		margin: -6px 0;
+	}
+}
+
+nav ul .nav-festive {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 6px 16px;
+	border: 1px solid #d9b46a;
+	border-radius: 999px;
+	background: linear-gradient(135deg, #a3192d 0%, #7d1222 100%);
+	box-shadow: 0 3px 10px -3px rgba(139, 26, 43, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+	color: var(--white);
+	font-weight: 600;
+	white-space: nowrap;
+	overflow: hidden;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+	/* soft shimmer sweeping across the pill */
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -60%;
+		width: 40%;
+		background: linear-gradient(100deg, transparent, rgba(255, 236, 190, 0.35), transparent);
+		transform: skewX(-20deg);
+		animation: nav-festive-shimmer 4.5s ease-in-out infinite;
+	}
+
+	&:hover {
+		text-decoration: none;
+		transform: translateY(-1px);
+		box-shadow: 0 6px 14px -4px rgba(139, 26, 43, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+	}
+
+	&.active {
+		color: var(--white);
+		background: linear-gradient(135deg, #253a32 0%, #1a2a24 100%);
+		border-color: #d9b46a;
+		box-shadow: 0 3px 10px -3px rgba(37, 58, 50, 0.6), inset 0 0 0 1px rgba(217, 180, 106, 0.4);
+	}
+}
+
+nav ul .nav-festive-icon {
+	color: #f3d58c;
+	animation: nav-festive-spin 8s linear infinite;
+}
+
+@keyframes nav-festive-shimmer {
+	0%, 55% { left: -60%; }
+	100% { left: 130%; }
+}
+
+@keyframes nav-festive-spin {
+	to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	nav ul .nav-festive::after,
+	nav ul .nav-festive-icon {
+		animation: none;
+	}
+}
+
 .hamburger {
 	display: block;
 	font-size: 1.5rem;
