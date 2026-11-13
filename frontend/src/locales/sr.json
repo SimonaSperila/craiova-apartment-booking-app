@@ -20,7 +20,8 @@
         "events": "Događaji",
         "gallery": "Galerija",
         "local-area": "Okolina",
-        "contact": "Kontakt"
+        "contact": "Kontakt",
+        "christmasMarket": "Božićni sajam"
     },
     "benefitsHomepage": {
         "benefit1": {
@@ -396,5 +397,84 @@
         "count_one": "{{count}} recenzija",
         "count_few": "{{count}} recenzije",
         "count_other": "{{count}} recenzija"
+    },
+    "christmasMarketPage": {
+        "hero": {
+            "eyebrow": "Krajova • 13. novembar 2026 – 3. januar 2027.",
+            "title": "Zemlja vilenjaka",
+            "tagline": "Magija Božića te čeka u srcu Krajove.",
+            "cta": "Pogledaj program",
+            "imageAlt": "Ilustracija Božićnog sajma u Krajovi uveče: osvetljene kućice, ogromna jelka i panoramski točak"
+        },
+        "intro": {
+            "title": "Krajova otvara Zemlju vilenjaka",
+            "text1": "Božićni sajam se otvara u petak, 13. novembra 2026, u 18:00.",
+            "text2": "Spektakularno izdanje sa više od dva miliona lampica i brojnim atrakcijama."
+        },
+        "facts": {
+            "dates": {
+                "title": "13. nov. 2026 – 3. jan. 2027.",
+                "text": "Otvoreno svakog dana"
+            },
+            "location": {
+                "title": "Trg Mihai Viteazul",
+                "text": "Zvanično otvaranje • 18:00"
+            },
+            "lights": {
+                "title": "Preko 2 miliona",
+                "text": "lampica"
+            }
+        },
+        "program": {
+            "title": "Program otvaranja",
+            "venues": [
+                {
+                    "name": "Trg Mihai Viteazul",
+                    "schedule": [
+                        {
+                            "time": "18:00",
+                            "label": "Voditelj: Cătălin Măruță"
+                        },
+                        {
+                            "time": "18:30",
+                            "label": "Zvanično otvaranje"
+                        }
+                    ],
+                    "highlights": [
+                        "Interaktivna predstava na štulama",
+                        "Vila vilenjaka i snežna balerina",
+                        "Leteće sanke Deda Mraza",
+                        "Vatromet"
+                    ]
+                },
+                {
+                    "name": "Trg Frații Buzești",
+                    "schedule": [
+                        {
+                            "time": "19:00 – 20:00",
+                            "label": "Winter Wonderland, Filharmonija Oltenija + DJ set: Mr Shtef"
+                        },
+                        {
+                            "time": "20:00 – 21:00",
+                            "label": "DJ set: Emil Safta"
+                        }
+                    ]
+                }
+            ]
+        },
+        "discover": {
+            "title": "Otkrij Zemlju vilenjaka",
+            "items": {
+                "toyFactory": "Fabrika igračaka i klizalište",
+                "tree": "Jelka od 21 metar sa vozićem",
+                "santa": "Džinovski Deda Mraz od 9 metara",
+                "wheel": "Panoramski točak i atrakcije za decu"
+            }
+        },
+        "stay": {
+            "title": "Smeštaj na korak od sajma",
+            "text": "Shakespeare Central Apartment nalazi se u centru Krajove, samo nekoliko minuta hoda od Božićnog sajma. Posle večeri među svetlima, vraćate se u topao, praznično ukrašen apartman.",
+            "cta": "Proverite dostupnost"
+        }
     }
 }
