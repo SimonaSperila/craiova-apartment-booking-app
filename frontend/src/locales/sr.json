@@ -462,6 +462,11 @@
                 }
             ]
         },
+        "map": {
+            "title": "Mapa sajma",
+            "imageAlt": "Mapa Božićnog sajma u Krajovi sa svim zonama: trg Mihai Viteazul, klizalište, panoramski točak, zone sa hranom, bina i Lavirint vilenjaka, kao i Shakespeare Central Apartment, odmah pored podzemne garaže",
+            "hint": "Dodirnite mapu da biste je otvorili u punoj veličini."
+        },
         "discover": {
             "title": "Otkrij Zemlju vilenjaka",
             "items": {

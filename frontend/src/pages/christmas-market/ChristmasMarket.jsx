@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faStar } from "@fortawesome/free-regular-svg-icons";
@@ -8,6 +9,12 @@ import toyFactoryImage from "../../assets/christmas-market/toy-factory.svg";
 import treeTrainImage from "../../assets/christmas-market/tree-train.svg";
 import giantSantaImage from "../../assets/christmas-market/giant-santa.svg";
 import ferrisWheelImage from "../../assets/christmas-market/ferris-wheel.svg";
+import marketMapRo from "../../assets/christmas-market/christmas-market-map.ro.webp";
+import marketMapEn from "../../assets/christmas-market/christmas-market-map.en.webp";
+import marketMapBg from "../../assets/christmas-market/christmas-market-map.bg.webp";
+import marketMapSr from "../../assets/christmas-market/christmas-market-map.sr.webp";
+
+import Lightbox from "../../components/lightbox/Lightbox";
 
 import styles from "./ChristmasMarket.module.css";
 
@@ -25,6 +32,9 @@ const ATTRACTIONS = [
     { id: "santa", image: giantSantaImage },
     { id: "wheel", image: ferrisWheelImage },
 ];
+
+// The map artwork has its labels baked in, so there is one image per language.
+const MARKET_MAPS = { ro: marketMapRo, en: marketMapEn, bg: marketMapBg, sr: marketMapSr };
 
 function Sparkle({ className }) {
     return (
@@ -54,7 +64,9 @@ function SectionTitle({ children }) {
 }
 
 function ChristmasMarket() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const marketMapImage = MARKET_MAPS[i18n.language] ?? MARKET_MAPS.ro;
+    const [isMapOpen, setIsMapOpen] = useState(false);
     const venues = t("christmasMarketPage.program.venues", { returnObjects: true });
 
     const scrollToProgram = (event) => {
@@ -135,6 +147,26 @@ function ChristmasMarket() {
                         </article>
                     ))}
                 </div>
+            </section>
+
+            <section className={`container ${styles.section}`}>
+                <SectionTitle>{t("christmasMarketPage.map.title")}</SectionTitle>
+
+                <figure className={styles.map}>
+                    <button type="button" onClick={() => setIsMapOpen(true)}>
+                        <img src={marketMapImage} alt={t("christmasMarketPage.map.imageAlt")} loading="lazy" width="1600" height="1012" />
+                    </button>
+                    <figcaption>{t("christmasMarketPage.map.hint")}</figcaption>
+                </figure>
+
+                {isMapOpen && (
+                    <Lightbox
+                        images={[{ src: marketMapImage, alt: t("christmasMarketPage.map.imageAlt") }]}
+                        activeIndex={0}
+                        onNavigate={() => {}}
+                        onClose={() => setIsMapOpen(false)}
+                    />
+                )}
             </section>
 
             <section className={`container ${styles.section}`}>
