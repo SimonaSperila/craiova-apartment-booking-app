@@ -306,14 +306,13 @@
 	background-image: url("../../assets/christmas-market/deco-tree.svg");
 	background-position: right 24px bottom 0;
 	background-size: auto 85%;
+	min-height: 190px;
+	padding-right: clamp(120px, 32%, 200px);
 
 	@media (max-width: 600px) {
-		background-position: right 14px top 18px;
+		background-position: right 14px bottom 0;
 		background-size: auto 130px;
-
-		.highlights {
-			max-width: 100%;
-		}
+		min-height: 170px;
 	}
 }
 
@@ -322,6 +321,93 @@
 	background-position: right 20px bottom 20px;
 	background-size: min(300px, 70%) auto;
 	padding-bottom: 110px;
+}
+
+/* an odd card out at the end spans the full row */
+.venue:last-child:nth-child(odd) {
+	@media (min-width: 900px) {
+		grid-column: 1 / -1;
+	}
+}
+
+.program-subtitle {
+	margin: -12px 0 28px;
+	font-family: var(--secondary-font);
+	font-style: italic;
+	font-size: 1.2rem;
+	color: var(--cm-red);
+}
+
+.venue-meta {
+	margin: -8px 0 16px;
+	font-size: 0.95rem;
+	opacity: 0.85;
+}
+
+.slots {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	list-style: none;
+
+	li {
+		padding: 6px 14px;
+		border: 1px solid var(--cm-gold-soft);
+		border-radius: 999px;
+		background-color: var(--white);
+		color: var(--cm-red);
+		font-weight: 700;
+		white-space: nowrap;
+	}
+}
+
+.price {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 14px;
+	padding: 6px 14px;
+	border-radius: 999px;
+	background-color: var(--cm-green);
+	color: var(--white);
+	font-weight: 600;
+
+	svg {
+		color: var(--cm-gold);
+	}
+}
+
+.route {
+	margin-top: 16px;
+	font-size: 0.95rem;
+
+	strong {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 8px;
+		color: var(--gray-900);
+		font-weight: 600;
+
+		svg {
+			color: var(--cm-red);
+		}
+	}
+
+	ol {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 4px;
+		list-style: none;
+		line-height: 1.45;
+	}
+
+	li:not(:last-child)::after {
+		content: "→";
+		margin: 0 8px;
+		color: var(--cm-gold);
+		font-weight: 700;
+	}
 }
 
 .venue-icon {
@@ -370,7 +456,6 @@
 .highlights {
 	display: grid;
 	gap: 8px;
-	max-width: 65%;
 	margin-top: 18px;
 	padding-top: 18px;
 	border-top: 1px solid var(--cm-border);
@@ -381,6 +466,11 @@
 		align-items: center;
 		gap: 12px;
 	}
+}
+
+/* leave room for the decorative illustration in the corner */
+.venue-music .highlights {
+	max-width: 65%;
 
 	@media (max-width: 480px) {
 		max-width: 75%;

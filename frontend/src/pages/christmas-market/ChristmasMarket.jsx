@@ -2,7 +2,19 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faStar } from "@fortawesome/free-regular-svg-icons";
-import { faArrowRight, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+    faArrowRight,
+    faBus,
+    faGift,
+    faLocationDot,
+    faMusic,
+    faRoute,
+    faSleigh,
+    faStore,
+    faTicket,
+    faTrain,
+    faTrainTram,
+} from "@fortawesome/free-solid-svg-icons";
 
 import heroImage from "../../assets/christmas-market/hero.svg";
 import toyFactoryImage from "../../assets/christmas-market/toy-factory.svg";
@@ -31,6 +43,18 @@ const ATTRACTIONS = [
     { id: "tree", image: treeTrainImage },
     { id: "santa", image: giantSantaImage },
     { id: "wheel", image: ferrisWheelImage },
+];
+
+// Daily programme cards, in display order. Texts live under
+// christmasMarketPage.program.items.<id> in the locale files.
+const PROGRAM = [
+    { id: "sleigh", icon: faSleigh },
+    { id: "treeTrain", icon: faTrainTram, deco: "venue-tree" },
+    { id: "toyFactory", icon: faGift },
+    { id: "concerts", icon: faMusic, deco: "venue-music" },
+    { id: "magicTrain", icon: faTrain },
+    { id: "partyBus", icon: faBus },
+    { id: "stalls", icon: faStore },
 ];
 
 // The map artwork has its labels baked in, so there is one image per language.
@@ -67,7 +91,6 @@ function ChristmasMarket() {
     const { t, i18n } = useTranslation();
     const marketMapImage = MARKET_MAPS[i18n.language] ?? MARKET_MAPS.ro;
     const [isMapOpen, setIsMapOpen] = useState(false);
-    const venues = t("christmasMarketPage.program.venues", { returnObjects: true });
 
     const scrollToProgram = (event) => {
         event.preventDefault();
@@ -119,33 +142,70 @@ function ChristmasMarket() {
             <section id="program" className={`container ${styles.section} ${styles.program}`}>
                 <SectionTitle>{t("christmasMarketPage.program.title")}</SectionTitle>
 
+                <p className={styles["program-subtitle"]}>{t("christmasMarketPage.program.subtitle")}</p>
+
                 <div className={styles.venues}>
-                    {Array.isArray(venues) && venues.map((venue, index) => (
-                        <article key={venue.name} className={`${styles.venue} ${index === 0 ? styles["venue-tree"] : styles["venue-music"]}`}>
-                            <h3>
-                                <FontAwesomeIcon icon={faLocationDot} className={styles["venue-icon"]} />
-                                {venue.name}
-                            </h3>
-                            <dl className={styles.schedule}>
-                                {venue.schedule.map(item => (
-                                    <div key={item.time} className={styles["schedule-row"]}>
-                                        <dt>{item.time}</dt>
-                                        <dd>{item.label}</dd>
+                    {PROGRAM.map(({ id, icon, deco }) => {
+                        const item = t(`christmasMarketPage.program.items.${id}`, { returnObjects: true });
+                        if (!item || typeof item !== "object") return null;
+
+                        return (
+                            <article key={id} className={`${styles.venue} ${deco ? styles[deco] : ""}`}>
+                                <h3>
+                                    <FontAwesomeIcon icon={icon} className={styles["venue-icon"]} />
+                                    {item.name}
+                                </h3>
+                                {item.meta && <p className={styles["venue-meta"]}>{item.meta}</p>}
+
+                                {item.schedule?.length > 0 && (
+                                    <dl className={styles.schedule}>
+                                        {item.schedule.map(row => (
+                                            <div key={row.time + row.label} className={styles["schedule-row"]}>
+                                                <dt>{row.time}</dt>
+                                                <dd>{row.label}</dd>
+                                            </div>
+                                        ))}
+                                    </dl>
+                                )}
+
+                                {item.slots?.length > 0 && (
+                                    <ul className={styles.slots}>
+                                        {item.slots.map(slot => <li key={slot}>{slot}</li>)}
+                                    </ul>
+                                )}
+
+                                {item.price && (
+                                    <p className={styles.price}>
+                                        <FontAwesomeIcon icon={faTicket} />
+                                        {item.price}
+                                    </p>
+                                )}
+
+                                {item.notes?.length > 0 && (
+                                    <ul className={styles.highlights}>
+                                        {item.notes.map(note => (
+                                            <li key={note}>
+                                                <Sparkle className={styles["highlight-icon"]} />
+                                                {note}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                                {item.route?.length > 0 && (
+                                    <div className={styles.route}>
+                                        <strong>
+                                            <FontAwesomeIcon icon={faRoute} />
+                                            {t("christmasMarketPage.program.routeLabel")}
+                                        </strong>
+                                        <ol>
+                                            {item.route.map((stop, index) => <li key={index}>{stop}</li>)}
+                                        </ol>
                                     </div>
-                                ))}
-                            </dl>
-                            {venue.highlights?.length > 0 && (
-                                <ul className={styles.highlights}>
-                                    {venue.highlights.map(highlight => (
-                                        <li key={highlight}>
-                                            <Sparkle className={styles["highlight-icon"]} />
-                                            {highlight}
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </article>
-                    ))}
+                                )}
+                            </article>
+                        );
+                    })}
                 </div>
             </section>
 

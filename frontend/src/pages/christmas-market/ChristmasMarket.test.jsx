@@ -16,16 +16,19 @@ afterEach(() => {
 });
 
 describe('Christmas Market page', () => {
-    it('renders the hero, facts, both opening-programme venues and the four attractions', () => {
+    it('renders the hero, facts, the daily programme and the four attractions', () => {
         const { container } = render(<ChristmasMarket />);
 
         expect(screen.getByRole('heading', { level: 1, name: 'The Land of the Elves' })).toBeInTheDocument();
         expect(screen.getByText('Open daily')).toBeInTheDocument();
 
         const program = container.querySelector('#program');
-        expect(within(program).getByRole('heading', { name: 'Mihai Viteazul Square' })).toBeInTheDocument();
-        expect(within(program).getByRole('heading', { name: 'Frații Buzești Square' })).toBeInTheDocument();
-        expect(within(program).getByText('Fireworks')).toBeInTheDocument();
+        expect(within(program).getByRole('heading', { level: 2, name: 'Daily programme' })).toBeInTheDocument();
+        expect(within(program).getByRole('heading', { name: "Santa's Flying Sleigh Show" })).toBeInTheDocument();
+        expect(within(program).getByRole('heading', { name: 'Party Bus' })).toBeInTheDocument();
+        expect(within(program).getByText('22:30 – 22:45')).toBeInTheDocument();
+        expect(within(program).getByText('4 lei / person')).toBeInTheDocument();
+        expect(within(program).getAllByText('Promenada Mall')).toHaveLength(2);
 
         expect(screen.getByText('A giant 9-metre Santa Claus')).toBeInTheDocument();
         expect(screen.getAllByRole('listitem').filter(li => li.querySelector('img'))).toHaveLength(4);
@@ -58,7 +61,7 @@ describe('Christmas Market page', () => {
         for (const lang of ['ro', 'bg', 'sr']) {
             i18n.changeLanguage(lang);
             const { container, unmount } = render(<ChristmasMarket />);
-            expect(container.querySelectorAll('#program article')).toHaveLength(2);
+            expect(container.querySelectorAll('#program article')).toHaveLength(7);
             expect(container.textContent).not.toMatch(/christmasMarketPage\./);
             unmount();
         }

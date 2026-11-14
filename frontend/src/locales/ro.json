@@ -426,41 +426,113 @@
             }
         },
         "program": {
-            "title": "Programul deschiderii",
-            "venues": [
-                {
-                    "name": "Piața Mihai Viteazul",
+            "title": "Program zilnic",
+            "subtitle": "13 noiembrie 2026 – 3 ianuarie 2027",
+            "routeLabel": "Traseu",
+            "items": {
+                "sleigh": {
+                    "name": "Show Sania Zburătoare a lui Moș Crăciun",
+                    "meta": "Piața Mihai Viteazul • 13.11.2026 – 27.12.2026",
                     "schedule": [
-                        {
-                            "time": "18:00",
-                            "label": "MC Cătălin Măruță"
-                        },
                         {
                             "time": "18:30",
-                            "label": "Deschiderea oficială"
-                        }
-                    ],
-                    "highlights": [
-                        "Spectacol interactiv pe picioroange",
-                        "Zâna elfilor și balerina zăpezii",
-                        "Sania zburătoare a lui Moș Crăciun",
-                        "Foc de artificii"
-                    ]
-                },
-                {
-                    "name": "Piața Frații Buzești",
-                    "schedule": [
-                        {
-                            "time": "19:00 – 20:00",
-                            "label": "Winter Wonderland, Filarmonica Oltenia + DJ set by Mr Shtef"
+                            "label": "Luni – Joi"
                         },
                         {
-                            "time": "20:00 – 21:00",
-                            "label": "DJ set by Emil Safta"
+                            "time": "18:30 • 19:30",
+                            "label": "Vineri, Sâmbătă și Duminică"
+                        }
+                    ]
+                },
+                "treeTrain": {
+                    "name": "Trenulețul din bradul din Piața Mihai Viteazul",
+                    "meta": "13.11.2026 – 03.01.2027",
+                    "schedule": [
+                        {
+                            "time": "18:30 – 19:00",
+                            "label": "Zilnic"
+                        }
+                    ]
+                },
+                "toyFactory": {
+                    "name": "Fabrica de jucării – Patinoar Piața Mihai Viteazul",
+                    "meta": "Zilnic • 13.11.2026 – 03.01.2027",
+                    "slots": [
+                        "18:00 – 18:45",
+                        "19:30 – 19:45",
+                        "20:30 – 20:45",
+                        "21:30 – 21:45",
+                        "22:30 – 22:45"
+                    ]
+                },
+                "concerts": {
+                    "name": "Concerte",
+                    "notes": [
+                        "În fiecare vineri și sâmbătă, la scena din zona bradului de Crăciun",
+                        "Artiști locali și naționali"
+                    ]
+                },
+                "magicTrain": {
+                    "name": "Trenulețul magic",
+                    "schedule": [
+                        {
+                            "time": "14:00 – 22:00",
+                            "label": "Zilnic"
+                        }
+                    ],
+                    "price": "4 lei / persoană",
+                    "notes": [
+                        "Biletele se achiziționează direct din trenuleț."
+                    ],
+                    "route": [
+                        "Sala Polivalentă",
+                        "Casa Băniei (Stația Sf. Dumitru)",
+                        "Inspectoratul Școlar",
+                        "Liceul Carol I",
+                        "str. A.I. Cuza (Stația Primărie)",
+                        "str. Arieș (Stația DIGI)",
+                        "str. Kogălniceanu",
+                        "Ciupercă",
+                        "Sala Polivalentă"
+                    ]
+                },
+                "partyBus": {
+                    "name": "Party Bus",
+                    "schedule": [
+                        {
+                            "time": "17:00 – 23:00",
+                            "label": "Zilnic"
+                        }
+                    ],
+                    "price": "6 lei / persoană",
+                    "notes": [
+                        "Biletele se achiziționează direct din autobuz."
+                    ],
+                    "route": [
+                        "Promenada Mall",
+                        "Calea Severinului",
+                        "str. Maria Tănase (Stația Casa Științei)",
+                        "str. A.I. Cuza (Primăria Craiova)",
+                        "str. Frații Golești",
+                        "Calea București (Stația 3F)",
+                        "Calea Severinului (Stația Casa Științei)",
+                        "Promenada Mall"
+                    ]
+                },
+                "stalls": {
+                    "name": "Program căsuțe și locuri de agrement",
+                    "schedule": [
+                        {
+                            "time": "12:00 – 22:00",
+                            "label": "Luni – Joi"
+                        },
+                        {
+                            "time": "11:00 – 23:00",
+                            "label": "Vineri – Duminică"
                         }
                     ]
                 }
-            ]
+            }
         },
         "map": {
             "title": "Harta târgului",
