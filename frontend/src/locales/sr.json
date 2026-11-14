@@ -426,41 +426,113 @@
             }
         },
         "program": {
-            "title": "Program otvaranja",
-            "venues": [
-                {
-                    "name": "Trg Mihai Viteazul",
+            "title": "Dnevni program",
+            "subtitle": "13. novembar 2026 – 3. januar 2027",
+            "routeLabel": "Trasa",
+            "items": {
+                "sleigh": {
+                    "name": "Šou „Leteće sanke Deda Mraza“",
+                    "meta": "Trg Mihai Viteazul • 13.11.2026 – 27.12.2026",
                     "schedule": [
-                        {
-                            "time": "18:00",
-                            "label": "Voditelj: Cătălin Măruță"
-                        },
                         {
                             "time": "18:30",
-                            "label": "Zvanično otvaranje"
-                        }
-                    ],
-                    "highlights": [
-                        "Interaktivna predstava na štulama",
-                        "Vila vilenjaka i snežna balerina",
-                        "Leteće sanke Deda Mraza",
-                        "Vatromet"
-                    ]
-                },
-                {
-                    "name": "Trg Frații Buzești",
-                    "schedule": [
-                        {
-                            "time": "19:00 – 20:00",
-                            "label": "Winter Wonderland, Filharmonija Oltenija + DJ set: Mr Shtef"
+                            "label": "Ponedeljak – četvrtak"
                         },
                         {
-                            "time": "20:00 – 21:00",
-                            "label": "DJ set: Emil Safta"
+                            "time": "18:30 • 19:30",
+                            "label": "Petak, subota i nedelja"
+                        }
+                    ]
+                },
+                "treeTrain": {
+                    "name": "Vozić u jelki na Trgu Mihai Viteazul",
+                    "meta": "13.11.2026 – 03.01.2027",
+                    "schedule": [
+                        {
+                            "time": "18:30 – 19:00",
+                            "label": "Svakog dana"
+                        }
+                    ]
+                },
+                "toyFactory": {
+                    "name": "Fabrika igračaka – klizalište na Trgu Mihai Viteazul",
+                    "meta": "Svakog dana • 13.11.2026 – 03.01.2027",
+                    "slots": [
+                        "18:00 – 18:45",
+                        "19:30 – 19:45",
+                        "20:30 – 20:45",
+                        "21:30 – 21:45",
+                        "22:30 – 22:45"
+                    ]
+                },
+                "concerts": {
+                    "name": "Koncerti",
+                    "notes": [
+                        "Svakog petka i subote, na bini kod božićne jelke",
+                        "Lokalni i nacionalni izvođači"
+                    ]
+                },
+                "magicTrain": {
+                    "name": "Čarobni vozić",
+                    "schedule": [
+                        {
+                            "time": "14:00 – 22:00",
+                            "label": "Svakog dana"
+                        }
+                    ],
+                    "price": "4 leja / osoba",
+                    "notes": [
+                        "Karte se kupuju direktno u vozu."
+                    ],
+                    "route": [
+                        "Polivalentna dvorana",
+                        "Casa Băniei (stanica Sf. Dumitru)",
+                        "Školski inspektorat",
+                        "Gimnazija Carol I",
+                        "ul. A.I. Cuza (stanica Opština)",
+                        "ul. Arieș (stanica DIGI)",
+                        "ul. Kogălniceanu",
+                        "Ciupercă",
+                        "Polivalentna dvorana"
+                    ]
+                },
+                "partyBus": {
+                    "name": "Party Bus",
+                    "schedule": [
+                        {
+                            "time": "17:00 – 23:00",
+                            "label": "Svakog dana"
+                        }
+                    ],
+                    "price": "6 leja / osoba",
+                    "notes": [
+                        "Karte se kupuju direktno u autobusu."
+                    ],
+                    "route": [
+                        "Promenada Mall",
+                        "Calea Severinului",
+                        "ul. Maria Tănase (stanica Casa Științei)",
+                        "ul. A.I. Cuza (Opština Krajova)",
+                        "ul. Frații Golești",
+                        "Calea București (stanica 3F)",
+                        "Calea Severinului (stanica Casa Științei)",
+                        "Promenada Mall"
+                    ]
+                },
+                "stalls": {
+                    "name": "Radno vreme kućica i atrakcija",
+                    "schedule": [
+                        {
+                            "time": "12:00 – 22:00",
+                            "label": "Ponedeljak – četvrtak"
+                        },
+                        {
+                            "time": "11:00 – 23:00",
+                            "label": "Petak – nedelja"
                         }
                     ]
                 }
-            ]
+            }
         },
         "map": {
             "title": "Mapa sajma",
